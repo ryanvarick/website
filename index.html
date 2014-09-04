@@ -5,16 +5,21 @@
     <title>ryanvarick.com &ndash; Design Test</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- <link rel="stylesheet" href="assets/vendor.css"> -->
+    <link rel="stylesheet/less" type="text/css" href="assets/app.less" />
 </head>
 <body>
     <h1>Hello World</h1>
 
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/less/dist/less-1.7.5.js"></script>
+    <script src="vendor/pleasejs/Please.js"></script>
+    <script src="assets/app.js"></script>
     <script>
-        // window.EmberCliENV = {{ENV}};
-        // window.EmberENV = window.EmberCliENV.EmberENV;
+        if(document.location.hostname === "localhost") {
+            less.logLevel = 1; // errors only
+            less.watch();
+            console.debug("DEBUG: LESS watch mode auto-enabled for localhost");
+        }
     </script>
-    <!-- // <script src="assets/vendor.js"></script> -->
 </body>
 </html>

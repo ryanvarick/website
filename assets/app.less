@@ -1,0 +1,40 @@
+html, body {
+  margin: 10px;
+  font-family: sans-serif;
+
+  h1 {
+  	margin: 0;
+  }
+}
+
+h1 {
+    font-size: 10em;
+    transition: color 3s linear;
+
+    // http://thecodeplayer.com/walkthrough/animating-css3-gradients
+    background-image: -webkit-gradient(
+    	linear,
+    	left top,
+    	left bottom,
+    	color-stop(0, #68BDAF),
+    	color-stop(1, #7C8482)
+    );
+}
+
+
+a {
+    color: black;
+
+    &.active {
+        font-weight: bold;
+    }
+}
+
+td {
+	padding: 3px;
+	border: 1px solid #efefef;
+}
+
+hr {
+	clear: both;
+}
