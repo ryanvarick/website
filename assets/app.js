@@ -13,5 +13,8 @@ $(document).ready(function() {
 
 		var logo = Please.make_color();
 		$("#svg-test path").css("fill", logo);
+
+		var bg = Please.make_color();
+		$("body").css("background-color", bg);
 	}, 3000);
 });
