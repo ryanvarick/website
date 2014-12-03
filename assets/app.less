@@ -1,3 +1,5 @@
+@import "variables.less";
+
 html, body {
   margin: 10px;
   font-family: sans-serif;
@@ -16,8 +18,8 @@ h1 {
     	linear,
     	left top,
     	left bottom,
-    	color-stop(0, #68BDAF),
-    	color-stop(1, #7C8482)
+    	color-stop(0, @RED),
+    	color-stop(1, @GREEN)
     );
 }
 
@@ -32,7 +34,7 @@ a {
 
 td {
 	padding: 3px;
-	border: 1px solid #efefef;
+	border: 1px solid @LIGHT_GREY;
 }
 
 hr {
