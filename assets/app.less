@@ -1,159 +1,77 @@
+/**
+ ryanvarick.com Stylesheet, v16.0.0
+  - Raw version: https://www.ryanvarick.com/assets/app.less
+  - More information: https://www.ryanvarick.com/colphon
+*/
+
+// browser reset
+@import "../vendor/normalize.css/normalize.css";
+
+// variables and base typography
 @import "variables.less";
+@import "typography.less";
+
+// desktop and print (media queries)
+@import "desktop.less";
+@import "print.less";
+
+@HEADING_SIZE: 12pt;
+
+
+
+
+
 
 html, body {
-  margin: 10px;
-  font-family: sans-serif;
-
-  h1 {
-      display: none;
-  	margin: 0;
-  }
+    margin: 0;
+    padding: 0;
 }
 
-p {
-    font-size: larger;
-    font-weight: 100;
-    color: white;
 
-    &.avenir {
-        font-family: avenir;
-    }
 
-    &.myriad {
-        font-family: myriad-pro;
-    }
+
+
+header svg path {
+    // shape-rendering: crispEdges;
+
+    fill: @BLUE;
+    fill: linear-gradient(
+        rgba(red(@BLUE), green(@BLUE), blue(@BLUE), 1.0),
+        rgba(red(@GREEN), green(@GREEN), blue(@GREEN), 1.0)
+    );
+        // -webkit-animation: hex2 5s infinite alternate;
 }
-// http://jsfiddle.net/hzNmQ/
-// requires inline SVGs but otherwise works as expected
-section.svg-tests {
-    background: white;
-}
-div#about {
-    padding: 10px;
-
-    text {
-        font-family: myriad-pro;
-        font-weight: 300;
-        font-size: 20pt;
-
-        // fill: @GREEN;
-        // transition: fill 3s linear;
-
-    }
+@-webkit-keyframes hex2 {
+    100% { fill: saturate(@BLUE, 100%) }
 }
 
-// webkit only, does not work with normal BG color or drop shadows
-div#about2 {
-    padding: 10px;
-
-    font-family: myriad-pro;
-    font-weight: 300;
-    font-size: 20pt;
-
-    // a little spice for webkit
-    // background-image: -webkit-gradient(
-    //     linear, left top, left bottom,
-    //     color-stop(0, #4db2e7),
-    //     color-stop(1, #7a6cff)
-    // );
-
-    // http://thecodeplayer.com/walkthrough/animating-css3-gradients
-    background-image: linear-gradient(
-        rgba(255,255,255,0.1),
-        rgba(0,0,0,0.1)
-        );
-
+main h2 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    // background-color: hsl(0, 100%, 50%); /*red*/
-    background-color: @BLUE;
-    // -webkit-animation: hue 10s infinite alternate;
+    // http://thecodeplayer.com/walkthrough/animating-css3-gradients
+    background-image: linear-gradient(
+        rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
+        rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
+    );
+
+    // background-color: @BLUE;
     -webkit-animation: hex 5s infinite alternate;
 }
-
 @-webkit-keyframes hex {
     // fallback
     // 50%  { background-color: saturate}
     100% { background-color: saturate(@BLUE, 100%) }
 }
 
-@-webkit-keyframes hue {
-    /*hue will animate from 0 to 360. Saturation and Lightness remain constant*/
-    20%  { background-color: hsl(72,  100%, 50%); }
-    40%  { background-color: hsl(144, 100%, 50%); }
-    60%  { background-color: hsl(216, 100%, 50%); }
-    80%  { background-color: hsl(288, 100%, 50%); }
-    100% { background-color: hsl(360, 100%, 50%); }
-}
 
 
-
-// <linearGradient id="textgradient" x1="0%" x2="50%" y1="0%" y2="100%">
-// <stop stop-color="#4db2e7" offset="0%">
-// <animate attributeName="stop-color" values="#4db2e7;#7a6cff;#4db2e7" dur="4s" repeatCount="indefinite"></animate>
-// </stop>
-// <stop stop-color="#7a6cff" offset="100%">
-// <animate attributeName="stop-color" values="#7a6cff;#4db2e7;#7a6cff" dur="4s" repeatCount="indefinite"></animate>
-// </stop>
-// </linearGradient>
-
-
-h1 {
-    font-size: 10em;
-    transition: color 3s linear;
-
-    // http://thecodeplayer.com/walkthrough/animating-css3-gradients
-    background-image: -webkit-gradient(
-    	linear,
-    	left top,
-    	left bottom,
-    	color-stop(0, @RED),
-    	color-stop(1, @GREEN)
+footer {
+    color: white;
+    background-color: @BLUE;
+    background-image: linear-gradient(
+        rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
+        rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
     );
-}
-
-
-a {
-    color: black;
-
-    &.active {
-        font-weight: bold;
-    }
-}
-
-td {
-	padding: 3px;
-	border: 1px solid @LIGHT_GREY;
-}
-
-hr {
-	clear: both;
-}
-
-/** SVG TESTING **/
-
-div#svg-test {
-	height: 150px;
-	width: 150px;
-    margin: 20px;
-}
-
-#svg-test path {
-	opacity: 1.0;
-    transition: fill 3s linear;
-}
-
-/** ANIMATED BG GRADIENT TESTING **/
-body {
-    margin: 0;
-    padding: 0;
-
-	background-image: linear-gradient(
-		rgba(255,255,255,0.6),
-		rgba(0,0,0,0.6)
-	);
-
-	background-color: hsl(0, 100%, 50%); /*red*/
-	transition: background-color 3s linear;
+        // -webkit-animation: hex 5s infinite alternate;
 }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ryan Varick, Designer | ryanvarick.com</title>
+    <meta name="description" content="I am a San Francisco-based interaction designer.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet/less" type="text/css" href="assets/swatches.less" />
+
+    <!-- Typekit -->
+    <script src="https://use.typekit.com/ygu4ods.js"></script>
+    <script>try { Typekit.load(); } catch(e) { }</script>
+
+    <script src="vendor/less/dist/less-1.7.5.js"></script>
+    <script>
+    if(document.location.hostname === "localhost") {
+        less.logLevel = 1; // errors only
+        less.watch();
+        console.debug("DEBUG: LESS watch mode auto-enabled for localhost");
+    }
+    </script>
+</head>
+<body>
+    <main>
+        <h2>Swatches</h2>
+
+        <h3>Base</h3>
+        <ul>
+            <li class="red">Red</li>
+            <li class="green">Green</li>
+            <li class="purple">Purple</li>
+            <li class="blue">Blue</li>
+            <li class="yellow">Yellow</li>
+            <li class="orange">Orange</li>
+        </ul>
+        <ul>
+            <li class="grey1">Grey 01</li>
+            <li class="grey2">Grey 02</li>
+            <li class="grey3">Grey 03</li>
+            <li class="grey4">Grey 04</li>
+            <li class="grey5">Grey 05</li>
+            <li class="grey6">Grey 06</li>
+            <li class="grey7">Grey 07</li>
+            <li class="grey8">Grey 08</li>
+            <li class="grey9">Grey 09</li>
+        </ul>
+
+        <h3>Mixes</h3>
+        <ul>
+            <li class="red"></li>
+            <li class="red-orange"></li>
+            <li class="red-yellow"></li>
+            <li class="red-green"></li>
+            <li class="red-blue"></li>
+            <li class="red-purple"></li>
+        </ul>
+        <ul>
+            <li class="orange-red"></li>
+            <li class="orange"></li>
+            <li class="orange-yellow"></li>
+            <li class="orange-green"></li>
+            <li class="orange-blue"></li>
+            <li class="orange-purple"></li>
+        </ul>
+        <ul>
+            <li class="yellow-red"></li>
+            <li class="yellow-orange"></li>
+            <li class="yellow"></li>
+            <li class="yellow-green"></li>
+            <li class="yellow-blue"></li>
+            <li class="yellow-purple"></li>
+        </ul>
+        <ul>
+            <li class="green-red"></li>
+            <li class="green-orange"></li>
+            <li class="green-yellow"></li>
+            <li class="green"></li>
+            <li class="green-blue"></li>
+            <li class="green-purple"></li>
+        </ul>
+        <ul>
+            <li class="blue-red"></li>
+            <li class="blue-orange"></li>
+            <li class="blue-yellow"></li>
+            <li class="blue-green"></li>
+            <li class="blue"></li>
+            <li class="blue-purple"></li>
+        </ul>
+        <ul>
+            <li class="purple-red"></li>
+            <li class="purple-orange"></li>
+            <li class="purple-yellow"></li>
+            <li class="purple-green"></li>
+            <li class="purple-blue"></li>
+            <li class="purple"></li>
+        </ul>
+    </main>
+
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/pleasejs/Please.js"></script>
+    <!-- <script src="assets/app.js"></script> -->
+</body>
+</html>
