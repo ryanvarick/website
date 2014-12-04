@@ -5,6 +5,7 @@ html, body {
   font-family: sans-serif;
 
   h1 {
+      display: none;
   	margin: 0;
   }
 }
@@ -22,10 +23,12 @@ p {
         font-family: myriad-pro;
     }
 }
-
+// http://jsfiddle.net/hzNmQ/
 // requires inline SVGs but otherwise works as expected
-div#about {
+section.svg-tests {
     background: white;
+}
+div#about {
     padding: 10px;
 
     text {
@@ -47,15 +50,44 @@ div#about2 {
     font-weight: 300;
     font-size: 20pt;
 
-    border: 1px solid red;
-    background-image: -webkit-gradient(
-        linear, left top, left bottom,
-        color-stop(0, #4db2e7),
-        color-stop(1, #7a6cff)
-    );
+    // a little spice for webkit
+    // background-image: -webkit-gradient(
+    //     linear, left top, left bottom,
+    //     color-stop(0, #4db2e7),
+    //     color-stop(1, #7a6cff)
+    // );
+
+    // http://thecodeplayer.com/walkthrough/animating-css3-gradients
+    background-image: linear-gradient(
+        rgba(255,255,255,0.1),
+        rgba(0,0,0,0.1)
+        );
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    // background-color: hsl(0, 100%, 50%); /*red*/
+    background-color: @BLUE;
+    // -webkit-animation: hue 10s infinite alternate;
+    -webkit-animation: hex 5s infinite alternate;
 }
+
+@-webkit-keyframes hex {
+    // fallback
+    // 50%  { background-color: saturate}
+    100% { background-color: saturate(@BLUE, 100%) }
+}
+
+@-webkit-keyframes hue {
+    /*hue will animate from 0 to 360. Saturation and Lightness remain constant*/
+    20%  { background-color: hsl(72,  100%, 50%); }
+    40%  { background-color: hsl(144, 100%, 50%); }
+    60%  { background-color: hsl(216, 100%, 50%); }
+    80%  { background-color: hsl(288, 100%, 50%); }
+    100% { background-color: hsl(360, 100%, 50%); }
+}
+
+
 
 // <linearGradient id="textgradient" x1="0%" x2="50%" y1="0%" y2="100%">
 // <stop stop-color="#4db2e7" offset="0%">
