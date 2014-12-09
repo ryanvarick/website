@@ -1,0 +1,23 @@
+{
+  "name": "Ryan Varick",
+  "version": "16.0.0",
+  "authors": [
+    "Ryan Varick"
+  ],
+  "description": "Website for Ryan Varick",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "https://www.ryanvarick.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hashgrid": "*"
+  }
+}
