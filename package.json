@@ -1,0 +1,15 @@
+{
+  "name": "ryanvarick.com",
+  "version": "16.0.0",
+  "description": "Website for Ryan Varick",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lessc assets/styles/app.less assets/app.css"
+  },
+  "author": "Ryan Varick",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^2.1.1"
+  }
+}
