@@ -1,0 +1,28 @@
+@PAGE_WIDTH: 800px;
+@MEASURE: 25px;
+
+#grid {
+  left: 50%;
+  margin-left: -50%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  @media @DESKTOP {
+    margin-left: -(@PAGE_WIDTH / 2);
+    width: @PAGE_WIDTH;
+  }
+
+  div.vert {
+    border: 1px solid @YELLOW;
+    border-width: 0 1px;
+    width: 100%;
+  }
+
+  div.horiz {
+    border-bottom: 1px dotted @DARK_GREY;
+    height: @MEASURE;
+    margin: 0;
+    padding: 0;
+  }
+}

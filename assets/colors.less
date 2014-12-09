@@ -1,42 +1,25 @@
-/**
- ryanvarick.com Stylesheet, v16.0.0
-  - Raw version: https://www.ryanvarick.com/assets/app.less
-  - More information: https://www.ryanvarick.com/colphon
-*/
+// color
+@PURPLE: #6C207E;
+@BLUE:   #5091CD;
+@GREEN:  #788E2F;
+@YELLOW: #FFC425;
+@ORANGE: #F37321;
+@RED:    #C41230;
 
-// browser reset
-@import "../vendor/normalize.css/normalize.css";
+@GREY1:  #EFEFF0;
+@GREY2:  #E0E1E2;
+@GREY3:  #C7C8CA;
+@GREY4:  #ADAFB2;
+@GREY5:  #95979A;
+@GREY6:  #7E8083;
+@GREY7:  #67686B;
+@GREY8:  #4D4D4F;
+@GREY9:  #414042;
 
-// variables and base typography
-@import "colors.less";
-@import "typography.less";
-
-// desktop and print (media queries)
-@import "desktop.less";
-@import "print.less";
-
-@HEADING_SIZE: 12pt;
-
-
-h2 {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    .gradient(@ORANGE, @YELLOW);
-}
-
-ul {
-    margin: 0;
-    padding: 0;
-
-    li {
-        color: transparent;
-        display: inline-block;
-
-        width: 5em;
-        height: 5em;
-        margin: .25em;
-    }
-}
+@WHITE:  #000000;
+@LIGHT_GREY: @GREY2;
+@DARK_GREY: @GREY5;
+@BLACK:  @GREY9;
 
 .red { background: @RED; }
 .orange { background: @ORANGE; }
@@ -54,9 +37,6 @@ ul {
 .grey7 { background: @GREY7; }
 .grey8 { background: @GREY8; }
 .grey9 { background: @GREY9; }
-
-
-
 
 .red-purple { .gradient(@RED, @PURPLE); }
 .red-blue { .gradient(@RED, @BLUE); }

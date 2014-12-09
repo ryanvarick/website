@@ -7,13 +7,17 @@
 // browser reset
 @import "../vendor/normalize.css/normalize.css";
 
-@import "variables.less";
-@import "typography.less";
+// base
+@import "colors.less";
+@import "typography.less"; // tbd: typography has a dependency on colors?
+@import "media_queries.less";
+
 @import "base.less";
+
+// views
+// @import "mobile.less";
 @import "desktop.less";
 @import "print.less";
 
-
-
-
-////// BASE STYLES /////
+// utilities
+@import "hashgrid.less";

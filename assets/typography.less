@@ -1,3 +1,7 @@
+// type
+@NORMAL: 300;
+@BOLD: 500;
+
 html, body {
     color: @BLACK;
     font-family: myriad-pro, "Avenir Next", sans-serif;
@@ -12,4 +16,15 @@ header h1 {
     @HEADING_SIZE: 12pt;
     font-size: @HEADING_SIZE;
     text-transform: uppercase;
+}
+
+// lobotomized owl
+// - @via http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
+* + * {
+    margin-top: 1em;
+}
+
+// exception: list items
+li + li {
+    margin-top: 0;
 }

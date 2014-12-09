@@ -5,11 +5,14 @@
     <title>TBD</title>
     <meta name="description" content="TBD">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet/css" type="text/css" href="//assets/app.css" />
-    <!-- <script src="//assets/app.js?v=1.0.0" /> -->
+    <link rel="stylesheet/css" type="text/css" href="assets/app.css" />
+    <!-- <script src="assets/app.js?v=1.0.0" /> -->
 
     <!-- DEVELOPMENT, REMOVE -->
     <link rel="stylesheet/less" type="text/css" href="assets/app.less" />
+
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="vendor/pleasejs/Please.js"></script>
     <script src="vendor/less/dist/less.js"></script>
     <script>
     if(document.location.hostname === "localhost") {
@@ -20,7 +23,13 @@
     </script>
     <script src="https://use.typekit.com/ygu4ods.js"></script>
     <script>try { Typekit.load(); } catch(e) { }</script>
-</head>
+    <script type="text/javascript" src="vendor/hashgrid/hashgrid.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var grid = new hashgrid({ numberOfGrids: 2 });
+        });
+    </script></head>
+    <!-- DEVELOPMENT, REMOVE -->
 <body>
     <header>
         <h1>Ryan Varick</h1>
@@ -34,11 +43,10 @@
     </header>
 
     <main>
-        <h2>I am a San Francisco-based <span>designer</span>.</h2>
+        <h2>I am a San Francisco-based <span>interaction designer</span>.</h2>
 
-        <h3>About</h3>
         <p>I design interfaces at Bleacher Report. Details &raquo;</p>
-        <p>Before that, I worked for <a href="">Wells Fargo</a>, <a href="">Nokia</a>, and <a href="">Motorola</a>. Resume. LinkedIn</p>
+        <p>I worked for <a href="">Wells Fargo</a>, <a href="">Nokia</a>, and <a href="">Motorola</a>. Resume. LinkedIn</p>
 
     </main>
 
@@ -54,9 +62,5 @@
         <p class="byline">Interaction designer, Bleacher Report</p>
         <p class="description">I am an experienced designer in San Francisco. I've worked on this, that, and the other thing.</p>
     </footer>
-
-    <script src="vendor/jquery/dist/jquery.js"></script>
-    <script src="vendor/pleasejs/Please.js"></script>
-    <!-- <script src="assets/test.js"></script> -->
 </body>
 </html>
