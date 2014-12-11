@@ -1,19 +1,21 @@
-
-//
+/**
+ Header
+*/
 header {
-    padding: 3em 0 0 0;
-}
-
-header svg, h1, ul {
     margin: 0;
-    vertical-align: middle;
 }
 
-//
+header h1, header ul {
+    margin: 0;
+    // vertical-align: middle;
+    // .debug();
+}
+
 header svg {
-    display: inline;
-    width: 2em;
-    height: 2em;
+    // .debug();
+    // display: inline;
+    // width: 2em;
+    // height: 2em;
 }
 
 header h1 {
@@ -21,17 +23,22 @@ header h1 {
 }
 
 header ul {
-    display: inline-block;
+    // display: inline;
+    margin: 0;
+    padding: 0;
 }
 
 header li {
     display: inline-block;
     list-style: none;
-    margin-right: 1em;
     text-transform: uppercase;
 
+    &:not(:last-child) {
+        margin-right: 1em;
+    }
+
     &.active {
-        border-top: 2px solid @BLACK;
+        // border-top: 2px solid @BLACK;
         font-weight: @BOLD;
     }
 }

@@ -1,21 +1,27 @@
 // type
 @NORMAL: 300;
 @BOLD: 500;
+@FONT_SIZE: 10pt;
 
 html, body {
     color: @BLACK;
     font-family: myriad-pro, "Avenir Next", sans-serif;
-    font-size: 10pt;
+    font-size: @FONT_SIZE;
 }
 
 h1, h2, h3,
 header, main, footer {
     font-weight: @NORMAL;
+
+    @media @DESKTOP {
+        font-size: 1rem;
+    }
+    @media @PORTRAIT {
+        font-size: 1.2rem;
+    }
 }
 
 header h1 {
-    @HEADING_SIZE: 12pt;
-    font-size: @HEADING_SIZE;
     text-transform: uppercase;
 }
 
