@@ -1,32 +1,32 @@
 {
-    "name": "ryanvarick.com",
-    "version": "16.0.0",
-    "description": "Website for Ryan Varick",
-    "repository": "TBD",
-    "readme": "TBD",
-    "main": "index.html",
-    "scripts": {
-        "build:css": "lessc assets/styles/app.less assets/app.css",
-        "open:chrome": "opener -a 'Google Chrome' http://localhost:9090",
-        "watch:css": "watch 'clear && npm run build:css' assets/styles/",
-
-        "livereload": "live-reload --port 9091 .",
-        "version": "versiony --to 'bower.json' --from 'package.json'",
-
-        "dev": "clear && parallelshell 'npm run livereload' 'npm run watch:css'",
-        "dev": "clear && parallelshell 'npm run livereload' 'npm run watch:css' && npm run open:chrome",
-        "serve": "http-server -p 9090 ."
-    },
-    "author": "Ryan Varick",
-    "license": "ISC",
-    "devDependencies": {
-        "clear": "0.0.1",
-        "http-server": "^0.7.4",
-        "less": "^2.1.1",
-        "live-reload": "^0.2.0",
-        "opener": "^1.4.0",
-        "parallelshell": "^1.0.0",
-        "versiony-cli": "^1.3.0",
-        "watch": "^0.13.0"
-    }
+  "name": "ryanvarick.com",
+  "version": "16.0.0",
+  "author": "Ryan Varick",
+  "description": "Website for Ryan Varick",
+  "repository": "TBD",
+  "readme": "TBD",
+  "license": "TBD",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "lessc assets/styles/app.less assets/app.css",
+    "build:js": "browserify assets/js/app.js -o assets/app.js",
+    "watch:css": "watch 'clear && npm run build:css' assets/styles/",
+    "watch:js": "watch 'clear && npm run build:js' assets/js/",
+    "open:chrome": "opener -a 'Google Chrome' http://localhost:9090",
+    "livereload": "live-reload --port 9091 .",
+    "version": "versiony --to 'bower.json' --from 'package.json'",
+    "dev": "clear && parallelshell 'npm run livereload' 'npm run watch:css' && npm run open:chrome",
+    "serve": "http-server -p 9090 ."
+  },
+  "devDependencies": {
+    "browserify": "^7.0.0",
+    "clear": "0.0.1",
+    "http-server": "^0.7.4",
+    "less": "^2.1.1",
+    "live-reload": "^0.2.0",
+    "opener": "^1.4.0",
+    "parallelshell": "^1.0.0",
+    "versiony-cli": "^1.3.0",
+    "watch": "^0.13.0"
+  }
 }
