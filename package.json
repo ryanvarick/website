@@ -9,6 +9,7 @@
   "main": "index.html",
   "scripts": {
     "build:css": "lessc assets/styles/app.less assets/app.css",
+    "build:fonts": "cp vendor/font-awesome/fonts/* assets/fonts",
     "build:js": "browserify assets/js/app.js -o assets/app.js",
     "watch:css": "watch 'clear && npm run build:css' assets/styles/",
     "watch:js": "watch 'clear && npm run build:js' assets/js/",

@@ -1,31 +1,20 @@
 /**
- ryanvarick.com Stylesheet, v16.0.0
+ Stylesheet for ryanvarick.com, v16.0.0 (December, 2014)
   - Readable version: https://www.ryanvarick.com/assets/styles/app.less
   - More info: https://www.ryanvarick.com/colphon
 */
 
-// browser reset
-@import (less) "../../vendor/normalize.css/normalize.css";
+@import "base/reset.less";             // browser reset
+@import "base/media_queries.less";     // breakpoint definitions
+@import "base/colors.less";            // colors and color functions
+@import "base/typography.less";        // typography
 
-@fa-font-path: "../../vendor/font-awesome/fonts";
-@import "../../vendor/font-awesome/less/font-awesome.less";
+@import "components/utilities.less";   // useful utilities
 
-// basics
-@import "base/colors.less";
-@import "base/media_queries.less";
-@import "base/typography.less";
+@import "components/layout.less";      // overall layout
+@import "components/header.less";      // general header
+@import "components/footer.less";      // general footer
 
-@import "components/utilities.less";
-@import "components/layout.less";
-@import "components/header.less";
-@import "components/footer.less";
-
-// @import "base.less";
-
-// views
-// @import "mobile.less";
-// @import "desktop.less";
-// @import "print.less";
-
-// utilities
-@import "components/hashgrid.less";
+// @import "desktop.less";                // desktop-specific styles
+// @import "mobile.less";                 // mobile-specific styles
+// @import "print.less";                  // print-specific styles (resume)
