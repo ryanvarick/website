@@ -24,7 +24,7 @@
     "version": "versiony --to 'bower.json' --from 'package.json'",
     "watch:css": "watch 'clear && npm run build:css' assets/styles/",
     "watch:js": "watch 'clear && npm run build:js' assets/js/",
-    "dev": "clear && parallelshell 'npm run serve' 'npm run livereload' 'npm run watch:css' 'npm run open:all'"
+    "dev": "clear && parallelshell 'npm run livereload' 'npm run serve' 'npm run watch:css' 'npm run open:all'"
   },
   "devDependencies": {
     "browserify": "^7.0.0",
