@@ -4,18 +4,23 @@
 
 // font-awesome
 // - fa-font-path is defined relative to current URL
+// - FIXME: Use `import (reference)` and `:extend` to cut down file size?
+// - FIXME: Serve subset of icon font? Serve icon font inline?
+// - FIXME: Add FA processing to build script?
 @import "../../../vendor/font-awesome/less/font-awesome.less";
 @fa-font-path: "fonts";
 
 // type
 @NORMAL: 300;
 @BOLD: 500;
+
+// FIXME: Default font sizes
 @FONT_SIZE: 10pt;
+@MEASURE: 25px;
 
 html, body {
     color: @BLACK;
     font-family: myriad-pro, "Avenir Next", sans-serif;
-    // font-size: @FONT_SIZE;
 }
 
 h1, h2, h3,

@@ -1,0 +1,33 @@
+/**
+ Default theme
+*/
+
+a {
+    color: @RED;
+}
+
+h2 {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    // http://thecodeplayer.com/walkthrough/animating-css3-gradients
+    background-image: linear-gradient(
+        rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
+        rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
+    );
+}
+
+footer {
+    color: white;
+    background-image: linear-gradient(
+        rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
+        rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
+    );
+    // -webkit-animation: hex 5s infinite alternate;
+}
+
+// @-webkit-keyframes hex {
+//     // fallback
+//     // 50%  { background-color: saturate}
+//     100% { background-color: saturate(@BLUE, 100%) }
+// }
