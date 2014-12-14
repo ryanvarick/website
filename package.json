@@ -16,14 +16,15 @@
     "open:chrome": "open -a 'Google Chrome' http://localhost:9090",
     "open:firefox": "open -a 'Firefox' http://localhost:9090",
     "open:simulator": "open /Applications/Xcode.app/Contents/Developer/Applications/iOS\\ Simulator.app",
-    "open": "npm run open:atom && npm run open:chrome",
+    "open:sourcetree": "open -a 'SourceTree' . -n",
+    "open": "npm run open:atom && npm run open:chrome && npm run open:sourcetree",
     "open:all": "npm run open && npm run open:firefox && npm run open:simulator",
     "livereload": "live-reload --port 9091 .",
-    "serve": "http-server -p 9090 .",
+    "serve": "http-server -s -p 9090 .",
     "version": "versiony --to 'bower.json' --from 'package.json'",
     "watch:css": "watch 'clear && npm run build:css' assets/styles/",
     "watch:js": "watch 'clear && npm run build:js' assets/js/",
-    "dev": "clear && parallelshell 'npm run livereload' 'npm run watch:css' && npm run open:all"
+    "dev": "clear && parallelshell 'npm run serve' 'npm run livereload' 'npm run watch:css' 'npm run open:all'"
   },
   "devDependencies": {
     "browserify": "^7.0.0",
