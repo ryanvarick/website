@@ -3,9 +3,10 @@
   "version": "16.0.0",
   "author": "Ryan Varick",
   "description": "Website for Ryan Varick",
-  "repository": "Private",
-  "readme": "Private",
-  "license": "Private",
+  "private": true,
+  "repository": "TBD",
+  "readme": "README.md",
+  "license": "MIT",
   "main": "index.html",
   "scripts": {
     "build:css": "lessc assets/styles/app.less assets/app.css",
