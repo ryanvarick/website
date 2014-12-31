@@ -14,31 +14,92 @@
 @NORMAL: 300;
 @BOLD: 500;
 
-// FIXME: Default font sizes
-@FONT_SIZE: 10pt;
-@MEASURE: 25px;
+@FONT_SIZE: 1em;
+@LINE_HEIGHT: 1.5;
+
+@GUTTER: 1.5rem;
+@LEADING: 1.5rem;
+// @MEASURE: 1.5rem;
+// @MEASURE: 23px;
+
+// @m: unit(@LEADING) * 10 + 10;
+// @MEASURE: unit(@m, "px");
+
+@m: 9 + (10 * @LINE_HEIGHT);
+@MEASURE: unit(@m, px);
+
+html {
+    font-size: 62.5%;
+    line-height: @LINE_HEIGHT;
+
+    // TBD: previously for desktop only
+    // text-rendering: optimizeLegibility;
+
+    // not sure what this is all about
+    // -webkit-text-size-adjust: 100%;
+    // -ms-text-size-adjust: 100%;
+}
 
 html, body {
     color: @BLACK;
     font-family: myriad-pro, "Avenir Next", sans-serif;
+    font-size: @FONT_SIZE;
 }
 
-h1, h2, h3,
+h1, h2, h3, h4, h5, h6,
 header, main, footer {
     font-weight: @NORMAL;
 }
 
+h3, h4, h5, h6 {
+    font-size: @FONT_SIZE;
+    line-height: @LINE_HEIGHT;
+    margin-bottom: 0;
+    color: @BLUE;
+}
+
+
+h2 {
+    .resizeTo(150%);
+}
+
+h4 {
+    .resizeTo(80%);
+    font-weight: bold;
+    color: @GREEN;
+}
+
+// UTILITY to maintain the grid
+.resizeTo(@size: 100%) {
+    font-size: @size;
+    line-height: @LINE_HEIGHT / (unit(@size) / 100);
+}
+
+
+
+// move to theme?
 header h1 {
     text-transform: uppercase;
 }
 
+
 // lobotomized owl
 // - @via http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
 * + * {
-    margin-top: 1em;
+    margin-top: @LEADING;
 }
+
+// may just be a test case, but the first <p> in a section gets the user agent default
+p:first-child {
+    margin-top: 0;
+}
+
 
 // exception: list items
 li + li {
+    margin-top: 0;
+}
+
+div + div {
     margin-top: 0;
 }

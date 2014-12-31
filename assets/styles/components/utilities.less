@@ -1,6 +1,12 @@
 .debug(@color: @RED) {
     border: 1px solid @color;
 }
+.hide() {
+    display: none;
+}
+.hidden {
+    .hide();
+}
 
 #grid {
     left: 50%;
