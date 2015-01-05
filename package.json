@@ -9,7 +9,9 @@
   "license": "MIT",
   "main": "index.html",
   "scripts": {
-    "build:css": "lessc assets/styles/app.less assets/app.css",
+    "build:less": "lessc assets/styles/app.less assets/app.css",
+    "build:autoprefix": "autoprefixer assets/app.css",
+    "build:css": "npm run build:less && npm run build:autoprefix",
     "build:fonts": "rm assets/fonts/* && cp vendor/font-awesome/fonts/* assets/fonts",
     "build:js": "browserify assets/js/app.js -o assets/app.js",
     "build": "npm run build:css && npm run build:fonts && npm run build:js",
@@ -29,6 +31,7 @@
     "dev": "clear && parallelshell 'npm run livereload' 'npm run serve' 'npm run watch:css'"
   },
   "devDependencies": {
+    "autoprefixer": "^4.0.0",
     "browserify": "^7.0.0",
     "clear": "0.0.1",
     "http-server": "^0.7.4",
