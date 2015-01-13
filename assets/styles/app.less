@@ -1,20 +1,33 @@
 /**
- Stylesheet for ryanvarick.com, v16.0.0 (December, 2014)
+ Stylesheet for ryanvarick.com, v16.0.0 (January, 2015)
   - Readable version: https://www.ryanvarick.com/assets/styles/app.less
-  - More info: https://www.ryanvarick.com/colphon
+  - More info: https://www.ryanvarick.com/colophon
 */
 
 @import "base/reset.less";             // browser reset
-@import "base/media_queries.less";     // breakpoint definitions
+
+@import "components/box_model.less";   // sane box model
+
 @import "base/colors.less";            // colors and color functions
-@import "base/typography.less";        // typography
+@import "components/typography.less";  // typography
+
+@import "base/media_queries.less";     // breakpoint definitions
+
+
+
 
 @import "components/utilities.less";   // useful utilities
 
 // FIXME: keep styles I like
 // @import "skeleton.less";
 
-@import "components/layout.less";      // overall layout
+// @import "components/layout.less";      // overall layout
+
+@PAGE_WIDTH: 800px;
+
+@import "components/sticky_footer.less";
+
+
 @import "components/header.less";      // general header
 @import "components/footer.less";      // general footer
 
@@ -22,4 +35,4 @@
 // @import "mobile.less";                 // mobile-specific styles
 // @import "print.less";                  // print-specific styles (resume)
 
-@import "themes/default.less";         // default theme
+// @import "themes/default.less";         // default theme

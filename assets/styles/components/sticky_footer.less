@@ -1,11 +1,10 @@
 /**
- Layout
+ Sticky footer - Ensure that the footer attaches to the bottom of the page or
+ the bottom of the browser, whichever is greater
+
+ @via http://mystrd.at/modern-clean-css-sticky-footer/
 */
 
-@PAGE_WIDTH: 800px;
-
-// sticky footer
-// - @via http://mystrd.at/modern-clean-css-sticky-footer/
 @FOOTER_HEIGHT: 100px;
 html {
     min-height: 100%;
@@ -22,9 +21,4 @@ footer {
     bottom: 0;
     right: 0;
     height: @FOOTER_HEIGHT;
-}
-
-// basic padding
-header, main, footer {
-    // padding: 1em;
 }

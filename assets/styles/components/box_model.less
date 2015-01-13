@@ -1,0 +1,13 @@
+/**
+ Sane box model - Ensure borders and padding do not affect box sizing
+
+ @via http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
