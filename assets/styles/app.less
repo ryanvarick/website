@@ -4,18 +4,16 @@
   - More info: https://www.ryanvarick.com/colophon
 */
 
-@import "base/reset.less";             // browser reset
+@import "base/reset.less";                 // browser reset
 
-@import "components/box_model.less";   // sane box model
+@import "base/media_queries.less";         // breakpoint definitions
+@import "components/box_model.less";       // sane box model
+@import "components/sticky_footer.less";   // footer position
+@import "components/utilities.less";       // useful utilities
 
-@import "base/colors.less";            // colors and color functions
-@import "components/typography.less";  // typography
+@import "base/colors.less";                // colors and color functions
+@import "components/typography.less";      // typography
 
-@import "base/media_queries.less";     // breakpoint definitions
-
-
-
-@import "components/utilities.less";   // useful utilities
 
 // FIXME: keep styles I like
 // @import "skeleton.less";
@@ -24,11 +22,10 @@
 
 @PAGE_WIDTH: 800px;
 
-@import "components/sticky_footer.less";
 
 
-@import "components/header.less";      // general header
-@import "components/footer.less";      // general footer
+// @import "components/header.less";      // general header
+// @import "components/footer.less";      // general footer
 
 @import "views/desktop.less";          // desktop-specific styles
 // @import "mobile.less";                 // mobile-specific styles

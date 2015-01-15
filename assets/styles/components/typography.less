@@ -2,53 +2,27 @@
  Typography
 */
 
-// font-awesome
-// - fa-font-path is defined relative to current URL
-// - FIXME: Use `import (reference)` and `:extend` to cut down file size?
-// - FIXME: Serve subset of icon font? Serve icon font inline?
-// - FIXME: Add FA processing to build script?
-@import "../../../vendor/font-awesome/less/font-awesome.less";
-@fa-font-path: "fonts";
 
-// configuration
-@NORMAL_FONT_WEIGHT:  300;
-@STRONG_FONT_WEIGHT:  500;
+
+/**
+ Grid
+*/
+
 @DEFAULT_FONT_SIZE:   15px;   // px required
 @DEFAULT_LINE_HEIGHT: 1.618;
 
 // Grid notes: Calculating a baseline grid is tricky. Calculations expect the
 //  base font to be sized in px. Subsequent fonts use ems. Pixel jog is still
 //  an issue. Firefox works with exact values, Chrome/Safari work with floor()
-@leading: floor(@DEFAULT_FONT_SIZE * @DEFAULT_LINE_HEIGHT);
+@exact_leading: @DEFAULT_FONT_SIZE * @DEFAULT_LINE_HEIGHT;
+@leading: @exact_leading;          // firefox
+@leading: floor(@exact_leading);   // chrome/safari (TBD: IE)
+
 
 body {
-    color: @BLACK;
-    font-family: myriad-pro, "Avenir Next", sans-serif;
     font-size: @DEFAULT_FONT_SIZE;
     line-height: @DEFAULT_LINE_HEIGHT;
-
-    // TODO: still necessary?
-    // text-rendering: optimizeLegibility;
-
-    // TODO: still necessary?
-    // -webkit-text-size-adjust: 100%;
-    // -ms-text-size-adjust: 100%;
 }
-
-
-///// MOVE TO THEME?
-hr {
-    .hide();
-}
-
-h1, h2, h3, h4, h5, h6,
-header, main, footer {
-    font-weight: @NORMAL_FONT_WEIGHT;
-}
-strong {
-    font-weight: @STRONG_FONT_WEIGHT;
-}
-///// END MOVE TO THEME?
 
 // lobotomized owl
 // - @via http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
@@ -83,7 +57,7 @@ h3 {
 
 h4 {
     .resizeTo(80%);
-    font-weight: @STRONG_FONT_WEIGHT;
+    // font-weight: @STRONG_FONT_WEIGHT;
     color: @GREEN;
 }
 
