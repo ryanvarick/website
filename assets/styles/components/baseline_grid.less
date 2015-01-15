@@ -1,11 +1,5 @@
 /**
- Typography
-*/
-
-
-
-/**
- Grid
+ Establish a pixel-perfect baseline grid
 */
 
 @DEFAULT_FONT_SIZE:   15px;   // px required
@@ -15,7 +9,7 @@
 //  base font to be sized in px. Subsequent fonts use ems. Pixel jog is still
 //  an issue. Firefox works with exact values, Chrome/Safari work with floor()
 @exact_leading: @DEFAULT_FONT_SIZE * @DEFAULT_LINE_HEIGHT;
-@leading: @exact_leading;          // firefox
+// @leading: @exact_leading;          // firefox
 @leading: floor(@exact_leading);   // chrome/safari (TBD: IE)
 
 
@@ -30,22 +24,20 @@ body {
     margin-top: @leading;
 }
 
-// may just be a test case, but the first <p> in a section gets the user agent default
+// default user agent stylesheet assigns a 1em top margin
 p:first-child {
     margin-top: 0;
 }
 
+// exception: list items, stacked divs
 li + li,
 div + div {
     margin-top: 0;
 }
 
-h3, h4, h5, h6 {
-    // font-size: @FONT_SIZE;
-    // line-height: @LINE_HEIGHT;
-    // margin-bottom: 0;
-    color: @BLUE;
-}
+
+
+
 
 h2 {
     .resizeTo(200%);
@@ -57,8 +49,6 @@ h3 {
 
 h4 {
     .resizeTo(80%);
-    // font-weight: @STRONG_FONT_WEIGHT;
-    color: @GREEN;
 }
 
 
@@ -99,3 +89,41 @@ h4 {
 //     font-size: @size;
 //     line-height: @LINE_HEIGHT / (unit(@size) / 100);
 // }
+
+// HASHGRID (replace?)
+#grid {
+    left: 50%;
+    margin-left: -50%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    @media @DESKTOP {
+        margin-left: -(@PAGE_WIDTH / 2);
+        width: @PAGE_WIDTH;
+    }
+
+    div.vert {
+        border: 1px solid @YELLOW;
+        border-width: 0 1px;
+        width: 100%;
+    }
+
+    div.horiz {
+        border-bottom: 1px dotted @DARK_GREY;
+        height: @leading;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+
+// FIXME: Remove after testing
+h1, h2, h3, h4, h5, h6 {
+    color: @BLUE;
+}
+hr {
+    .hide();
+}
+// END REMOVE
