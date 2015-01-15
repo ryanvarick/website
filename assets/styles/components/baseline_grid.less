@@ -1,6 +1,29 @@
 /**
- Establish a pixel-perfect baseline grid
+ Establish a cross-browser, (pixel-perfect?), (unit-agnostic?) baseline grid
 */
+
+/*
+ Goals: As stated above
+  [-] Want to be able to define sizes [ ] `em`, [ ] `rem`, or [√] `px`
+     [√] `px` should not require `font-size: 62.5%` hack
+  [ ] Want to be able to easily scale elements (Gridlover or %)
+  [ ] Want to use absolute sizes for print (TBD)
+  [-] Want [√] visible, [√] toggleable grid, ideally [ ] without jQuery dependency
+
+ Notes:
+  - No mixing units (unless unit + %)
+  - Prefer unitless line height, but maybe OK?
+*/
+
+// units: http://www.w3schools.com/cssref/css_units.asp
+// - relative (1): em, rem, px
+// - relative (2): %
+// - relative (3): ex, ch, vw, vh, vmin, vmax,
+// - absolute (1): pt
+// - absolute (2): cm, mm, in, pc
+
+
+@grid_unit: "px";
 
 @DEFAULT_FONT_SIZE:   15px;   // px required
 @DEFAULT_LINE_HEIGHT: 1.618;
