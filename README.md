@@ -32,4 +32,4 @@ Sixteenth major revision since 1998. For this version, I moved my repository ove
 
 ## TODO
 
-* If `dev` aborts, the server does not shut down cleanly, need to find process manually and kill
+* `livereload` seems to occasionally choke on Git's files, so I should ignore them
