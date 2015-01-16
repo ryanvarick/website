@@ -32,13 +32,8 @@
 // - modifiers: [xx-small, xx-large], smaller, larger
 
 
-@DEFAULT_FONT_SIZE:   15px;   // px required
+@DEFAULT_FONT_SIZE:   15px;
 @DEFAULT_LINE_HEIGHT: 1.618;
-
-// Grid notes: Calculating a baseline grid is tricky. Calculations expect the
-//  base font to be sized in px. Subsequent fonts use ems. Pixel jog is still
-//  an issue. Firefox works with exact values, Chrome/Safari work with floor()
-// NOTE: Pixel jog vs. self-correcting grid (go with that)
 
 // The leading defines the height of one line of text, including margin, at the
 // base font size. Smaller text should have its line height adjusted so that it
@@ -52,6 +47,10 @@
 @leading: @exact_leading;          // firefox
 @leading: floor(@exact_leading);   // chrome/safari (TBD: IE)
 
+// Grid notes: Calculating a baseline grid is tricky. Calculations expect the
+//  base font to be sized in px. Subsequent fonts use ems. Pixel jog is still
+//  an issue. Firefox works with exact values, Chrome/Safari work with floor()
+// NOTE: Pixel jog vs. self-correcting grid (go with that)
 
 body {
     font-size: @DEFAULT_FONT_SIZE;
