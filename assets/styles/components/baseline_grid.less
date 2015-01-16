@@ -78,7 +78,7 @@ div + div {
 
 
 
-h2 {
+h1, h2 {
     .resizeTo(200%);
 }
 
@@ -90,6 +90,14 @@ h4 {
     .resizeTo(80%);
 }
 
+h5 {
+    .resizeTo(100%);
+}
+
+h6 {
+    .resizeTo(50%);
+}
+
 
 // .resizeTo(@scale: 100%) {
 //     @s: unit(@scale) / 100;
@@ -97,12 +105,28 @@ h4 {
 // }
 
 .resizeTo(@scale: 100%) {
-    @font-size: @DEFAULT_FONT_SIZE * (unit(@scale) / 100);
-    font-size: @font-size;
 
-    @lines_used: ceil(@font-size / @line-height);
-    @line-height: round(@DEFAULT_LINE_HEIGHT / (unit(@scale) / 100));
-    // line-height: @line-height + 1;
+    // convert percentage to numeric value
+    @percent: unit(@scale) / 100;                // e.g. "150%" -> 1.5
+
+    // compute new font size
+    @font-size: @DEFAULT_FONT_SIZE * @percent;   // e.g. 15px -> 22.5px
+
+    // compute new line size
+    @line-size: @font-size * @DEFAULT_LINE_HEIGHT;      // e.g. 22.5px * 1.5 = 33.75px
+
+    // compute lines used (unitless)
+    @lines-used: ceil(unit(@line-size / @leading));
+    @line-height: unit((@leading * @lines-used) / @font-size);
+
+    // @line-height: @DEFAULT_LINE_HEIGHT * @percent;
+
+    font-size: @font-size;
+    line-height: @line-height;
+
+
+    bl-line-size: @line-size;
+    bl-lines-used: @lines-used;
 }
 
 
@@ -128,6 +152,14 @@ h4 {
 //     font-size: @size;
 //     line-height: @LINE_HEIGHT / (unit(@size) / 100);
 // }
+
+
+
+
+
+
+
+
 
 // HASHGRID (replace?)
 #grid {
@@ -155,8 +187,6 @@ h4 {
         padding: 0;
     }
 }
-
-
 
 // FIXME: Remove after testing
 h1, h2, h3, h4, h5, h6 {
