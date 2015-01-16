@@ -9,10 +9,15 @@
   [ ] Want to be able to easily scale elements (Gridlover or %)
   [ ] Want to use absolute sizes for print (TBD)
   [-] Want [√] visible, [√] toggleable grid, ideally [ ] without jQuery dependency
+     [ ] Draw grid such that `box-sizing` does not matter
 
  Notes:
   - No mixing units (unless unit + %)
   - Prefer unitless line height, but maybe OK?
+
+  - baseline-min.less - em, rem, px, %, pt
+  - baseline-extra.less - (other font sizes)
+  - baseline-classes.less - .bl-larger, .bl-resizeTo-[10-200], etc.
 */
 
 // units: http://www.w3schools.com/cssref/css_units.asp
@@ -21,6 +26,7 @@
 // - relative (3): ex, ch, vw, vh, vmin, vmax,
 // - absolute (1): pt
 // - absolute (2): cm, mm, in, pc
+// - modifiers: [xx-small, xx-large], smaller, larger
 
 
 @grid_unit: "px";
@@ -31,6 +37,16 @@
 // Grid notes: Calculating a baseline grid is tricky. Calculations expect the
 //  base font to be sized in px. Subsequent fonts use ems. Pixel jog is still
 //  an issue. Firefox works with exact values, Chrome/Safari work with floor()
+// NOTE: Pixel jog vs. self-correcting grid (go with that)
+
+// The leading defines the height of one line of text, including margin, at the
+// base font size. Smaller text should have its line height adjusted so that it
+// occupies one line. Larger text should have some fractional margin added such
+// that it occupies some whole-number multiple of lines.
+//
+// That's really all there is to it: Adjust line heights and margins such that
+// text of mixed sizes stays between the lines. The complexity comes from how
+// all the various units work, and some differences between browsers.
 @exact_leading: @DEFAULT_FONT_SIZE * @DEFAULT_LINE_HEIGHT;
 // @leading: @exact_leading;          // firefox
 @leading: floor(@exact_leading);   // chrome/safari (TBD: IE)
