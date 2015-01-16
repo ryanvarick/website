@@ -153,7 +153,7 @@
         <p>This is a test paragraph.</p>
         <h6>This is 6th level heading</h6>
         <p>This is a test paragraph.</p>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus gravida nisl, ac vestibulum massa mollis ac. Phasellus elementum interdum lacus, a pretium erat bibendum vel. In consequat consectetur enim quis pellentesque. Integer ornare,
+        <h1>A multi-line heading to illustrate the full effect of line heights lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus gravida nisl, ac vestibulum massa mollis ac. Phasellus elementum interdum lacus, a pretium erat bibendum vel. In consequat consectetur enim quis pellentesque. Integer ornare,
             dolor non dignissim scelerisque, ligula nisl lacinia est, a mollis eros ex vitae nulla. Aliquam porttitor id enim vitae imperdiet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec efficitur
             id urna eget consectetur. Fusce nibh nisi, ultricies ac nisi eget, tincidunt sagittis purus. In pretium tellus vel tellus euismod mollis. Curabitur finibus enim ligula, ut iaculis lorem molestie id.</h1>
         <p>Lorem ipsum #1</p>
@@ -279,6 +279,111 @@
             </dd>
         </dl>
 
+        <h2>Text-level markup</h2>
+
+        <ul>
+            <li>
+                <abbr title="Cascading Style Sheets">CSS</abbr> (an abbreviation;
+                <code>abbr</code> markup used)
+            </li>
+            <li>
+                <acronym title="radio detecting and ranging">radar</acronym> (an acronym;
+                <code>acronym</code> markup used)
+            </li>
+            <li> <b>bolded</b> (
+                <code>b</code> markup used - just bolding with unspecified semantics)
+            </li>
+            <li>
+                <font face="Courier">Courier font</font> (
+                <code>font face=Courier</code> markup used)
+            </li>
+            <li>
+                <font color="red">red text</font> (
+                <code>font color=red</code> markup used)
+            </li>
+            <li>
+                <cite>Origin of Species</cite> (a book title;
+                <code>cite</code> markup used)
+            </li>
+            <li>
+                <code>a[i] = b[i] + c[i);</code> (computer code;
+                <code>code</code> markup used)
+            </li>
+            <li> here we have some
+                <del>deleted</del> text (
+                <code>del</code> markup used)
+            </li>
+            <li> an
+                <dfn>octet</dfn> is an entity consisting of eight bits (
+                <code>dfn</code> markup used for the term being defined)
+            </li>
+            <li> this is
+                <em>very</em> simple (
+                <code>em</code> markup used for emphasizing a word)
+            </li>
+            <li> <i lang="la">Homo sapiens</i> (should appear in italics;
+                <code>i</code> markup used)
+            </li>
+            <li> here we have some
+                <ins>inserted</ins> text (
+                <code>ins</code> markup used)
+            </li>
+            <li> type
+                <kbd>yes</kbd> when prompted for an answer (
+                <code>kbd</code> markup used for text indicating keyboard input)
+            </li>
+            <li>
+                <q>Hello!</q> (
+                <code>q</code> markup used for quotation)
+            </li>
+            <li> He said:
+                <q>She said
+                    <q>Hello!</q>
+                </q> (a quotation inside a quotation)
+            </li>
+            <li> you may get the message
+                <samp>Core dumped</samp> at times (
+                <code>samp</code> markup used for sample output)
+            </li>
+            <li>
+                <small>this is not that important</small> (
+                <code>small</code> markup used)
+            </li>
+            <li>
+                <strike>overstruck</strike> (
+                <code>strike</code> markup used; note:
+                <code>s</code> is a nonstandard synonym for
+                <code>strike</code>)
+            </li>
+            <li>
+                <strong>this is highlighted text</strong> (
+                <code>strong</code> markup used)
+            </li>
+            <li> In order to test how subscripts and superscripts (
+                <code>sub</code> and
+                <code>sup</code> markup) work inside running text, we need some dummy text around constructs like x<sub>1</sub> and H<sub>2</sub>O (where subscripts occur). So here is some fill so that you will (hopefully) see whether and how badly the subscripts
+                and superscripts mess up vertical spacing between lines. Now superscripts: M<sup>lle</sup>, 1<sup>st</sup>, and then some mathematical notations: e<sup>x</sup>, sin<sup>2</sup> <i>x</i>, and some nested superscripts (exponents) too: e
+                <sup>x<sup>2</sup></sup> and f(x)<sup>g(x)<sup>a+b+c</sup></sup>
+                (where 2 and a+b+c should appear as exponents of exponents).
+            </li>
+            <li>
+                <tt>text in monospace font</tt> (
+                <code>tt</code> markup used)
+            </li>
+            <li> <u>underlined</u> text (
+                <code>u</code> markup used)
+            </li>
+            <li> the command
+                <code>cat</code>
+                <var>filename</var> displays the file specified by the
+                <var>filename</var> (
+                <code>var</code> markup used to indicate a word as a variable).
+            </li>
+        </ul>
+
+        <p>Some of the elements tested above are typically displayed in a monospace font, often using the
+            <em>same</em> presentation for all of them. This tests whether that is the case on your browser:</p>
+
         <ul>
             <li>
                 <code>This is sample text inside code markup</code>
@@ -308,7 +413,7 @@
 
         <h2>Forms</h2>
 
-        <form>
+        <form action="http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi">
             <div>
                 <input type="hidden" name="hidden field" value="42"> This is a form containing various fields (with some initial values (defaults) set, so that you can see how input text looks like without actually typing it):</div>
             <div>
@@ -503,104 +608,6 @@
         <h3>Explicit hyphenation hints (soft hyphens)</h3>
         <p class="limited">Un­til re­cent­ly the great ma­jor­i­ty of nat­u­ral­ists be­lieved that spe­cies were im­mu­ta­ble pro­duc­tions, and had been sep­a­rate­ly cre­at­ed. This view has been ably main­tain­ed by many au­thors.
         </p>
-
-        <h2>Text-level markup</h2>
-
-        <ul>
-            <li>
-                <abbr title="Cascading Style Sheets">CSS</abbr> (an abbreviation;
-                <code>abbr</code> markup used)
-            </li>
-            <li>
-                <acronym title="radio detecting and ranging">radar</acronym> (an acronym;
-                <code>acronym</code> markup used)
-            </li>
-            <li> <b>bolded</b> (
-                <code>b</code> markup used - just bolding with unspecified semantics)
-            </li>
-            <li>
-                <cite>Origin of Species</cite> (a book title;
-                <code>cite</code> markup used)
-            </li>
-            <li>
-                <code>a[i] = b[i] + c[i);</code> (computer code;
-                <code>code</code> markup used)
-            </li>
-            <li> here we have some
-                <del>deleted</del> text (
-                <code>del</code> markup used)
-            </li>
-            <li> an
-                <dfn>octet</dfn> is an entity consisting of eight bits (
-                <code>dfn</code> markup used for the term being defined)
-            </li>
-            <li> this is
-                <em>very</em> simple (
-                <code>em</code> markup used for emphasizing a word)
-            </li>
-            <li> <i lang="la">Homo sapiens</i> (should appear in italics;
-                <code>i</code> markup used)
-            </li>
-            <li> here we have some
-                <ins>inserted</ins> text (
-                <code>ins</code> markup used)
-            </li>
-            <li> type
-                <kbd>yes</kbd> when prompted for an answer (
-                <code>kbd</code> markup used for text indicating keyboard input)
-            </li>
-            <li>
-                <q>Hello!</q> (
-                <code>q</code> markup used for quotation)
-            </li>
-            <li> He said:
-                <q>She said
-                    <q>Hello!</q>
-                </q> (a quotation inside a quotation)
-            </li>
-            <li> you may get the message
-                <samp>Core dumped</samp> at times (
-                <code>samp</code> markup used for sample output)
-            </li>
-            <li>
-                <small>this is not that important</small> (
-                <code>small</code> markup used)
-            </li>
-            <li>
-                <strike>overstruck</strike> (
-                <code>strike</code> markup used; note:
-                <code>s</code> is a nonstandard synonym for
-                <code>strike</code>)
-            </li>
-            <li>
-                <strong>this is highlighted text</strong> (
-                <code>strong</code> markup used)
-            </li>
-            <li> In order to test how subscripts and superscripts (
-                <code>sub</code> and
-                <code>sup</code> markup) work inside running text, we need some dummy text around constructs like x<sub>1</sub> and H<sub>2</sub>O (where subscripts occur). So here is some fill so that you will (hopefully) see whether and how badly the subscripts
-                and superscripts mess up vertical spacing between lines. Now superscripts: M<sup>lle</sup>, 1<sup>st</sup>, and then some mathematical notations: e<sup>x</sup>, sin<sup>2</sup> <i>x</i>, and some nested superscripts (exponents) too: e
-                <sup>x<sup>2</sup></sup> and f(x)<sup>g(x)<sup>a+b+c</sup></sup>
-                (where 2 and a+b+c should appear as exponents of exponents).
-            </li>
-            <li>
-                <tt>text in monospace font</tt> (
-                <code>tt</code> markup used)
-            </li>
-            <li> <u>underlined</u> text (
-                <code>u</code> markup used)
-            </li>
-            <li> the command
-                <code>cat</code>
-                <var>filename</var> displays the file specified by the
-                <var>filename</var> (
-                <code>var</code> markup used to indicate a word as a variable).
-            </li>
-        </ul>
-
-        <p>Some of the elements tested above are typically displayed in a monospace font, often using the
-            <em>same</em> presentation for all of them. This tests whether that is the case on your browser:</p>
-            
     </main>
 </body>
 </html>
