@@ -15,6 +15,9 @@
   - No mixing units (unless unit + %)
   - Prefer unitless line height, but maybe OK?
 
+  - Maybe support Gridlover style scale/pow() sizings?
+  - Probably want to be able to control how much line-heigh is affected (advanced?)
+
   - baseline-min.less - em, rem, px, %, pt
   - baseline-extra.less - (other font sizes)
   - baseline-classes.less - .bl-larger, .bl-resizeTo-[10-200], etc.
@@ -28,8 +31,6 @@
 // - absolute (2): cm, mm, in, pc
 // - modifiers: [xx-small, xx-large], smaller, larger
 
-
-@grid_unit: "px";
 
 @DEFAULT_FONT_SIZE:   15px;   // px required
 @DEFAULT_LINE_HEIGHT: 1.618;
@@ -48,7 +49,7 @@
 // text of mixed sizes stays between the lines. The complexity comes from how
 // all the various units work, and some differences between browsers.
 @exact_leading: @DEFAULT_FONT_SIZE * @DEFAULT_LINE_HEIGHT;
-// @leading: @exact_leading;          // firefox
+@leading: @exact_leading;          // firefox
 @leading: floor(@exact_leading);   // chrome/safari (TBD: IE)
 
 
@@ -99,34 +100,25 @@ h6 {
 }
 
 
-// .resizeTo(@scale: 100%) {
-//     @s: unit(@scale) / 100;
-//     font-size: @DEFAULT_FONT_SIZE * (@DEFAULT_LINE_HEIGHT * @s);
-// }
-
 .resizeTo(@scale: 100%) {
 
-    // convert percentage to numeric value
-    @percent: unit(@scale) / 100;                // e.g. "150%" -> 1.5
+    // convert the percentage (string) to a numeric value (e.g. 150% = 1.5)
+    @percent: unit(@scale) / 100;
 
-    // compute new font size
-    @font-size: @DEFAULT_FONT_SIZE * @percent;   // e.g. 15px -> 22.5px
+    // determine the new font size (e.g. 15px * 1.5 = 22.5px)
+    @new-font-size: @DEFAULT_FONT_SIZE * @percent;
 
-    // compute new line size
-    @line-size: @font-size * @DEFAULT_LINE_HEIGHT;      // e.g. 22.5px * 1.5 = 33.75px
+    // determine the size of a line with the new font size (e.g. 22.5px * 1.5 = 33.75px)
+    @new-line-size: @new-font-size * @DEFAULT_LINE_HEIGHT;
 
-    // compute lines used (unitless)
-    @lines-used: ceil(unit(@line-size / @leading));
-    @line-height: unit((@leading * @lines-used) / @font-size);
+    // determine, as a whole number, how many base lines the new font uses
+    @lines-used: ceil(unit(@new-line-size) / unit(@leading));
 
-    // @line-height: @DEFAULT_LINE_HEIGHT * @percent;
+    // determine the line height necessary to maintain the grid
+    @new-line-height: (unit(@leading) * @lines-used) / unit(@new-font-size);
 
-    font-size: @font-size;
-    line-height: @line-height;
-
-
-    bl-line-size: @line-size;
-    bl-lines-used: @lines-used;
+    font-size: @new-font-size;
+    line-height: @new-line-height;
 }
 
 
@@ -146,19 +138,6 @@ h6 {
 //         margin-top: @line-height * 2 * 1px;
 //     }
 // }
-
-// UTILITY to maintain the grid
-// .resizeTo(@size: 100%) {
-//     font-size: @size;
-//     line-height: @LINE_HEIGHT / (unit(@size) / 100);
-// }
-
-
-
-
-
-
-
 
 
 // HASHGRID (replace?)
