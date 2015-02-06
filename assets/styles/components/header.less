@@ -2,29 +2,24 @@
  Header
 */
 header {
-    .hide();
-    margin: 0;
 }
 
 header h1, header ul {
-    margin: 0;
+    // margin: 0;
     // vertical-align: middle;
     // .debug();
 }
 
 header svg {
-    // .debug();
-    // display: inline;
-    // width: 2em;
-    // height: 2em;
-}
+    .debug();
+    height: @DEFAULT_FONT_SIZE * 2;
+    width: @DEFAULT_FONT_SIZE * 2;
 
-header h1 {
-    display: none;
+    // take out of normal flow for now
+    float: left;
 }
 
 header ul {
-    // display: inline;
     margin: 0;
     padding: 0;
 }
@@ -42,4 +37,8 @@ header li {
         // border-top: 2px solid @BLACK;
         font-weight: @STRONG_FONT_WEIGHT;
     }
+}
+
+header a {
+    text-decoration: none;
 }
