@@ -16,20 +16,20 @@
 
 // @import "components/font-awesome.less";
 
-// FIXME: keep styles I like
-// @import "skeleton.less";
-
-// @import "components/layout.less";      // overall layout
 
 @PAGE_WIDTH: 800px;
 
 
 
-// @import "components/header.less";      // general header
+@import "components/header.less";      // general header
 @import "components/footer.less";      // general footer
 
+// @import "views/mobile.less";                 // mobile-specific styles
 @import "views/desktop.less";          // desktop-specific styles
-// @import "mobile.less";                 // mobile-specific styles
-// @import "print.less";                  // print-specific styles (resume)
+@import "views/print.less";                  // print-specific styles (resume)
 
 @import "themes/default.less";         // default theme
+
+
+@import "components/skeleton_forms.less";  // TBD: Skeleton's form styling
+@import "components/portfolio.less";    // yeah
