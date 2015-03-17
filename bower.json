@@ -1,23 +1,26 @@
 {
-    "name": "Ryan Varick",
-    "version": "16.0.0",
-    "authors": [
-        "Ryan Varick"
-    ],
-    "description": "Website for Ryan Varick",
-    "main": "index.html",
-    "license": "none",
-    "homepage": "https://www.ryanvarick.com",
-    "private": true,
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "vendor",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "hashgrid": "*"
-    }
+  "name": "Ryan Varick",
+  "version": "16.0.0",
+  "authors": [
+    "Ryan Varick"
+  ],
+  "description": "Website for Ryan Varick",
+  "main": "index.html",
+  "license": "none",
+  "homepage": "https://www.ryanvarick.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hashgrid": "*",
+    "fontawesome": "~4.3.0",
+    "normalize.css": "~3.0.2",
+    "jquery": "~2.1.3"
+  }
 }
