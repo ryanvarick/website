@@ -3,3 +3,35 @@ p.edit-link {
     top: 10px;
     right: 10px;
 }
+
+p.download-resume {
+    float: right;
+    margin-top: -@leading * 2;
+}
+
+@PRIMARY_WIDTH: 30em;
+@SECONDARY_WIDTH: 18em;
+@gutter: @leading;
+
+div.primary
+{
+  display: inline-block;
+  width: @PRIMARY_WIDTH;
+  margin-right: @gutter;
+  vertical-align: top;
+}
+
+div.secondary
+{
+  display: inline-block;
+  width: @SECONDARY_WIDTH;
+  vertical-align: top;
+}
+
+div.secondary.resume {
+    h2, h3 {
+        font-size: 100%;
+        color: @BLACK; 
+    }
+
+}
