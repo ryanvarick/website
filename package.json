@@ -6,7 +6,7 @@
   "private": true,
   "repository": "TBD",
   "readme": "README.md",
-  "license": "MIT",
+  "license": "TBD",
   "main": "index.html",
   "scripts": {
     "build:less": "lessc assets/styles/app.less assets/app.css",
@@ -36,7 +36,8 @@
     "version": "versiony --to 'bower.json' --from 'package.json'",
     "watch:css": "watch 'clear && npm run build:css' assets/styles/",
     "watch:js": "watch 'clear && npm run build:js' assets/js/",
-    "dev": "clear && npm run cleanup && parallelshell 'npm run livereload' 'npm run serve' 'npm run watch:css'"
+    "dev": "clear && npm run cleanup && parallelshell 'npm run livereload' 'npm run serve' 'npm run watch:css'",
+    "dev:watch": "clear && npm run cleanup && parallelshell 'npm run livereload' 'npm run watch:css'"
   },
   "devDependencies": {
     "autoprefixer": "^4.0.0",
