@@ -1,22 +1,14 @@
 /**
  Header
 */
-header {
-}
 
-header h1, header ul {
-    // margin: 0;
-    // vertical-align: middle;
-    // .debug();
+header {
+    padding: @leading 0 0 0;
 }
 
 header svg {
-    .debug();
-    height: @DEFAULT_FONT_SIZE * 2;
-    width: @DEFAULT_FONT_SIZE * 2;
-
-    // take out of normal flow for now
-    float: left;
+    // TBD
+    .hide();
 }
 
 header ul {
@@ -41,4 +33,9 @@ header li {
 
 header a {
     text-decoration: none;
+}
+
+header h2 {
+    border-top: 1px solid @ORANGE;
+    border-bottom: 1px solid @ORANGE;
 }
