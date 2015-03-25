@@ -25,21 +25,27 @@ ol { list-style: decimal inside; }
 // links
 a { color: @BLACK; }
 
+.headline h2,
+.animated {
+    color: @ORANGE;
 
-
-h2 {
+    /* autoprefixer: off */ // Requires WebKit only features
+    background-image: -webkit-linear-gradient(0deg, @ORANGE, @YELLOW);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 120s infinite linear;
 
-    // http://thecodeplayer.com/walkthrough/animating-css3-gradients
-    background-image: linear-gradient(
-        rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
-        rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
-    );
+    // TODO: Use smoothState to keep colors consistent across page loads?
+}
 
-    .resizeTo(200%);
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
 
-    // text-align: center;
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
 }
 
 footer {
