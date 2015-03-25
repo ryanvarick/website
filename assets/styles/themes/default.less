@@ -30,10 +30,10 @@ a { color: @BLACK; }
     color: @ORANGE;
 
     /* autoprefixer: off */ // Requires WebKit only features
-    background-image: -webkit-linear-gradient(0deg, @ORANGE, @YELLOW);
+    background-image: -webkit-linear-gradient(270deg, @ORANGE, @YELLOW);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 120s infinite linear;
+    // -webkit-animation: hue 300s infinite linear;
 
     // TODO: Use smoothState to keep colors consistent across page loads?
 }
@@ -44,7 +44,7 @@ a { color: @BLACK; }
   }
 
   to {
-    -webkit-filter: hue-rotate(-360deg);
+    -webkit-filter: hue-rotate(360deg);
   }
 }
 
@@ -55,6 +55,8 @@ footer {
         rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
     );
     // -webkit-animation: hex 5s infinite alternate;
+
+    // -webkit-animation: hue 300s infinite linear;
 }
 
 // @-webkit-keyframes hex {
