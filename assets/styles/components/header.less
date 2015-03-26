@@ -3,17 +3,27 @@
 */
 
 header {
-    padding: @leading 0 0 0;
-}
 
-header svg {
-    // TBD
-    .hide();
+    padding: (@leading * 2) 0 @leading 0;
+
+    svg {
+        // TBD
+        // .hide();
+        height: @leading;
+        width: @leading;
+        float: left;
+    }
 }
 
 header h1 {
-    text-transform: uppercase;
-    .resizeTo(100%);
+    .hide();
+
+    // font-family: minion-pro, marion, "Times New Roman", Times, serif;
+
+    a {
+        font-weight: 300;
+        text-transform: uppercase;
+    }
 }
 
 header ul {
