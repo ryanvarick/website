@@ -85,13 +85,12 @@ section.portfolio {
     width: @width;
 
     // appearance
-    @color2: fade(@color, 90%);
-
-    border: 1px solid @color2;
-    .retina-image(@image, "png", no-repeat, @height, @width);
+    @accentColor: fade(@color, 90%);
+    border: 1px solid @accentColor;
+    .retina-png(@image, @width, @height);
 
     h3 {
-        background: @color2;
+        background: @accentColor;
         text-shadow: 1px 1px #333; // TBD color
         // background-image: linear-gradient(lighten(@color, 20%), @color2);
     }

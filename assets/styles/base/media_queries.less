@@ -4,7 +4,8 @@
 
 @desktop: ~"all and (min-width: 481px)";
 @portrait: ~"screen and (orientation: portrait) and (max-device-width: 480px)";
-@retina: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
-~"only screen and (min--moz-device-pixel-ratio: 1.5)",
-~"only screen and (-o-min-device-pixel-ratio: 3/2)",
-~"only screen and (min-device-pixel-ratio: 1.5)";
+
+// https://css-tricks.com/snippets/css/retina-display-media-query/
+@retina:
+    ~"(-webkit-min-device-pixel-ratio: 2)",
+    ~"(min-resolution: 192dpi)";
