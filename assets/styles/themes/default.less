@@ -26,6 +26,13 @@ ol { list-style: decimal inside; }
 a { color: @BLACK; }
 
 h2 {
+    .colorBurn();
+    .resizeTo(200%);
+
+    // text-align: center;
+}
+
+.colorBurn() {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -34,18 +41,16 @@ h2 {
         rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
         rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
     );
-
-    .resizeTo(200%);
-
-    // text-align: center;
 }
 
 footer {
     color: white;
-    background-image: linear-gradient(
-        rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
-        rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
-    );
+    background-image: linear-gradient(@ORANGE, @YELLOW);
+
+    // background-image: linear-gradient(
+    //     rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
+    //     rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
+    // );
     // -webkit-animation: hex 5s infinite alternate;
 }
 
