@@ -31,11 +31,9 @@ h2 {
 
     // ANIMATED
     /* autoprefixer: off */ // Requires WebKit only features
-    // background-image: -webkit-linear-gradient(0deg, @orange, @yellow);
     // background-image: -webkit-linear-gradient(270deg, @orange, @yellow);
     // -webkit-background-clip: text;
     // -webkit-text-fill-color: transparent;
-    // -webkit-animation: hue 120s infinite linear;
     // -webkit-animation: hue 300s infinite linear;
 }
 
@@ -43,11 +41,15 @@ h2 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    // http://thecodeplayer.com/walkthrough/animating-css3-gradients
-    background-image: linear-gradient(
-        rgba(red(@orange), green(@orange), blue(@orange), 1.0),
-        rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
-    );
+    /* autoprefixer: off */ // Requires WebKit only features
+    background-image: -webkit-linear-gradient(270deg, @orange, @yellow);
+    color: @orange; // fallback for non-WK browsers
+
+    // // http://thecodeplayer.com/walkthrough/animating-css3-gradients
+    // background-image: linear-gradient(
+    //     rgba(red(@orange), green(@orange), blue(@orange), 1.0),
+    //     rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
+    // );
 }
 
 footer {
