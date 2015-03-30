@@ -29,7 +29,14 @@ h2 {
     .colorBurn();
     .resizeTo(200%);
 
-    // text-align: center;
+    // ANIMATED
+    /* autoprefixer: off */ // Requires WebKit only features
+    // background-image: -webkit-linear-gradient(0deg, @ORANGE, @YELLOW);
+    // background-image: -webkit-linear-gradient(270deg, @ORANGE, @YELLOW);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    // -webkit-animation: hue 120s infinite linear;
+    // -webkit-animation: hue 300s infinite linear;
 }
 
 .colorBurn() {
@@ -47,6 +54,9 @@ footer {
     color: white;
     background-image: linear-gradient(@ORANGE, @YELLOW);
 
+    // ANIMATED COLOR
+    // -webkit-animation: hue 300s infinite linear;
+
     // background-image: linear-gradient(
     //     rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
     //     rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
@@ -58,4 +68,18 @@ footer {
 //     // fallback
 //     // 50%  { background-color: saturate}
 //     100% { background-color: saturate(@BLUE, 100%) }
+// }
+
+
+
+// ANIMATED COLOR
+// @-webkit-keyframes hue {
+//   from {
+//     -webkit-filter: hue-rotate(0deg);
+//   }
+//
+//   to {
+//     //   -webkit-filter: hue-rotate(-360deg);
+//       -webkit-filter: hue-rotate(360deg);
+//   }
 // }
