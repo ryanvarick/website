@@ -2,84 +2,81 @@
  Colors and color functions
 */
 
-@PURPLE: #6C207E;
-@BLUE:   #5091CD;
-@GREEN:  #788E2F;
-@YELLOW: #FFC425;
-@ORANGE: #F37321;
-@RED:    #C41230;
+@purple: #6C207E;
+@blue:   #5091CD;
+@green:  #788E2F;
+@yellow: #FFC425;
+@orange: #F37321;
+@red:    #C41230;
 
-@GREY1:  #EFEFF0;
-@GREY2:  #E0E1E2;
-@GREY3:  #C7C8CA;
-@GREY4:  #ADAFB2;
-@GREY5:  #95979A;
-@GREY6:  #7E8083;
-@GREY7:  #67686B;
-@GREY8:  #4D4D4F;
-@GREY9:  #414042;
+@grey1:  #EFEFF0;
+@grey2:  #E0E1E2;
+@grey3:  #C7C8CA;
+@grey4:  #ADAFB2;
+@grey5:  #95979A;
+@grey6:  #7E8083;
+@grey7:  #67686B;
+@grey8:  #4D4D4F;
+@grey9:  #414042;
 
-@WHITE:  #FFFFFF;
-@LIGHT_GREY: @GREY2;
-@DARK_GREY: @GREY5;
-@BLACK:  @GREY9;
+@white:  #FFFFFF;
+@light_grey: @grey2;
+@dark_grey: @grey5;
+@black:  @grey9;
 
-.red { background: @RED; }
-.orange { background: @ORANGE; }
-.yellow { background: @YELLOW; }
-.green { background: @GREEN; }
-.blue { background: @BLUE; }
-.purple { background: @PURPLE; }
+.red { background: @red; }
+.orange { background: @orange; }
+.yellow { background: @yellow; }
+.green { background: @green; }
+.blue { background: @blue; }
+.purple { background: @purple; }
 
-.grey1 { background: @GREY1; }
-.grey2 { background: @GREY2; }
-.grey3 { background: @GREY3; }
-.grey4 { background: @GREY4; }
-.grey5 { background: @GREY5; }
-.grey6 { background: @GREY6; }
-.grey7 { background: @GREY7; }
-.grey8 { background: @GREY8; }
-.grey9 { background: @GREY9; }
+.grey1 { background: @grey1; }
+.grey2 { background: @grey2; }
+.grey3 { background: @grey3; }
+.grey4 { background: @grey4; }
+.grey5 { background: @grey5; }
+.grey6 { background: @grey6; }
+.grey7 { background: @grey7; }
+.grey8 { background: @grey8; }
+.grey9 { background: @grey9; }
 
-.red-purple { .gradient(@RED, @PURPLE); }
-.red-blue { .gradient(@RED, @BLUE); }
-.red-green { .gradient(@RED, @GREEN); }
-.red-yellow { .gradient(@RED, @YELLOW); }
-.red-orange { .gradient(@RED, @ORANGE); }
+.red-purple { .gradient(@red, @purple); }
+.red-blue { .gradient(@red, @blue); }
+.red-green { .gradient(@red, @green); }
+.red-yellow { .gradient(@red, @yellow); }
+.red-orange { .gradient(@red, @orange); }
 
-.orange-purple { .gradient(@ORANGE, @PURPLE); }
-.orange-blue { .gradient(@ORANGE, @BLUE); }
-.orange-green { .gradient(@ORANGE, @GREEN); }
-.orange-yellow { .gradient(@ORANGE, @YELLOW); }
-.orange-red { .gradient(@ORANGE, @RED); }
+.orange-purple { .gradient(@orange, @purple); }
+.orange-blue { .gradient(@orange, @blue); }
+.orange-green { .gradient(@orange, @green); }
+.orange-yellow { .gradient(@orange, @yellow); }
+.orange-red { .gradient(@orange, @red); }
 
-.yellow-purple { .gradient(@YELLOW, @PURPLE); }
-.yellow-blue { .gradient(@YELLOW, @BLUE); }
-.yellow-green { .gradient(@YELLOW, @GREEN); }
-.yellow-red { .gradient(@YELLOW, @RED); }
-.yellow-orange { .gradient(@YELLOW, @ORANGE); }
+.yellow-purple { .gradient(@yellow, @purple); }
+.yellow-blue { .gradient(@yellow, @blue); }
+.yellow-green { .gradient(@yellow, @green); }
+.yellow-red { .gradient(@yellow, @red); }
+.yellow-orange { .gradient(@yellow, @orange); }
 
-.green-purple { .gradient(@GREEN, @PURPLE); }
-.green-blue { .gradient(@GREEN, @BLUE); }
-.green-red { .gradient(@GREEN, @RED); }
-.green-yellow { .gradient(@GREEN, @YELLOW); }
-.green-orange { .gradient(@GREEN, @ORANGE); }
+.green-purple { .gradient(@green, @purple); }
+.green-blue { .gradient(@green, @blue); }
+.green-red { .gradient(@green, @red); }
+.green-yellow { .gradient(@green, @yellow); }
+.green-orange { .gradient(@green, @orange); }
 
-.blue-purple { .gradient(@BLUE, @PURPLE); }
-.blue-red { .gradient(@BLUE, @RED); }
-.blue-green { .gradient(@BLUE, @GREEN); }
-.blue-yellow { .gradient(@BLUE, @YELLOW); }
-.blue-orange { .gradient(@BLUE, @ORANGE); }
+.blue-purple { .gradient(@blue, @purple); }
+.blue-red { .gradient(@blue, @red); }
+.blue-green { .gradient(@blue, @green); }
+.blue-yellow { .gradient(@blue, @yellow); }
+.blue-orange { .gradient(@blue, @orange); }
 
-.purple-red { .gradient(@PURPLE, @RED); }
-.purple-blue { .gradient(@PURPLE, @BLUE); }
-.purple-green { .gradient(@PURPLE, @GREEN); }
-.purple-yellow { .gradient(@PURPLE, @YELLOW); }
-.purple-orange { .gradient(@PURPLE, @ORANGE); }
+.purple-red { .gradient(@purple, @red); }
+.purple-blue { .gradient(@purple, @blue); }
+.purple-green { .gradient(@purple, @green); }
+.purple-yellow { .gradient(@purple, @yellow); }
+.purple-orange { .gradient(@purple, @orange); }
 
 .gradient(@color1, @color2) {
-    background-image: linear-gradient(
-        rgba(red(@color1), green(@color1), blue(@color1), 1.0),
-        rgba(red(@color2), green(@color2), blue(@color2), 1.0)
-    );
+    background-image: linear-gradient(@color1, @color2);
 }

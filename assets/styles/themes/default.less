@@ -7,7 +7,7 @@
 @STRONG_FONT_WEIGHT:  500;
 
 body {
-    color: @BLACK;
+    color: @black;
     font-family: myriad-pro, "Avenir Next", sans-serif;
 
     // TODO: still necessary?
@@ -23,7 +23,7 @@ ul { list-style: circle inside;  }
 ol { list-style: decimal inside; }
 
 // links
-a { color: @BLACK; }
+a { color: @black; }
 
 h2 {
     .colorBurn();
@@ -31,8 +31,8 @@ h2 {
 
     // ANIMATED
     /* autoprefixer: off */ // Requires WebKit only features
-    // background-image: -webkit-linear-gradient(0deg, @ORANGE, @YELLOW);
-    // background-image: -webkit-linear-gradient(270deg, @ORANGE, @YELLOW);
+    // background-image: -webkit-linear-gradient(0deg, @orange, @yellow);
+    // background-image: -webkit-linear-gradient(270deg, @orange, @yellow);
     // -webkit-background-clip: text;
     // -webkit-text-fill-color: transparent;
     // -webkit-animation: hue 120s infinite linear;
@@ -45,21 +45,21 @@ h2 {
 
     // http://thecodeplayer.com/walkthrough/animating-css3-gradients
     background-image: linear-gradient(
-        rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
-        rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
+        rgba(red(@orange), green(@orange), blue(@orange), 1.0),
+        rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
     );
 }
 
 footer {
     color: white;
-    background-image: linear-gradient(@ORANGE, @YELLOW);
+    background-image: linear-gradient(@orange, @yellow);
 
     // ANIMATED COLOR
     // -webkit-animation: hue 300s infinite linear;
 
     // background-image: linear-gradient(
-    //     rgba(red(@ORANGE), green(@ORANGE), blue(@ORANGE), 1.0),
-    //     rgba(red(@YELLOW), green(@YELLOW), blue(@YELLOW), 1.0)
+    //     rgba(red(@orange), green(@orange), blue(@orange), 1.0),
+    //     rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
     // );
     // -webkit-animation: hex 5s infinite alternate;
 }
@@ -67,7 +67,7 @@ footer {
 // @-webkit-keyframes hex {
 //     // fallback
 //     // 50%  { background-color: saturate}
-//     100% { background-color: saturate(@BLUE, 100%) }
+//     100% { background-color: saturate(@blue, 100%) }
 // }
 
 
