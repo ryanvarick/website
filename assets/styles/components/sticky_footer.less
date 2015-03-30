@@ -2,25 +2,27 @@
  Sticky footer - Ensure that the footer attaches to the bottom of the page or
  the bottom of the browser, whichever is greater
 
- @via http://mystrd.at/modern-clean-css-sticky-footer/
+ @via http://colintoh.com/blog/display-table-anti-hero
 */
 
-@FOOTER_HEIGHT: 7em;
-html {
-    min-height: 100%;
-    position: relative;
+html, body {
+    display: table;
+    height: 100%;
+
+    // TODO: Move this somewhere else, it is not necessary for the sticky footer
+    width: 100%;
 }
 
-body {
-    margin-bottom: @FOOTER_HEIGHT;
+main {
+    height: 100%;
 }
 
+header,
 footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: @FOOTER_HEIGHT;
-}
+    display: table-row;
 
-// alternative? http://colintoh.com/blog/display-table-anti-hero
+    // This acts like `min-height`: "Rows" subtract from `main`'s 100% height
+    // until it hits its minimum height, then the page will scroll. Rows also
+    // grow as necessary. `min-height` doesn't seem to do anything.
+    height: 1em;
+}
