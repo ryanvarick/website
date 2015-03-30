@@ -14,3 +14,120 @@ div.portfolio.placeholder {
     height: 100px;
     width: calc(100% / 3);
 }
+
+
+
+@normal_font_size: @DEFAULT_FONT_SIZE;
+
+section.portfolio {
+
+    margin: (@leading * 3) 0;
+    position: relative;
+    height: 350px;
+    width: 100%;
+
+
+    h3 {
+
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        // right: 10px;
+        right: 0;
+        // width: 100%;
+        // height: 40px;
+
+        // background: black;
+        color: @WHITE;
+
+        font-size: 14px;
+        margin: 0;
+        padding: 10px 0 10px 10px;
+        line-height: 1.0;
+        // background-color: rgba(255, 255, 255, 0.80);
+
+        // .colorBurn();
+        span {
+            font-size: smaller;
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    div {
+        // border: 1px solid white;
+        // background: #eeeeee;
+        position: absolute;
+
+        &:hover {
+            .fake-hyperlink();
+            // border-bottom: 3px solid @ORANGE;
+        }
+    }
+}
+
+.portfolio-bg(@color: @BLACK) {
+    h3 {
+        background: fade(@color, 60%);
+    }
+}
+
+
+.portfolio-cover(@x, @y, @width, @height, @color, @image) {
+
+    // positioning
+    top: @x;
+    left: @y;
+
+    // size
+    height: @height;
+    width: @width;
+
+    // appearance
+    @color2: fade(@color, 90%);
+
+    border: 1px solid @color2;
+    .retina-image(@image, "png", no-repeat, @height, @width);
+
+    h3 {
+        background: @color2;
+        text-shadow: 1px 1px #333; // TBD color
+        // background-image: linear-gradient(lighten(@color, 20%), @color2);
+    }
+
+}
+
+@portfolio_width: @PAGE_WIDTH;
+
+// @x, @y, @width, @height, @color, @image
+
+div.p1 {
+    .portfolio-cover(0, 0, 200px, 200px, @ORANGE, "../assets/images/cover-br_pub");
+    border-right: none;
+}
+div.p2 {
+    .portfolio-cover(0, 200px, 300px, 100px, @ORANGE, "../assets/images/cover-br_xbox");
+    border-bottom: none;
+}
+div.p3 {
+    .portfolio-cover(100px, 200px, 300px, 100px, @ORANGE, "../assets/images/cover-br_cms");
+}
+div.p4 {
+    .portfolio-cover(0, 500px, 300px, 200px, @GREEN, "../assets/images/cover-wf");
+    border-left: none;
+}
+div.p5 {
+    .portfolio-cover(200px, 0, 400px, 150px, @BLUE, "../assets/images/cover-nokia");
+    border-top: none;
+    border-right: none;
+}
+div.p6 {
+    .portfolio-cover(200px, 400px, 200px, 150px, @RED, "../assets/images/cover-moto");
+    border-top: none;
+    border-right: none;
+}
+div.p7 {
+    .portfolio-cover(200px, 600px, 200px, 150px, @RED, "../assets/images/cover-good");
+    border-top: none;
+}
