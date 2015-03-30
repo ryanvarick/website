@@ -1,27 +1,33 @@
-# ryanvarick.com
+# PmWiki Skin for ryanvarick.com
 
-v16.0.0
-
-Sixteenth major revision since 1998. For this version, I moved my repository over to Github, automated deployment through `npm`, and manage my front end dependencies with `bower`.
+This is the sixteenth major version of my website since 1998. It is currently powered by [PmWiki](http://www.pmwiki.org). This is the skin I am using.
 
 ## Installation
 
-`npm install`
-`npm run build`
+Clone locally under `pub/skins/<version>`, then
 
-## Scripts
+    npm install
 
-* `npm run dev` &ndash; Starts the server, live reload, watcher, and opens browser windows
-* `npm run build`
-* TBD
+For local testing, create the latest version number (e.g `v16.0.0`) and symlink as `experimental`. To go live, change the symlink to `production` and push remotely. Installations should be configured to use the correct skin automatically.
 
-`build` - Asset compilation. Generates `app.css` and `app.less`. Specific assets can be called.
+## Usage
 
-`open` - Useful for opening applications. Requires Chrome and Firefox. My editor is Atom. Etc.
+I dig `npm` scripts. The more I can do without Grunt or Gulp or whatever, the better.
 
-`livereload`, `serve`, and `watch` - Used for development.
+* `npm run dev` - Run live reload, watch for changes, and start a static server
+* `npm run dev:watch` - Like `npm run dev`, but without the server (useful when running a separate PHP server)
+* `npm run deploy` - Deploy the current skin (uses `sync.pm`)
 
-`dev` - Start live reload on port 9001, serve off of port 9090, watch for changes, open some windows
+I don't really like dealing with Bower or NPM either, so here are a few utilities related to them:
+
+* `npm run version` - Sync `package.json` version number to `bower.json`
+* `npm run postinstall` - Automatically run `bower install` after `npm install`
+* `npm run clean:packages` - Wipe out NPM and Bower junk
+* `npm run clean:processes` - Kill processes (useful if the watch process dies)
+
+### Notes
+
+* FIXME: Live reload dies when switching Git branches, which is annoying
 
 ## Dependencies
 
@@ -29,7 +35,3 @@ Sixteenth major revision since 1998. For this version, I moved my repository ove
 * Hashgrid (replace with something that does not require jQuery)
 * Normalize.css
 * Please.js
-
-## TODO
-
-* `livereload` seems to occasionally choke on Git's files, so I should ignore them
