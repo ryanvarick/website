@@ -2,8 +2,11 @@
  Breakpoint definitions
 */
 
-@desktop: ~"all and (min-width: 481px)";
-@portrait: ~"screen and (orientation: portrait) and (max-device-width: 480px)";
+@mobile:
+    ~"only screen and (max-device-width: 500px)";
+
+@desktop:
+    ~"(min-width: 500px)";
 
 // https://css-tricks.com/snippets/css/retina-display-media-query/
 @retina:
