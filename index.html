@@ -4,49 +4,39 @@
     <meta charset="utf-8">
     <title>Ryan Varick &bull; Product Designer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="https://www.ryanvarick.com/site/pub/skins/stable/assets/favicon.ico?v=3" />
     <link rel="stylesheet" href="assets/app.css?v1" />
     <!-- <script src="assets/app.js?v1"></script> -->
     <!-- favicon, apple touch icons -->
+    <link rel="shortcut icon" href="https://www.ryanvarick.com/site/pub/skins/stable/assets/favicon.ico?v=3" />
 
-    <!-- DEVELOPMENT, REMOVE -->
-    <script src="assets/js/typekit.js"></script>
-    <script>try { Typekit.load(); } catch(e) { }</script>
-    <script src="vendor/jquery/dist/jquery.js"></script>
-    <!-- // <script type="text/javascript" src="vendor/hashgrid/hashgrid.js"></script> -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            var grid = new hashgrid();
-        });
-    </script>
-    <!-- // <script src="vendor/pleasejs/Please.js"></script> -->
-    <script src="//localhost:9091"></script>
-    <!-- DEVELOPMENT, REMOVE -->
+    <!-- DEVELOPMENT CODE -->
+
+        <!-- TypeKit -->
+        <script src="assets/js/typekit.js"></script>
+        <script>try { Typekit.load(); } catch(e) { }</script>
+
+        <!-- Hashgrid -->
+        <script src="vendor/jquery/dist/jquery.js"></script>
+        <script type="text/javascript" src="vendor/hashgrid/hashgrid.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var grid = new hashgrid();
+            });
+        </script>
+
+        <!-- Live reload -->
+        <script src="//localhost:9091"></script>
+
+    <!-- END DEVELOPMENT CODE -->
 </head>
 <body>
     <header>
-        <!-- TBD: Move logo to footer? No logo in header?? -->
-        <!-- FIXME: Minimum inline SVG for CSS styling -->
-        <!-- <a href="pmwiki.php?n=Home.Index">
-            <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-                <title>Logo v2 – Prod</title>
-                <desc>Created with Sketch.</desc>
-                <defs>
-                    <path d="M1.4492928,38 C6.82399195,16.1814156 26.5223099,0 50,0 C77.6142375,0 100,22.3857625 100,50 C100,77.6142375 77.6142375,100 50,100 C48.4556645,100 46.9276819,99.9299853 45.4190531,99.792957 C53.1061692,79.7904877 61.3198891,60.1518096 64,54 C68.3139013,43.3863636 69.8684604,42.3090909 78,41 L78,38 L51,38 L51,41 C60.7802691,42.5484848 61.4977578,43.5060606 59,50 C55.5410299,61.8137489 47.0187964,83.8166179 40.7586575,99.1476912 C40.2293283,99.0487786 39.7029352,98.9415258 39.1796198,98.8260743 C31.4861484,78.4401238 23.2359187,56.605363 20,48 C18.328849,43.1469697 18.8071749,42.3090909 27,41 L27,38 L1.4492928,38 Z M0.723929714,41.4745963 C0.2479778,44.2451434 0,47.0936125 0,50 C0,69.1867092 10.8070402,85.8492989 26.6660462,94.2326947 C20.9012785,78.844195 14.9107547,63.5642155 10,52 C7.40109845,44.3074122 5.624007,42.5060781 0.723929714,41.4745963 Z" id="path-1"></path>
-                </defs>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-                    <g id="Logo-v2-–-Prod" sketch:type="MSArtboardGroup">
-                        <g id="Intersected" sketch:type="MSLayerGroup">
-                            <mask id="mask-2" sketch:name="Circle" fill="white">
-                                <use xlink:href="#path-1"></use>
-                            </mask>
-                            <use id="Circle" fill="#373535" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
-                        </g>
-                    </g>
-                </g>
-            </svg>
-        </a> -->
-        <!--wiki:Site.Header-->
+        <h1>Ryan Varick</h1>
+        <ul>
+            <li>Recent Work</li>
+            <li>Resume</li>
+            <li><button>Download PDF</button></li>
+        </ul>
     </header>
     <main>
         <div id="wikitext">
@@ -66,117 +56,112 @@
                 <div class="p7"><h3><span>2008</span> Good Administration Center</h3></div>
             </section>
 
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
+            <h2>Experience</h2>
+            <section class="resume">
+                <h3>Bleacher Report</h3>
+                <p class="resume-detail">
+                    <strong>Interaction Designer</strong> &bull;
+                    <span class="span">July 2013 – February 2015</span>
+                </p>
+                <p>Redesigned the tools used by Bleacher Report writers and employees to create and publish content. Designed consumer app for Xbox One. Created a centralized style guide and led company-wide brand update.</p>
 
+                <h3>Wells Fargo</h3>
+                <p class="resume-detail">
+                    <strong>Interaction Designer</strong> &bull;
+                    <span class="span">February 2011 – December 2012</span>
+                </p>
+                <p>Designed mobile banking software for iOS, Android, and text messaging. Led projects ranging from maintenance releases and new features, to comprehensive redesigns and channel strategy/conceptual design.</p>
 
+                <h3>Nokia</h3>
+                <p class="resume-detail">
+                    <strong>Interface Designer</strong> &bull;
+                    <span class="span">April 2010 – January 2011</span>
+                </p>
+                <p>Designed messaging software for Symbian smartphones. Coordinated contributions from visual designers, prototype developers, localization experts, and technical writers. Participated in cross-product peer reviews.</p>
+
+                <h3>Good Technology (formerly Motorola)</h3>
+                </p>
+                <p class="resume-detail">
+                    <strong>Interaction Designer</strong> &bull;
+                    <span class="span">February 2009 – March 2010</span>
+                </p>
+                <p>Designed personal information management software for iPhone and webOS. Led design transition from waterfall to agile development process after spin-off from Motorola. Initiated cross-platform consistency reviews.</p>
+
+                <h3>Motorola (Good Technology Group)</h3>
+                <p class="resume-detail">
+                    <strong>Experience Designer</strong> &bull;
+                    <span class="span">January 2008 – February 2009</span>
+                </p>
+                <p>Designed web-based mobile device management software. Produced wireframes, flow diagrams, and high-fidelity comps. Wrote HTML-based interface specifications. Conducted usability tests.</p>
+            </section>
+
+            <div class="secondary resume">
+                <h2>Education</h2>
+                <h3>M.S., Human-Computer Interaction Design</h3>
+                <p class="resume-detail">
+                    <strong>Indiana University</strong> –
+                    <span class="span">School of Informatics</span>
+                </p>
+                <h3>B.S., Computer Science</h3>
+                <p class="resume-detail">
+                    <strong>Indiana University</strong> –
+                    <span class="span">College of Arts &amp; Sciences</span>
+                </p>
+                <h2>Professional Affiliations</h2>
+                <ul>
+                    <li>ACM, SIGCHI, &amp; BayCHI</li>
+                    <li>Interaction Design Association</li>
+                    <li>UX Book Club San Francisco</li>
+                </ul>
+                <h2>Skills &amp; Proficiencies</h2>
+                <h3>Methods</h3>
+                <ul>
+                    <li>Requirements Analysis</li>
+                    <li>Contextual Inquiry</li>
+                    <li>Scenario &amp; Use Case Generation</li>
+                    <li>Whiteboard &amp; Sticky Note Abuse</li>
+                    <li>Paper &amp; HTML Prototyping</li>
+                    <li>Flow Diagramming</li>
+                    <li>Wireframing &amp; Storyboarding</li>
+                    <li>Information Architecture</li>
+                    <li>Interface Design</li>
+                    <li>Cross-Channel/Service Design</li>
+                    <li>Qualitative Usability Testing</li>
+                </ul>
+                <h3>Tools</h3>
+                <ul>
+                    <li>Omnigraffle/Visio</li>
+                    <li>Photoshop, Sketch, Pixelmator</li>
+                    <li>HTML, CSS, Javascript</li>
+                    <li>PHP, Perl, Node</li>
+                    <li>Microsoft Crash Reporter</li>
+                </ul>
+            </div>
         </div>
-        <div class="primary resume m-page scene_element scene_element--fadeinup">
-            <h3>Wells Fargo</h3>
-            <p><a class="wikilink" href="http://192.168.1.100:8080/site/pmwiki.php?n=Portfolio.WellsFargoMobileBanking">Wells Fargo Mobile Banking <span class="year">(2011-2012)</span></a>
-            </p>
-            <p class="resume-detail">
-                <strong>Interaction Designer</strong> •
-                <span class="span">February 2011 – December 2012</span>
-            </p>
-            <p>Designed mobile banking software for iOS, Android, and text messaging. Led projects ranging from maintenance releases and new features, to comprehensive redesigns and channel strategy/conceptual design.
-            </p>
-            <h3>Nokia</h3>
-            <p><a class="wikilink" href="http://192.168.1.100:8080/site/pmwiki.php?n=Portfolio.NokiaMessaging">Nokia Messaging <span class="year">(2010)</span></a>
-            </p>
-            <p class="resume-detail">
-                <strong>Interface Designer</strong> •
-                <span class="span">April 2010 – January 2011</span>
-            </p>
-            <p>Designed messaging software for Symbian smartphones. Coordinated contributions from visual designers, prototype developers, localization experts, and technical writers. Participated in cross-product peer reviews.
-            </p>
-            <h3>Good Technology (formerly Motorola)</h3>
-            <p><a class="wikilink" href="http://192.168.1.100:8080/site/pmwiki.php?n=Portfolio.GoodMobileMessaging">Good Mobile Messaging <span class="year">(2009)</span></a>
-            </p>
-            <p class="resume-detail">
-                <strong>Interaction Designer</strong> •
-                <span class="span">February 2009 – March 2010</span>
-            </p>
-            <p>Designed personal information management software for iPhone and webOS. Led design transition from waterfall to agile development process after spin-off from Motorola. Initiated cross-platform consistency reviews.
-            </p>
-            <h3>Motorola (Good Technology Group)</h3>
-            <p class="resume-detail">
-                <strong>Experience Designer</strong> •
-                <span class="span">January 2008 – February 2009</span>
-            </p>
-            <p>Designed web-based mobile device management software. Produced wireframes, flow diagrams, and high-fidelity comps. Wrote HTML-based interface specifications. Conducted usability tests.
-            </p>
-        </div>
-        <div class="secondary resume">
-            <h2>Education</h2>
-            <h3>M.S., Human-Computer Interaction Design</h3>
-            <p class="resume-detail">
-                <strong>Indiana University</strong> –
-                <span class="span">School of Informatics</span>
-            </p>
-            <h3>B.S., Computer Science</h3>
-            <p class="resume-detail">
-                <strong>Indiana University</strong> –
-                <span class="span">College of Arts &amp; Sciences</span>
-            </p>
-            <h2>Professional Affiliations</h2>
-            <ul>
-                <li>ACM, SIGCHI, &amp; BayCHI
-                </li>
-                <li>Interaction Design Association
-                </li>
-                <li>UX Book Club San Francisco
-                </li>
-            </ul>
-            <h2>Skills &amp; Proficiencies </h2>
-            <h3>Methods</h3>
-            <ul>
-                <li>Requirements Analysis
-                </li>
-                <li>Contextual Inquiry
-                </li>
-                <li>Scenario &amp; Use Case Generation
-                </li>
-                <li>Whiteboard &amp; Sticky Note Abuse
-                </li>
-                <li>Paper &amp; HTML Prototyping
-                </li>
-                <li>Flow Diagramming
-                </li>
-                <li>Wireframing &amp; Storyboarding
-                </li>
-                <li>Information Architecture
-                </li>
-                <li>Interface Design
-                </li>
-                <li>Cross-Channel/Service Design
-                </li>
-                <li>Qualitative Usability Testing
-                </li>
-            </ul>
-            <h3>Tools</h3>
-            <ul>
-                <li>Omnigraffle/Visio
-                </li>
-                <li>Photoshop, Sketch, Pixelmator
-                </li>
-                <li>HTML/CSS/Javascript
-                </li>
-                <li>PHP, Perl, Node
-                </li>
-                <li>Microsoft Crash Reporter
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
     </main>
     <footer>
         <section>
+
+            <!-- TODO: Replace placeholder logo with real SVG code -->
+            <svg width="40px" height="40px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                <defs>
+                    <path d="M1.4492928,38 C6.82399195,16.1814156 26.5223099,0 50,0 C77.6142375,0 100,22.3857625 100,50 C100,77.6142375 77.6142375,100 50,100 C48.4556645,100 46.9276819,99.9299853 45.4190531,99.792957 C53.1061692,79.7904877 61.3198891,60.1518096 64,54 C68.3139013,43.3863636 69.8684604,42.3090909 78,41 L78,38 L51,38 L51,41 C60.7802691,42.5484848 61.4977578,43.5060606 59,50 C55.5410299,61.8137489 47.0187964,83.8166179 40.7586575,99.1476912 C40.2293283,99.0487786 39.7029352,98.9415258 39.1796198,98.8260743 C31.4861484,78.4401238 23.2359187,56.605363 20,48 C18.328849,43.1469697 18.8071749,42.3090909 27,41 L27,38 L1.4492928,38 Z M0.723929714,41.4745963 C0.2479778,44.2451434 0,47.0936125 0,50 C0,69.1867092 10.8070402,85.8492989 26.6660462,94.2326947 C20.9012785,78.844195 14.9107547,63.5642155 10,52 C7.40109845,44.3074122 5.624007,42.5060781 0.723929714,41.4745963 Z" id="path-1"></path>
+                </defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                    <g id="Logo-v2-–-Prod" sketch:type="MSArtboardGroup">
+                        <g id="Intersected" sketch:type="MSLayerGroup">
+                            <mask id="mask-2" sketch:name="Circle" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <use id="Circle" fill="#373535" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+
+            <p class="description">Ryan Varick is a product designer in San Francisco.</p>
             <button class="download display">Download Resume (PDF)</button>
-            <p class="description">I am a product designer in San Francisco.</p>
+
             <ul>
                 <li class="twitter"><a href="https://twitter.com/ryanvarick" title="Twitter"><i class="fa fa-twitter"></i> <span>@ryanvarick</span></a></li>
                 <li class="instagram"><a href="https://instagram.com/ryanvarick_" title="Instagram"><i class="fa fa-instagram"></i> <span>Instagram</span></a></li>
