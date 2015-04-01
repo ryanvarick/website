@@ -1,24 +1,40 @@
+/**
+ Useful mixins
+*/
+
+// add a border to an element
 .debug(@color: @red) {
     border: 1px solid @color;
 }
+
+// change the cursor on hover, good for prototyping
+.fake-hyperlink() {
+	cursor: pointer;
+};
+
+// stretch an element beyond its container's bounds
+.full-bleed(@offset: @gutter) {
+  margin-left: -@offset;
+  margin-right: -@offset;
+  padding-left: @offset;
+  padding-right: @offset;
+}
+
+// hide an element
 .hide() {
     display: none;
 }
 .hidden {
     .hide();
 }
+
+// show an element
 .show() {
     display: initial;
 }
-// good for appearance prototypes
-.fake-hyperlink() {
-	cursor: pointer;
-};
 
-
-
-// load retina images
-// - adapted from https://gist.github.com/dannykeane/4754113
+// handle Retina images
+//  @via https://gist.github.com/dannykeane/4754113
 .retina-image(@file, @type, @width, @height, @repeat: no-repeat, @x: 0, @y: 0) {
     background-image: url("@{imageDir}@{file}.@{type}");
     background-repeat: @repeat;
@@ -31,6 +47,7 @@
     }
 }
 
+// shortcut for inserting Retina PNGs
 .retina-png(@file, @width, @height, @repeat: no-repeat, @x: 0, @y: 0) {
     .retina-image(@file, "png", @width, @height, @repeat, @x, @y);
 }
