@@ -2,7 +2,7 @@
  Portfolio-specific styles
 */
 
-section.portfolio {
+ul.portfolio {
 
     // grid container for desktop only, mobile shows inline
     @media @desktop {
@@ -33,6 +33,7 @@ section.portfolio {
     .retina-png(@image, @width, @height);
 
     // single column for mobile
+    display: block;
     margin: 0 0 @leading 0;
 
     // grid layout for desktop
@@ -50,7 +51,7 @@ section.portfolio {
         height: @height;
         width: 100%;
 
-        h3 {
+        p {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -78,24 +79,24 @@ section.portfolio {
 
 } // end .portfolio-cover()
 
-div.p1 {
+li.p1 {
     .portfolio-cover("cover-br_pub", 200px, 200px, @orange, 0, 0);
 }
-div.p2 {
+li.p2 {
     .portfolio-cover("cover-br_xbox", 300px, 100px, @orange, 0, 200px);
 }
-div.p3 {
+li.p3 {
     .portfolio-cover("cover-br_cms", 300px, 100px, @orange, 100px, 200px);
 }
-div.p4 {
+li.p4 {
     .portfolio-cover("cover-wf", 300px, 200px, @green, 0, 500px);
 }
-div.p5 {
+li.p5 {
     .portfolio-cover("cover-nokia", 400px, 150px, @blue, 200px, 0);
 }
-div.p6 {
+li.p6 {
     .portfolio-cover("cover-moto", 200px, 150px, @red, 200px, 400px);
 }
-div.p7 {
+li.p7 {
     .portfolio-cover("cover-good", 200px, 150px, @red, 200px, 600px);
 }
