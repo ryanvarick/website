@@ -1,15 +1,12 @@
 /**
- ryanvarick.com Stylesheet, v16.0.0
- - Readable version: https://www.ryanvarick.com/assets/styles/app.less
- - More info: https://www.ryanvarick.com/colphon
+ Javascript for ryanvarick.com, v16.0.0 (April, 2015)
+  - Readable version at https://www.ryanvarick.com/site/pub/skins/production/assets/js/app.js
+  - More info at https://github.com/ryanvarick/website
 */
 
 /*
-<!-- DEVELOPMENT, REMOVE -->
 <script src="vendor/jquery/dist/jquery.js"></script>
 <script src="vendor/pleasejs/Please.js"></script>
-<script src="https://use.typekit.com/ygu4ods.js"></script>
-<script>try { Typekit.load(); } catch(e) { }</script>
 <script type="text/javascript" src="vendor/hashgrid/hashgrid.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -17,16 +14,20 @@ $(document).ready(function() {
 });
 </script>
 <script src="//localhost:9091"></script>
-<!-- DEVELOPMENT, REMOVE -->
 */
 
-// var jquery = require("jquery");
-// var please = require("please");
-// var typekit = require("typekit");
-// var hashgrid = require("hashgrid");
-// var livereload = require("livereload");
+// Typekit
+//  - @via https://github.com/wired8/typekit-shim
+//  - Inlined here because filename doesn't match module name
+var typekitId = 'ygu4ods';
+window.onload = function initTypekit() {
+    var el = document.createElement('script');
+    el.src = '//use.typekit.net/' + typekitId + '.js';
+    el.onload = function() {
+        Typekit.load();
+        delete window.Typekit;
+    };
+    document.body.appendChild(el);
+}
 
-require("./typekit.js");
-
-try { Typekit.load(); } catch(e) { }
-console.log("App ready!");
+console.log("Javascript initialized.");
