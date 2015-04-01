@@ -20,7 +20,7 @@
 // load retina images
 // - adapted from https://gist.github.com/dannykeane/4754113
 .retina-image(@file, @type, @width, @height, @repeat: no-repeat, @x: 0, @y: 0) {
-    background-image: url('@{file}.@{type}');
+    background-image: url("@{imageDir}@{file}.@{type}");
     background-repeat: @repeat;
     background-position: @x @y;
 

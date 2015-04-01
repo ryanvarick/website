@@ -20,6 +20,7 @@ div.portfolio.placeholder {
 @normal_font_size: @DEFAULT_FONT_SIZE;
 
 section.portfolio {
+.portfolio-cover(@x, @y, @width, @height, @color, @image) {
 
     margin: (@leading * 3) 0;
     position: relative;
@@ -97,36 +98,33 @@ section.portfolio {
 
 }
 
-@portfolio_width: @PAGE_WIDTH;
-
-// @x, @y, @width, @height, @color, @image
-
 div.p1 {
-    .portfolio-cover(0, 0, 200px, 200px, @orange, "../assets/images/cover-br_pub");
-    border-right: none;
+    .portfolio-cover(0, 0, 200px, 200px, @orange, "cover-br_pub");
+    // border-right: none;
 }
 div.p2 {
-    .portfolio-cover(0, 200px, 300px, 100px, @orange, "../assets/images/cover-br_xbox");
-    border-bottom: none;
+    .portfolio-cover(0, 200px, 300px, 100px, @orange, "cover-br_xbox");
+    // border-bottom: none;
 }
 div.p3 {
-    .portfolio-cover(100px, 200px, 300px, 100px, @orange, "../assets/images/cover-br_cms");
+    .portfolio-cover(100px, 200px, 300px, 100px, @orange, "cover-br_cms");
 }
 div.p4 {
-    .portfolio-cover(0, 500px, 300px, 200px, @green, "../assets/images/cover-wf");
-    border-left: none;
+    .portfolio-cover(0, 500px, 300px, 200px, @green, "cover-wf");
+    // border-left: none;
 }
 div.p5 {
-    .portfolio-cover(200px, 0, 400px, 150px, @blue, "../assets/images/cover-nokia");
-    border-top: none;
-    border-right: none;
+    .portfolio-cover(200px, 0, 400px, 150px, @blue, "cover-nokia");
+    // border-top: none;
+    // border-right: none;
 }
 div.p6 {
-    .portfolio-cover(200px, 400px, 200px, 150px, @red, "../assets/images/cover-moto");
-    border-top: none;
-    border-right: none;
+    .portfolio-cover(200px, 400px, 200px, 150px, @red, "cover-moto");
+    // border-top: none;
+    // border-right: none;
 }
 div.p7 {
-    .portfolio-cover(200px, 600px, 200px, 150px, @red, "../assets/images/cover-good");
-    border-top: none;
+    .portfolio-cover(200px, 600px, 200px, 150px, @red, "cover-good");
+    // border-top: none;
+}
 }
