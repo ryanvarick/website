@@ -7,6 +7,7 @@
 
 html, body {
     width: 100%;
+    margin: 0;
 }
 
 body {
@@ -18,20 +19,11 @@ body {
     padding: 0 @gutter;
 }
 
-// FIXME: this might not be compatible with display: table-row, suck
 footer {
-    // .full-bleed();
-}
 
-// header,
-// main,
-// footer section,
-// footer div.temporary-footer-container {
-//
-//     padding: 0;
-//
-//     // mobile needs a little breathing space
-//     @media @mobile {
-//         padding: 0 @gutter;
-//     }
-// }
+    // same breathing room as above, but with edge-to-edge background
+    .full-bleed();
+
+    // additional breathing room between the footer and the content
+    margin-top: (@leading * 3);
+}
