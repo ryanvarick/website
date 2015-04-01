@@ -1,58 +1,14 @@
 /**
-
+ Portfolio-specific styles
 */
 
-// container (base)
 section.portfolio {
-    position: relative;
 
-    // strech container to "full bleed"
-    margin: 0 -@gutter 0 -@gutter;
-
-    // .debug();
-
+    // grid container for desktop only, mobile shows inline
     @media @desktop {
-        // section.portfolio {
-
-            margin: (@leading * 3) 0;
-            position: relative;
-            height: 350px;
-            width: 100%;
-        // }
-    }
-
-}
-
-
-
-
-section.portfolio div {
-    position: absolute;
-
-    &:hover {
-        .fake-hyperlink();
-    }
-}
-
-section.portfolio h3 {
-
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    margin: 0;
-    padding: 10px 0 10px 10px;
-
-    color: @white;
-    font-size: 14px;
-    line-height: 1.0;
-
-    span {
-        display: block;
-        margin: 0;
-        padding: 0;
-        font-size: smaller;
+        position: relative;
+        height: 350px;
+        width: 100%;
     }
 }
 
@@ -69,40 +25,58 @@ section.portfolio h3 {
 */
 .portfolio-cover(@image, @width, @height, @color, @x, @y) {
 
-    height: @height;
-    width: 100%;
-    // mobile
-    border-left: @gutter;
-    border-right: @gutter;
-    // margin: 0 0 (@leading / 2) 0;
-    margin: 0;
-    // appearance
     @accentColor: fade(@color, 90%);
-    // border-top: 5px solid @accentColor;
-    // border-bottom: 1px solid @accentColor;
-    border: 1px solid @accentColor;
+    @textSize: 14px;
 
-
+    // background image and accent color
+    border: 1px solid @color;
     .retina-png(@image, @width, @height);
-    // background-size: cover !important;
 
-    h3 {
-        background: @accentColor;
+    // single column for mobile
+    margin: 0 0 @leading 0;
 
-        // TODO: Tweak text shadow and/or gradient effect
-        // background-image: linear-gradient(lighten(@color, 20%), @accentColor);
-        text-shadow: 1px 1px #333;
-    }
-
-    // use grid values
+    // grid layout for desktop
     @media @desktop {
+        position: absolute;
         top: @x;
         left: @y;
         width: @width;
     }
-}
 
+    // link covers entire area
+    a {
+        display: block;
+        position: relative;
+        height: @height;
+        width: 100%;
 
+        h3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            margin: 0;
+            padding: 10px 0 10px 10px;
+
+            color: @white;
+            font-size: @textSize;
+            line-height: 1.0;
+
+            // TODO: tweak text shadow, gradient effect
+            text-shadow: 1px 1px #333;
+            background-image: linear-gradient(@accentColor, fade(spin(@accentColor, 20%), 90%));
+
+            span {
+                display: block;
+                margin: 0;
+                padding: 0;
+                font-size: smaller;
+            } // end span
+        } // end h3
+    } // end a
+
+} // end .portfolio-cover()
 
 div.p1 {
     .portfolio-cover("cover-br_pub", 200px, 200px, @orange, 0, 0);
