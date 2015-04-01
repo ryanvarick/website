@@ -1,13 +1,14 @@
 {
   "name": "ryanvarick.com",
-  "version": "16.0.0",
-  "author": "Ryan Varick",
   "description": "Website for Ryan Varick",
+  "author": "Ryan Varick <github@ryanvarick.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanvarick/website"
+  },
+  "version": "16.0.0",
   "private": true,
-  "repository": "TBD",
   "readme": "README.md",
-  "license": "TBD",
-  "main": "index.html",
   "scripts": {
     "build:less": "lessc assets/styles/app.less assets/app.css",
     "build:autoprefix": "autoprefixer assets/app.css",
