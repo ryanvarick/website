@@ -11,7 +11,7 @@ body {
     font-family: myriad-pro, "Avenir Next", sans-serif;
 
     // TODO: still necessary?
-    // text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
 }
 
 // only select elements should be bold
@@ -25,9 +25,13 @@ ol { list-style: decimal inside; }
 // links
 a { color: @black; }
 
+section.portfolio a {
+    color: @white;
+}
+
 h2 {
     .colorBurn();
-    .resizeTo(200%);
+    // .resizeTo(200%);
 
     // ANIMATED
     /* autoprefixer: off */ // Requires WebKit only features
@@ -35,6 +39,10 @@ h2 {
     // -webkit-background-clip: text;
     // -webkit-text-fill-color: transparent;
     // -webkit-animation: hue 300s infinite linear;
+}
+
+.headline h2 {
+    line-height: 1.2;
 }
 
 .colorBurn() {
@@ -55,6 +63,17 @@ h2 {
 footer {
     color: white;
     background-image: linear-gradient(@orange, @yellow);
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    svg {
+        height: 1.5em;
+        width: 1.5em;
+        margin: @leading 0;
+    }
 
     // ANIMATED COLOR
     // -webkit-animation: hue 300s infinite linear;
