@@ -6,7 +6,6 @@
 
 /*
 <script src="vendor/jquery/dist/jquery.js"></script>
-<script src="vendor/pleasejs/Please.js"></script>
 <script type="text/javascript" src="vendor/hashgrid/hashgrid.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -20,13 +19,13 @@ $(document).ready(function() {
 //  - @via https://github.com/wired8/typekit-shim
 //  - Inlined here because filename doesn't match module name
 var typekitId = 'ygu4ods';
+var el = document.createElement('script');
+el.src = '//use.typekit.net/' + typekitId + '.js';
+el.onload = function() {
+    Typekit.load();
+    // delete window.Typekit;
+};
 window.onload = function initTypekit() {
-    var el = document.createElement('script');
-    el.src = '//use.typekit.net/' + typekitId + '.js';
-    el.onload = function() {
-        Typekit.load();
-        delete window.Typekit;
-    };
     document.body.appendChild(el);
 }
 

@@ -18,10 +18,8 @@
     "tests"
   ],
   "dependencies": {
-    "hashgrid": "*",
     "fontawesome": "~4.3.0",
-    "normalize.css": "~3.0.2",
-    "jquery": "~2.1.3",
-    "pleasejs": "~0.4.2"
+    "hashgrid": "*",
+    "jquery": "~2.1.3"
   }
 }

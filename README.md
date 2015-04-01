@@ -27,10 +27,26 @@ I don't really like dealing with Bower or NPM either, so here are a few utilitie
 
 ### Notes
 
-* Live reload dies when switching Git branches, which is annoying
+* Watch dies when switching branches (watched files and directories are temporarily removed), but I don't know how to fix
 
-## Dependencies (TBD)
+## Client Dependencies (TBD)
 
 * [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (subset)
 * [Hashgrid](http://hashgrid.com) (replace with something that does not require jQuery)
 * [Normalize.css](https://github.com/necolas/normalize.css)
+* sanitize.css - TBD
+
+## NPM Dependencies
+
+All this junk is used during development or for building.
+
+* "autoprefixer" - Automatically generate CSS vendor prefixes
+* "browserify": - Modules for Javascript
+* "clear": - Clear the screen (used by NPM scripts)
+* [debowerify](https://github.com/eugeneware/debowerify) - Make `require('module')` work with the rat's nest that is Bower
+* "http-server": Small static asset server (used for Live Reload)
+* "less": CSS preprocessor
+* "live-reload": Awesome
+* "parallelshell": Flaky little tool to run multiple NPM scripts in parallel
+* "versiony-cli": Sync `package.json` version to `bower.json`
+* "watch": Watch filesystem for changes
