@@ -1,6 +1,6 @@
-# PmWiki Skin for ryanvarick.com
+# ryanvarick.com
 
-This is the sixteenth major version of my website since 1998. It is currently powered by [PmWiki](http://www.pmwiki.org). This is the skin I am using.
+My website, [ryanvarick.com](https://www.ryanvarick.com), is currently powered by [PmWiki](http://www.pmwiki.org). This is its current skin, the 16th major version since 1998. Eventually I would like to migrate to a Markdown-based wiki like [Jingo](https://github.com/claudioc/jingo).
 
 ## Installation
 
@@ -27,11 +27,10 @@ I don't really like dealing with Bower or NPM either, so here are a few utilitie
 
 ### Notes
 
-* FIXME: Live reload dies when switching Git branches, which is annoying
+* Live reload dies when switching Git branches, which is annoying
 
-## Dependencies
+## Dependencies (TBD)
 
-* Font Awesome (subset)
-* Hashgrid (replace with something that does not require jQuery)
-* Normalize.css
-* Please.js
+* [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (subset)
+* [Hashgrid](http://hashgrid.com) (replace with something that does not require jQuery)
+* [Normalize.css](https://github.com/necolas/normalize.css)
