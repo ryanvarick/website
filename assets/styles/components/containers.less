@@ -4,15 +4,34 @@
 
 // TODO: Move this stuff elsewhere?
 @gutter: @leading;
-@page_width: 800px;
 
 html, body {
     width: 100%;
 }
 
-header,
-main,
-footer section,
-footer div.temporary-footer-container {
+body {
+
+    // Mobile needs breathing room around the edges, but desktop only needs
+    // extra space if the window is fairly small (e.g. mobile landscape).
+    // Otherwise, the padding disappears in the `margin: auto` centering on
+    // other containers.
     padding: 0 @gutter;
 }
+
+// FIXME: this might not be compatible with display: table-row, suck
+footer {
+    // .full-bleed();
+}
+
+// header,
+// main,
+// footer section,
+// footer div.temporary-footer-container {
+//
+//     padding: 0;
+//
+//     // mobile needs a little breathing space
+//     @media @mobile {
+//         padding: 0 @gutter;
+//     }
+// }

@@ -1,130 +1,101 @@
-
-button.download {
-    float: right;
-}
-button.download:after {
-    clear: both;
-}
-
-
-div.portfolio.placeholder {
-    .debug();
-
-    float: left;
-    height: 100px;
-    width: calc(100% / 3);
-}
-
-
-
-@normal_font_size: @DEFAULT_FONT_SIZE;
+/**
+ Portfolio-specific styles
+*/
 
 section.portfolio {
-.portfolio-cover(@x, @y, @width, @height, @color, @image) {
 
-    margin: (@leading * 3) 0;
-    position: relative;
-    height: 350px;
-    width: 100%;
-
-
-    h3 {
-
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        // right: 10px;
-        right: 0;
-        // width: 100%;
-        // height: 40px;
-
-        // background: black;
-        color: @white;
-
-        font-size: 14px;
-        margin: 0;
-        padding: 10px 0 10px 10px;
-        line-height: 1.0;
-        // background-color: rgba(255, 255, 255, 0.80);
-
-        // .colorBurn();
-        span {
-            font-size: smaller;
-            display: block;
-            margin: 0;
-            padding: 0;
-        }
-    }
-
-    div {
-        // border: 1px solid white;
-        // background: #eeeeee;
-        position: absolute;
-
-        &:hover {
-            .fake-hyperlink();
-            // border-bottom: 3px solid @orange;
-        }
-    }
-}
-
-.portfolio-bg(@color: @black) {
-    h3 {
-        background: fade(@color, 60%);
+    // grid container for desktop only, mobile shows inline
+    @media @desktop {
+        position: relative;
+        height: 350px;
+        width: 100%;
     }
 }
 
 
-.portfolio-cover(@x, @y, @width, @height, @color, @image) {
+/**
+ Style portfolio cover images for desktop, mobile, Retina, and non-Retina
 
-    // positioning
-    top: @x;
-    left: @y;
+ @param {string} image name (do not include the path, file extension, or @2x)
+ @param {length} width of the image
+ @param {length} height of the image
+ @param {color} accent color
+ @param {length} x-coordinate to position the image
+ @param {length} y-coordinate to position the image
+*/
+.portfolio-cover(@image, @width, @height, @color, @x, @y) {
 
-    // size
-    height: @height;
-    width: @width;
-
-    // appearance
     @accentColor: fade(@color, 90%);
-    border: 1px solid @accentColor;
+    @textSize: 14px;
+
+    // background image and accent color
+    border: 1px solid @color;
     .retina-png(@image, @width, @height);
 
-    h3 {
-        background: @accentColor;
-        text-shadow: 1px 1px #333; // TBD color
-        // background-image: linear-gradient(lighten(@color, 20%), @color2);
+    // single column for mobile
+    margin: 0 0 @leading 0;
+
+    // grid layout for desktop
+    @media @desktop {
+        position: absolute;
+        top: @x;
+        left: @y;
+        width: @width;
     }
 
-}
+    // link covers entire area
+    a {
+        display: block;
+        position: relative;
+        height: @height;
+        width: 100%;
+
+        h3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            margin: 0;
+            padding: 10px 0 10px 10px;
+
+            color: @white;
+            font-size: @textSize;
+            line-height: 1.0;
+
+            // TODO: tweak text shadow, gradient effect
+            text-shadow: 1px 1px #333;
+            background-image: linear-gradient(@accentColor, fade(spin(@accentColor, 20%), 90%));
+
+            span {
+                display: block;
+                margin: 0;
+                padding: 0;
+                font-size: smaller;
+            } // end span
+        } // end h3
+    } // end a
+
+} // end .portfolio-cover()
 
 div.p1 {
-    .portfolio-cover(0, 0, 200px, 200px, @orange, "cover-br_pub");
-    // border-right: none;
+    .portfolio-cover("cover-br_pub", 200px, 200px, @orange, 0, 0);
 }
 div.p2 {
-    .portfolio-cover(0, 200px, 300px, 100px, @orange, "cover-br_xbox");
-    // border-bottom: none;
+    .portfolio-cover("cover-br_xbox", 300px, 100px, @orange, 0, 200px);
 }
 div.p3 {
-    .portfolio-cover(100px, 200px, 300px, 100px, @orange, "cover-br_cms");
+    .portfolio-cover("cover-br_cms", 300px, 100px, @orange, 100px, 200px);
 }
 div.p4 {
-    .portfolio-cover(0, 500px, 300px, 200px, @green, "cover-wf");
-    // border-left: none;
+    .portfolio-cover("cover-wf", 300px, 200px, @green, 0, 500px);
 }
 div.p5 {
-    .portfolio-cover(200px, 0, 400px, 150px, @blue, "cover-nokia");
-    // border-top: none;
-    // border-right: none;
+    .portfolio-cover("cover-nokia", 400px, 150px, @blue, 200px, 0);
 }
 div.p6 {
-    .portfolio-cover(200px, 400px, 200px, 150px, @red, "cover-moto");
-    // border-top: none;
-    // border-right: none;
+    .portfolio-cover("cover-moto", 200px, 150px, @red, 200px, 400px);
 }
 div.p7 {
-    .portfolio-cover(200px, 600px, 200px, 150px, @red, "cover-good");
-    // border-top: none;
-}
+    .portfolio-cover("cover-good", 200px, 150px, @red, 200px, 600px);
 }
