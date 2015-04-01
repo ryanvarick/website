@@ -1,101 +1,43 @@
+/**
 
-button.download {
-    float: right;
-}
-button.download:after {
-    clear: both;
-}
+*/
 
-
-div.portfolio.placeholder {
-    .debug();
-
-    float: left;
-    height: 100px;
-    width: calc(100% / 3);
-}
-
-
-
-@normal_font_size: @DEFAULT_FONT_SIZE;
-
-section.portfolio {
 .portfolio-cover(@x, @y, @width, @height, @color, @image) {
 
-    margin: (@leading * 3) 0;
-    position: relative;
-    height: 350px;
+    height: @height;
     width: 100%;
 
+    @media @desktop {
+        // positioning
+        top: @x;
+        left: @y;
 
-    h3 {
-
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        // right: 10px;
-        right: 0;
-        // width: 100%;
-        // height: 40px;
-
-        // background: black;
-        color: @white;
-
-        font-size: 14px;
-        margin: 0;
-        padding: 10px 0 10px 10px;
-        line-height: 1.0;
-        // background-color: rgba(255, 255, 255, 0.80);
-
-        // .colorBurn();
-        span {
-            font-size: smaller;
-            display: block;
-            margin: 0;
-            padding: 0;
-        }
+        // size
+        // height: @height;
+        width: @width;
     }
 
-    div {
-        // border: 1px solid white;
-        // background: #eeeeee;
-        position: absolute;
-
-        &:hover {
-            .fake-hyperlink();
-            // border-bottom: 3px solid @orange;
-        }
-    }
-}
-
-.portfolio-bg(@color: @black) {
-    h3 {
-        background: fade(@color, 60%);
-    }
-}
-
-
-.portfolio-cover(@x, @y, @width, @height, @color, @image) {
-
-    // positioning
-    top: @x;
-    left: @y;
-
-    // size
-    height: @height;
-    width: @width;
 
     // appearance
     @accentColor: fade(@color, 90%);
+    // border-top: 5px solid @accentColor;
+    // border-bottom: 1px solid @accentColor;
     border: 1px solid @accentColor;
+
+    background-size: cover !important;
     .retina-png(@image, @width, @height);
+
+    // mobile
+    border-left: @gutter;
+    border-right: @gutter;
+    // margin: 0 0 (@leading / 2) 0;
+    margin: 0;
 
     h3 {
         background: @accentColor;
-        text-shadow: 1px 1px #333; // TBD color
+        text-shadow: 1px 1px #333; // TODO: Tweak color values
         // background-image: linear-gradient(lighten(@color, 20%), @color2);
     }
-
 }
 
 div.p1 {
@@ -127,4 +69,63 @@ div.p7 {
     .portfolio-cover(200px, 600px, 200px, 150px, @red, "cover-good");
     // border-top: none;
 }
+
+section.portfolio {
+    position: relative;
+
+    // strech container to "full bleed"
+    margin: 0 -@gutter 0 -@gutter;
+
+    // .debug();
+}
+
+section.portfolio div {
+    position: relative;
+}
+
+section.portfolio h3 {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: 0;
+    padding: 10px 0 10px 10px;
+
+    color: @white;
+    font-size: 14px;
+    line-height: 1.0;
+
+    span {
+        display: block;
+        margin: 0;
+        padding: 0;
+        font-size: smaller;
+    }
+}
+
+
+@media @desktop {
+    section.portfolio {
+
+        margin: (@leading * 3) 0;
+        position: relative;
+        height: 350px;
+        width: 100%;
+
+
+
+        div {
+            // border: 1px solid white;
+            // background: #eeeeee;
+            position: absolute;
+
+            &:hover {
+                .fake-hyperlink();
+                // border-bottom: 3px solid @orange;
+            }
+        }
+    }
+
 }
