@@ -2,24 +2,15 @@
  Sticky footer - Ensure that the footer attaches to the bottom of the page or
  the bottom of the browser, whichever is greater
 
- @via http://colintoh.com/blog/display-table-anti-hero
+ @via http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 */
 
-html, body {
-    display: table;
-    height: 100%;
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 main {
-    height: 100%;
-}
-
-header,
-footer {
-    display: table-row;
-
-    // This acts like `min-height`: "Rows" subtract from `main`'s 100% height
-    // until it hits its minimum height, then the page will scroll. Rows will
-    // still grow as necessary. `min-height` doesn't do anything.
-    height: 1em;
+    flex: 1;
 }
