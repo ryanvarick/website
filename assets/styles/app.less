@@ -9,40 +9,32 @@
 @import "base/reset.less";                  // browser reset
 @import "base/colors.less";                 // colors and color functions
 @import "base/media_queries.less";          // breakpoint definitions
+@import "base/utilities.less";              // useful mixins
 
 @import "components/box_model.less";        // sane box model
 @import "components/baseline_grid.less";    // vertical rhythm
-@import "components/sticky_footer.less";    // footer position
-
-@import "components/utilities.less";        // useful utilities
-
-
-
+@import "components/skeleton_forms.less";  // TBD: Skeleton's form styling
+// typography (gutter, leading)
 // @import "components/font-awesome.less";
 
-
-@PAGE_WIDTH: 800px;
-
-
-
+@import "components/sticky_footer.less";    // footer position
+@import "components/containers.less";       // general layout
 @import "components/header.less";      // general header
 @import "components/footer.less";      // general footer
 
+@import "components/pmwiki.less";                // PmWiki-specific styles
+
+// TODO: Replace Hashgrid with something else
+@import "components/hashgrid.less";
+
+
+
 // @import "views/mobile.less";                 // mobile-specific styles
-// @import "views/desktop.less";          // desktop-specific styles
-@import "views/print.less";                  // print-specific styles (resume)
+@import "views/desktop.less";          // desktop-specific styles
+// @import "views/print.less";                  // print-specific styles (resume)
+
 
 @import "themes/default.less";         // default theme
 
 
-@import "components/skeleton_forms.less";  // TBD: Skeleton's form styling
-
-@import "components/pmwiki.less";                // PmWiki-specific styles
-
-@media @desktop {
-    @import "components/portfolio.less";    // yeah
-}
-
-
-// TODO: Replace Hashgrid with something else
-@import "components/hashgrid.less";
+@import "components/portfolio.less";    // yeah

@@ -8,9 +8,6 @@
 html, body {
     display: table;
     height: 100%;
-
-    // TODO: Move this somewhere else, it is not necessary for the sticky footer
-    width: 100%;
 }
 
 main {
@@ -22,7 +19,7 @@ footer {
     display: table-row;
 
     // This acts like `min-height`: "Rows" subtract from `main`'s 100% height
-    // until it hits its minimum height, then the page will scroll. Rows also
-    // grow as necessary. `min-height` doesn't seem to do anything.
+    // until it hits its minimum height, then the page will scroll. Rows will
+    // still grow as necessary. `min-height` doesn't do anything.
     height: 1em;
 }
