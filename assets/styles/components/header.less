@@ -2,20 +2,6 @@
  Header
 */
 
-header {
-    .hide();
-    // margin: 0;
-    // padding: (@leading * 2) 0 @leading 0;
-
-    svg {
-        // TBD
-        // .hide();
-        height: @leading;
-        width: @leading;
-        float: left;
-    }
-}
-
 header h1 {
     .hide();
 
@@ -25,6 +11,10 @@ header h1 {
         font-weight: 300;
         text-transform: uppercase;
     }
+}
+
+header svg {
+    .hide();
 }
 
 header ul {
@@ -43,15 +33,6 @@ header li {
 
     &.active {
         // border-top: 2px solid @black;
-        font-weight: @STRONG_FONT_WEIGHT;
+        // font-weight: @STRONG_FONT_WEIGHT;
     }
-}
-
-header a {
-    text-decoration: none;
-}
-
-header h2 {
-    border-top: 1px solid @orange;
-    border-bottom: 1px solid @orange;
 }

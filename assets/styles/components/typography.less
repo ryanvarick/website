@@ -1,0 +1,33 @@
+/**
+ Typography
+*/
+
+@gutter: @leading;
+@normal_font_weight:  300;
+@strong_font_weight:  500;
+
+body {
+    color: @black;
+    font-family: myriad-pro, "Avenir Next", sans-serif;
+
+    // TODO: still necessary?
+    // text-rendering: optimizeLegibility;
+}
+
+// only select elements should be bold
+* { font-weight: @normal_font_weight; }
+strong { font-weight: @strong_font_weight; }
+
+// lists
+ul { list-style: circle inside;  }
+ol { list-style: decimal inside; }
+
+// links
+a {
+    color: @black;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+}

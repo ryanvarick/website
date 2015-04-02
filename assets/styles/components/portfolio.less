@@ -99,3 +99,43 @@ div.p6 {
 div.p7 {
     .portfolio-cover("cover-good", 200px, 150px, @red, 200px, 600px);
 }
+
+
+// TODO: Margins?
+div.headline,
+div.portfolio-navigation {
+    // .full-bleed();
+
+    margin-top: (@leading * 2);
+    // margin-bottom: @leading;
+    padding-top: @leading;
+    padding-bottom: @leading;
+
+    border-top: 1px solid @orange;
+    border-bottom: 1px solid @orange;
+}
+
+// FIXME: MOVE THIS SOMEWHERE ELSE?
+
+img {
+    border: 1px solid @orange;
+
+    // constrain image sizes on mobile
+    @media @mobile {
+        max-width: 100%;
+    }
+}
+
+p.caption {
+
+    // margin-top: 0;
+    color: @orange;
+
+    @media @desktop {
+        font-size: smaller;
+    }
+}
+
+span.year {
+    font-size: smaller;
+}

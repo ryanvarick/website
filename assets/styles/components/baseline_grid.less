@@ -32,8 +32,8 @@
 // - modifiers: [xx-small, xx-large], smaller, larger
 
 
-@DEFAULT_FONT_SIZE:   15px;
-@DEFAULT_LINE_HEIGHT: 1.618;
+@default_font_size:   15px;
+@default_line_height: 1.618;
 
 // The leading defines the height of one line of text, including margin, at the
 // base font size. Smaller text should have its line height adjusted so that it
@@ -43,7 +43,7 @@
 // That's really all there is to it: Adjust line heights and margins such that
 // text of mixed sizes stays between the lines. The complexity comes from how
 // all the various units work, and some differences between browsers.
-@exact_leading: @DEFAULT_FONT_SIZE * @DEFAULT_LINE_HEIGHT;
+@exact_leading: @default_font_size * @default_line_height;
 @leading: @exact_leading;          // firefox
 @leading: floor(@exact_leading);   // chrome/safari (TBD: IE)
 
@@ -53,14 +53,14 @@
 // NOTE: Pixel jog vs. self-correcting grid (go with that)
 
 body {
-    font-size: @DEFAULT_FONT_SIZE;
-    line-height: @DEFAULT_LINE_HEIGHT;
+    font-size: @default_font_size;
+    line-height: @default_line_height;
 }
 
 // lobotomized owl
 // - @via http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
 * + * {
-    margin-top: @leading;
+    // margin-top: @leading;
 }
 
 // default user agent stylesheet assigns a 1em top margin
@@ -83,23 +83,23 @@ li > *:not(ol):not(ul) {
 
 
 h1, h2 {
-    .resizeTo(200%);
+    // .resizeTo(200%);
 }
 
 h3 {
-    .resizeTo(150%);
+    // .resizeTo(150%);
 }
 
 h4 {
-    .resizeTo(80%);
+    // .resizeTo(80%);
 }
 
 h5 {
-    .resizeTo(100%);
+    // .resizeTo(100%);
 }
 
 h6 {
-    .resizeTo(50%);
+    // .resizeTo(50%);
 }
 
 
@@ -109,10 +109,10 @@ h6 {
     @percent: unit(@scale) / 100;
 
     // determine the new font size (e.g. 15px * 1.5 = 22.5px)
-    @new-font-size: @DEFAULT_FONT_SIZE * @percent;
+    @new-font-size: @default_font_size * @percent;
 
     // determine the size of a line with the new font size (e.g. 22.5px * 1.5 = 33.75px)
-    @new-line-size: @new-font-size * @DEFAULT_LINE_HEIGHT;
+    @new-line-size: @new-font-size * @default_line_height;
 
     // determine, as a whole number, how many base lines the new font uses
     @lines-used: ceil(unit(@new-line-size) / unit(@leading));

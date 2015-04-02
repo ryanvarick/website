@@ -29,27 +29,37 @@ p.download-resume {
 
 @PRIMARY_WIDTH: 30em;
 @SECONDARY_WIDTH: 18em;
-@gutter: @leading;
 
-div.primary
-{
-  display: inline-block;
-  width: @PRIMARY_WIDTH;
-  margin-right: @gutter;
-  vertical-align: top;
-}
+@media @desktop {
+    div.primary
+    {
+      display: inline-block;
+      width: @PRIMARY_WIDTH;
+      margin-right: @gutter;
+      vertical-align: top;
+    }
 
-div.secondary
-{
-  display: inline-block;
-  width: @SECONDARY_WIDTH;
-  vertical-align: top;
-}
+    div.secondary
+    {
+      display: inline-block;
+      width: @SECONDARY_WIDTH;
+      vertical-align: top;
 
-div.secondary.resume {
-    h2, h3 {
-        font-size: 100%;
-        color: @black;
+      h2 {
+            font-size: 100%;
+      }
+
+      li {
+          list-style: none;
+      }
+    }
+
+    div.secondary.resume {
+        h2, h3 {
+            font-size: 100%;
+            color: @black;
+        }
+
     }
 
 }

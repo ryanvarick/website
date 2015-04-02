@@ -3,56 +3,85 @@
 */
 
 footer {
-    vertical-align: baseline;
-}
+    padding-top: @leading;
+    padding-bottom: @leading;
 
-footer p.contact {
-    text-align: center;
-    margin: 0 0 @leading 0;
+    ul {
+        // margin: 0
+    }
+    li {
+        list-style: none;
+    }
 }
 
 footer svg {
-    float: left;
     height: 1.5em;
     width: 1.5em;
-    margin: 0 @gutter 0 0;
+    margin: 0 (@gutter / 2) 0 0;
+    // .debug();
 }
 
-// social icons
-footer ul {
+footer p.description {
+    display: inline;
+    // .debug();
+}
 
-    margin: @leading 0;
-    padding: 0;
-
-    @media @mobile {
-        text-align: center;
-    }
+ul.contact {
+    float: right;
 
     li {
         display: inline-block;
-        list-style: none;
-
-        a {
-            display: block;
-            padding: (@leading / 2) (@gutter / 2);
-
-            // buttonize
-            @media @mobile {
-                border: 1px solid white;
-            }
-        }
     }
-
-    // except for Twitter, only show icons
-    li:not(.twitter) span {
-        display: none;
-    }
-
-
-
-
-    // gutter between icons
-    li:not(:last-child) {
-        // margin-right: @gutter;
+    li:last-child:before {
+        content: "\2022 ";
+        margin: 0 (@gutter / 2);
     }
 }
+
+
+
+
+//
+// footer p.contact {
+//     text-align: center;
+//     margin: 0 0 @leading 0;
+// }
+
+// // social icons
+// footer ul {
+//
+//     margin: @leading 0;
+//     padding: 0;
+//
+//     @media @mobile {
+//         text-align: center;
+//     }
+//
+//     li {
+//         display: inline-block;
+//         list-style: none;
+//
+//         a {
+//             display: block;
+//             padding: (@leading / 2) (@gutter / 2);
+//
+//             // buttonize
+//             @media @mobile {
+//                 border: 1px solid white;
+//             }
+//         }
+//     }
+//
+//     // except for Twitter, only show icons
+//     li:not(.twitter) span {
+//         display: none;
+//     }
+//
+//
+//
+//
+//     // gutter between icons
+//     li:not(:last-child) {
+//         // margin-right: @gutter;
+//     }
+// }

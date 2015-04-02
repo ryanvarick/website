@@ -3,30 +3,17 @@
 */
 
 // configuration
-@NORMAL_FONT_WEIGHT:  300;
-@STRONG_FONT_WEIGHT:  500;
-
-body {
-    color: @black;
-    font-family: myriad-pro, "Avenir Next", sans-serif;
-
-    // TODO: still necessary?
-    text-rendering: optimizeLegibility;
-}
-
-// only select elements should be bold
-* { font-weight: @NORMAL_FONT_WEIGHT; }
-strong { font-weight: @STRONG_FONT_WEIGHT; }
-
-// lists
-ul { list-style: circle inside;  }
-ol { list-style: decimal inside; }
-
-// links
-a { color: @black; }
 
 section.portfolio a {
     color: @white;
+}
+
+code {
+    background: @light_grey;
+
+    // taken from Github
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: smaller;
 }
 
 h2 {
