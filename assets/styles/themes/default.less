@@ -2,7 +2,22 @@
  Default theme
 */
 
+@topColor: @orange;
+@bottomColor: @yellow;
+
 // configuration
+
+img {
+    border: 1px solid @topColor;
+}
+p.caption {
+    color: @topColor;
+}
+div.headline,
+div.portfolio-navigation {
+    border-top: 1px solid @topColor;
+    border-bottom: 1px solid @topColor;
+}
 
 section.portfolio a {
     color: @white;
@@ -37,8 +52,8 @@ h2 {
     -webkit-text-fill-color: transparent;
 
     /* autoprefixer: off */ // Requires WebKit only features
-    background-image: -webkit-linear-gradient(270deg, @orange, @yellow);
-    color: @orange; // fallback for non-WK browsers
+    background-image: -webkit-linear-gradient(270deg, @topColor, @bottomColor);
+    color: @topColor; // fallback for non-WK browsers
 
     // // http://thecodeplayer.com/walkthrough/animating-css3-gradients
     // background-image: linear-gradient(
@@ -49,7 +64,7 @@ h2 {
 
 footer {
     color: white;
-    background-image: linear-gradient(@orange, @yellow);
+    background-image: linear-gradient(@topColor, @bottomColor);
 
     a {
         color: inherit;
