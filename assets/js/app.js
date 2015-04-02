@@ -30,3 +30,7 @@ window.onload = function initTypekit() {
 }
 
 console.log("Javascript initialized.");
+
+// Retina.js
+var retina = require('retinajs')
+retina.Retina.init(window);
