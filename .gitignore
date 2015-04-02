@@ -1,8 +1,4 @@
+dist/*
 vendor/*
-assets/app.css
-assets/app.js
-assets/fonts/*
-assets/images/*
-assets/styles/experimental/*
-experimental/*
+**/experimental/*
 SCRATCH.md
