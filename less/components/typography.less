@@ -6,6 +6,14 @@
 @normal_font_weight:  300;
 @strong_font_weight:  500;
 
+// @import "components/font-awesome.less";
+// - fa-font-path is defined relative to current URL
+// - FIXME: Use `import (reference)` and `:extend` to cut down file size?
+// - FIXME: Serve subset of icon font? Serve icon font inline?
+@import "../../vendor/fontawesome/less/font-awesome.less";
+@fa-font-path: "fonts";
+
+
 body {
     color: @black;
     font-family: myriad-pro, "Avenir Next", sans-serif;
@@ -27,9 +35,6 @@ a {
     color: @black;
     text-decoration: underline;
 }
-
-
-/////// GRID
 
 // * + * {
 //     margin-top: @leading;

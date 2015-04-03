@@ -1,12 +1,8 @@
 /**
- General layout
+ Overall page layout
+
+ For the container grid system, check out `container_grid.less`.
 */
-
-
-
-// TODO: Move this stuff elsewhere?
-@page_width: 800px;
-@gutter: @leading;
 
 html, body {
     width: 100%;
@@ -17,8 +13,8 @@ body {
 
     // Mobile needs breathing room around the edges, but desktop only needs
     // extra space if the window is fairly small (e.g. mobile landscape).
-    // Otherwise, the padding disappears in the `margin: auto` centering on
-    // other containers.
+    // Using padding ensures the space disappears in the `margin: auto` centering
+    // of the other containers.
     padding: 0 @gutter;
 }
 

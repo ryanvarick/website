@@ -1,45 +1,23 @@
 /**
  Grid system for containers
 
- For typographic vertical rhythm, check out `baseline_grid.less`.
+ For typographic vertical rhythm, check out `baseline_grid.less`. For the overall
+ page layout, check out `containers.less`.
 */
 
-
-// @primary_container_width: 30em;
-// @secondary_container_width: 18em;
-// @primary_container_width: floor((@page_width * 0.618) - (@gutter * 2  ));
-// @secondary_container_width: floor((@page_width - @primary_container_width));
-@primary_container_width: (@page_width * 0.618);
-@secondary_container_width: (@page_width - @primary_container_width);
+@primary_container_width: @page_width * 0.618;
+@secondary_container_width: @page_width - @primary_container_width;
 
 @media @desktop {
 
+    // left/right golden ratio grid
     div.primary {
         display: table-cell;
         width: @primary_container_width;
         padding-right: (@gutter * 2);
     }
-
-    div.secondary
-    {
+    div.secondary {
         display: table-cell;
         width: @secondary_container_width;
-
-    //   h2 {
-    //         font-size: 100%;
-    //   }
-
-    //   li {
-    //       list-style: none;
-    //   }
     }
-
-    // div.secondary.resume {
-    //     h2, h3 {
-    //         font-size: 100%;
-    //         color: @black;
-    //     }
-    //
-    // }
-
 }

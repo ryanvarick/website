@@ -1,35 +1,29 @@
 /*! Stylesheet for ryanvarick.com | v16.0.0 (April, 2015) | https://github.com/ryanvarick.com/website */
 
+@page_width: 800px;
 @imageDir: "/uploads/";
+
+// TODO: gutter, leading
+// TODO: line height, base font size
 
 @import "base/reset.less";                  // browser reset
 @import "base/media_queries.less";          // breakpoint definitions
 @import "base/colors.less";                 // colors and color functions
 @import "base/utilities.less";              // useful mixins
 
-@import "components/baseline_grid.less";    // typographic vertical rhythm
+@import "components/sticky_footer.less";    // sticky footer
+@import "components/containers.less";       // overall page layout
 @import "components/container_grid.less";   // grid system for containers
-@import "components/typography.less";
-@import "components/font-awesome.less";
+@import "components/baseline_grid.less";    // typographic vertical rhythm (WIP)
+@import "components/typography.less";       // general typography (WIP)
+@import "components/skeleton_forms.less";   // Skeleton's form styles (WIP)
+@import "components/hashgrid.less";         // HashGrid (TODO: Replace this)
+@import "components/print.less";            // print styles
 
-@import "components/skeleton_forms.less";  // TBD: Skeleton's form styling
+@import "components/header.less";           // header-specific styles
+@import "components/footer.less";           // footer-specific styles
+@import "components/portfolio.less";        // portfolio-specific styles
+@import "components/resume.less";           // resume-specific styles
+@import "components/pmwiki.less";           // PmWiki-specific styles
 
-@import "components/sticky_footer.less";    // footer position
-@import "components/containers.less";       // general layout
-
-@import "components/header.less";      // general header
-@import "components/footer.less";      // general footer
-
-@import "components/pmwiki.less";                // PmWiki-specific styles
-
-// TODO: Replace Hashgrid with something else
-@import "components/hashgrid.less";
-
-// @import "views/print.less";                  // print-specific styles (resume)
-
-
-@import "themes/default.less";         // default theme
-
-
-@import "components/portfolio.less";    // yeah
-@import "components/resume.less";    // yeah
+@import "themes/default.less";              // color scheme, etc.
