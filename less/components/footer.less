@@ -3,85 +3,49 @@
 */
 
 footer {
+
     padding-top: @leading;
-    padding-bottom: @leading;
+    padding-bottom: (@leading * 2);
 
-    ul {
-        // margin: 0
+    h3,
+    hr {
+
+        // hide accessbility markup
+        .hide();
     }
-    li {
-        list-style: none;
-    }
 }
 
-footer svg {
-    height: 1.5em;
-    width: 1.5em;
-    margin: 0 (@gutter / 2) 0 0;
-    // .debug();
+footer li {
+    list-style: none;
 }
 
-footer p.description {
-    display: inline;
-    // .debug();
+footer .links a {
+
+    // add a little extra styling to navigation links
+    text-decoration: underline;
 }
 
-ul.contact {
-    float: right;
+ul.social {
 
+    // show social links inline, and give all but the first one (Twitter)
+    // a little extra horizontal breathing room
     li {
         display: inline-block;
+
+        a {
+            display: block;
+            padding: 0 (@gutter / 2);
+        }
     }
-    li:last-child:before {
-        content: "\2022 ";
-        margin: 0 (@gutter / 2);
+    li:first-child a {
+        padding: 0 (@gutter / 2) 0 0;
+    }
+
+    @media @mobile {
+
+        // except for Twitter, only show icons
+        li:not(:first-child) span {
+            display: none;
+        }
     }
 }
-
-
-
-
-//
-// footer p.contact {
-//     text-align: center;
-//     margin: 0 0 @leading 0;
-// }
-
-// // social icons
-// footer ul {
-//
-//     margin: @leading 0;
-//     padding: 0;
-//
-//     @media @mobile {
-//         text-align: center;
-//     }
-//
-//     li {
-//         display: inline-block;
-//         list-style: none;
-//
-//         a {
-//             display: block;
-//             padding: (@leading / 2) (@gutter / 2);
-//
-//             // buttonize
-//             @media @mobile {
-//                 border: 1px solid white;
-//             }
-//         }
-//     }
-//
-//     // except for Twitter, only show icons
-//     li:not(.twitter) span {
-//         display: none;
-//     }
-//
-//
-//
-//
-//     // gutter between icons
-//     li:not(:last-child) {
-//         // margin-right: @gutter;
-//     }
-// }
