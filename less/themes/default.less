@@ -49,18 +49,21 @@ main h2 {
 }
 
 .colorBurn() {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 
-    /* autoprefixer: off */ // Requires WebKit only features
-    background-image: -webkit-linear-gradient(270deg, @topColor, @bottomColor);
-    color: @topColor; // fallback for non-WK browsers
+    @media screen {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 
-    // // http://thecodeplayer.com/walkthrough/animating-css3-gradients
-    // background-image: linear-gradient(
-    //     rgba(red(@orange), green(@orange), blue(@orange), 1.0),
-    //     rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
-    // );
+        /* autoprefixer: off */ // Requires WebKit only features
+        background-image: -webkit-linear-gradient(270deg, @topColor, @bottomColor);
+        color: @topColor; // fallback for non-WK browsers
+
+        // // http://thecodeplayer.com/walkthrough/animating-css3-gradients
+        // background-image: linear-gradient(
+        //     rgba(red(@orange), green(@orange), blue(@orange), 1.0),
+        //     rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
+        // );
+    }
 }
 
 footer {
