@@ -2,13 +2,18 @@
  Portfolio
 */
 
-section.portfolio {
+ul.portfolio-container {
+
+    li {
+        list-style: none;
+    }
 
     // grid container for desktop only, mobile shows inline
     @media @desktop {
         position: relative;
         height: 350px;
         width: 100%;
+        margin: (@leading * 2) 0 0 0;
     }
 }
 
@@ -56,54 +61,54 @@ section.portfolio {
         position: relative;
         height: @height;
         width: 100%;
+    }
 
-        h3 {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+    a > span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
 
+        margin: 0;
+        padding: 10px 0 10px 10px;
+
+        color: @white;
+        font-size: @textSize;
+        line-height: 1.0;
+
+        // TODO: tweak text shadow, gradient effect
+        text-shadow: 1px 1px #333;
+        background-image: linear-gradient(@accentColor, fade(spin(@accentColor, 20%), 90%));
+
+        span {
+            display: block;
             margin: 0;
-            padding: 10px 0 10px 10px;
-
-            color: @white;
-            font-size: @textSize;
-            line-height: 1.0;
-
-            // TODO: tweak text shadow, gradient effect
-            text-shadow: 1px 1px #333;
-            background-image: linear-gradient(@accentColor, fade(spin(@accentColor, 20%), 90%));
-
-            span {
-                display: block;
-                margin: 0;
-                padding: 0;
-                font-size: smaller;
-            } // end span
-        } // end h3
-    } // end a
+            padding: 0;
+            font-size: smaller;
+        } // end span
+    } // end a > span
 
 } // end .portfolio-cover()
 
-div.p1 {
+li.p1 {
     .portfolio-cover("portfolio-cover-br_pub", 200px, 200px, @orange, 0, 0);
 }
-div.p2 {
+li.p2 {
     .portfolio-cover("portfolio-cover-br_xbox", 300px, 100px, @orange, 0, 200px);
 }
-div.p3 {
+li.p3 {
     .portfolio-cover("portfolio-cover-br_cms", 300px, 100px, @orange, 100px, 200px);
 }
-div.p4 {
+li.p4 {
     .portfolio-cover("portfolio-cover-wf", 300px, 200px, @green, 0, 500px);
 }
-div.p5 {
+li.p5 {
     .portfolio-cover("portfolio-cover-nokia", 400px, 150px, @blue, 200px, 0);
 }
-div.p6 {
+li.p6 {
     .portfolio-cover("portfolio-cover-moto", 200px, 150px, @red, 200px, 400px);
 }
-div.p7 {
+li.p7 {
     .portfolio-cover("portfolio-cover-good", 200px, 150px, @red, 200px, 600px);
 }
 
