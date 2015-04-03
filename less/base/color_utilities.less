@@ -1,0 +1,62 @@
+/**
+ Color utilities
+
+ See `swatches.html`
+*/
+
+.red { background: @red; }
+.orange { background: @orange; }
+.yellow { background: @yellow; }
+.green { background: @green; }
+.blue { background: @blue; }
+.purple { background: @purple; }
+
+.grey1 { background: @grey1; }
+.grey2 { background: @grey2; }
+.grey3 { background: @grey3; }
+.grey4 { background: @grey4; }
+.grey5 { background: @grey5; }
+.grey6 { background: @grey6; }
+.grey7 { background: @grey7; }
+.grey8 { background: @grey8; }
+.grey9 { background: @grey9; }
+
+.red-purple { .gradient(@red, @purple); }
+.red-blue { .gradient(@red, @blue); }
+.red-green { .gradient(@red, @green); }
+.red-yellow { .gradient(@red, @yellow); }
+.red-orange { .gradient(@red, @orange); }
+
+.orange-purple { .gradient(@orange, @purple); }
+.orange-blue { .gradient(@orange, @blue); }
+.orange-green { .gradient(@orange, @green); }
+.orange-yellow { .gradient(@orange, @yellow); }
+.orange-red { .gradient(@orange, @red); }
+
+.yellow-purple { .gradient(@yellow, @purple); }
+.yellow-blue { .gradient(@yellow, @blue); }
+.yellow-green { .gradient(@yellow, @green); }
+.yellow-red { .gradient(@yellow, @red); }
+.yellow-orange { .gradient(@yellow, @orange); }
+
+.green-purple { .gradient(@green, @purple); }
+.green-blue { .gradient(@green, @blue); }
+.green-red { .gradient(@green, @red); }
+.green-yellow { .gradient(@green, @yellow); }
+.green-orange { .gradient(@green, @orange); }
+
+.blue-purple { .gradient(@blue, @purple); }
+.blue-red { .gradient(@blue, @red); }
+.blue-green { .gradient(@blue, @green); }
+.blue-yellow { .gradient(@blue, @yellow); }
+.blue-orange { .gradient(@blue, @orange); }
+
+.purple-red { .gradient(@purple, @red); }
+.purple-blue { .gradient(@purple, @blue); }
+.purple-green { .gradient(@purple, @green); }
+.purple-yellow { .gradient(@purple, @yellow); }
+.purple-orange { .gradient(@purple, @orange); }
+
+.gradient(@color1, @color2) {
+    background-image: linear-gradient(@color1, @color2);
+}
