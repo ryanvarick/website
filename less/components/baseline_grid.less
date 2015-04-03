@@ -57,50 +57,50 @@ body {
     line-height: @default_line_height;
 }
 
-// lobotomized owl
-// - @via http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
-* + * {
-    // margin-top: @leading;
-}
-
-// default user agent stylesheet assigns a 1em top margin
-p:first-child {
-    margin-top: 0;
-}
-
-// exception: list items, stacked divs
-li + li,
-div + div {
-    margin-top: 0;
-}
-
-// fix for inline elements, which sometimes break the grid by a pixel
-// - do not try to "fix" nested lists
-p > *,
-li > *:not(ol):not(ul) {
-    line-height: 1.0;
-}
-
-
-h1, h2 {
-    // .resizeTo(200%);
-}
-
-h3 {
-    // .resizeTo(150%);
-}
-
-h4 {
-    // .resizeTo(80%);
-}
-
-h5 {
-    // .resizeTo(100%);
-}
-
-h6 {
-    // .resizeTo(50%);
-}
+// // lobotomized owl
+// // - @via http://alistapart.com/article/axiomatic-css-and-lobotomized-owls
+// * + * {
+//     // margin-top: @leading;
+// }
+//
+// // default user agent stylesheet assigns a 1em top margin
+// p:first-child {
+//     margin-top: 0;
+// }
+//
+// // exception: list items, stacked divs
+// li + li,
+// div + div {
+//     margin-top: 0;
+// }
+//
+// // fix for inline elements, which sometimes break the grid by a pixel
+// // - do not try to "fix" nested lists
+// p > *,
+// li > *:not(ol):not(ul) {
+//     line-height: 1.0;
+// }
+//
+//
+// h1, h2 {
+//     // .resizeTo(200%);
+// }
+//
+// h3 {
+//     // .resizeTo(150%);
+// }
+//
+// h4 {
+//     // .resizeTo(80%);
+// }
+//
+// h5 {
+//     // .resizeTo(100%);
+// }
+//
+// h6 {
+//     // .resizeTo(50%);
+// }
 
 
 .resizeTo(@scale: 100%) {

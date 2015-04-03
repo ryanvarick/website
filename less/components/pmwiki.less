@@ -1,65 +1,10 @@
-// div.hero {
-//     float: left;
-//
-//     background: @grey1;
-//     border: 1px solid @grey2;
-//
-//     width: @PAGE_WIDTH / 4;
-//     height: 150px;
-//
-//     &:last-of-type:after {
-//         clear: both;
-//         content:"";
-//         display:table;
-//     }
-// }
+/**
+ Legacy PmWiki styles
+*/
 
 p.edit-link {
     position: fixed;
     z-index: 1000;
     bottom: 10px;
     right: 30px;
-}
-
-p.download-resume {
-    .hide();
-    float: right;
-    margin-top: -@leading * 2;
-}
-
-@PRIMARY_WIDTH: 30em;
-@SECONDARY_WIDTH: 18em;
-
-@media @desktop {
-    div.primary
-    {
-      display: inline-block;
-      width: @PRIMARY_WIDTH;
-      margin-right: (@gutter * 2);
-      vertical-align: top;
-    }
-
-    div.secondary
-    {
-      display: inline-block;
-      width: @SECONDARY_WIDTH;
-      vertical-align: top;
-
-      h2 {
-            font-size: 100%;
-      }
-
-      li {
-          list-style: none;
-      }
-    }
-
-    div.secondary.resume {
-        h2, h3 {
-            font-size: 100%;
-            color: @black;
-        }
-
-    }
-
 }

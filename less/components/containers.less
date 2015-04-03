@@ -2,7 +2,10 @@
  General layout
 */
 
+
+
 // TODO: Move this stuff elsewhere?
+@page_width: 800px;
 @gutter: @leading;
 
 html, body {
@@ -26,4 +29,16 @@ footer {
 
     // additional breathing room between the footer and the content
     margin-top: (@leading * 3);
+}
+
+@media @desktop {
+
+    // center containers
+    header,
+    main,
+    footer section,
+    footer div.temporary-footer-container {
+        margin: 0 auto;
+        width: @page_width;
+    }
 }

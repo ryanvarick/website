@@ -1,0 +1,36 @@
+/**
+ Resume
+*/
+
+.resume li {
+    list-style: none;
+}
+
+p.summary {
+    text-transform: uppercase;
+
+    // // FIXME: Need to fix the grid by adjusting line-height
+    font-size: smaller; // 85%
+    line-height: 1.9;   // *.85 = existing LH
+
+    strong {
+        font-weight: @normal_font_weight;
+    }
+}
+
+@media @mobile {
+    span.break {
+
+        // control where the summary line breaks on mobile
+        display: block;
+    }
+}
+
+// remove the default spacing between the summary and details
+p.summary + p {
+    margin: 0;
+}
+
+div.portfolio-link {
+    .hide();
+}

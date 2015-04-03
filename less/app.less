@@ -1,20 +1,17 @@
-/**
- Stylesheet for ryanvarick.com, v16.0.0 (April, 2015)
-  - Readable version at https://www.ryanvarick.com/site/pub/skins/production/assets/styles/app.less
-  - More info at https://github.com/ryanvarick/website
-*/
+/*! Stylesheet for ryanvarick.com | v16.0.0 (April, 2015) | https://github.com/ryanvarick.com/website */
 
 @imageDir: "/uploads/";
 
 @import "base/reset.less";                  // browser reset
-@import "base/colors.less";                 // colors and color functions
 @import "base/media_queries.less";          // breakpoint definitions
+@import "base/colors.less";                 // colors and color functions
 @import "base/utilities.less";              // useful mixins
 
-// @import "components/box_model.less";        // sane box model
-@import "components/baseline_grid.less";    // vertical rhythm
+@import "components/baseline_grid.less";    // typographic vertical rhythm
+@import "components/container_grid.less";   // grid system for containers
 @import "components/typography.less";
 @import "components/font-awesome.less";
+
 @import "components/skeleton_forms.less";  // TBD: Skeleton's form styling
 
 @import "components/sticky_footer.less";    // footer position
@@ -28,10 +25,6 @@
 // TODO: Replace Hashgrid with something else
 @import "components/hashgrid.less";
 
-
-
-// @import "views/mobile.less";                 // mobile-specific styles
-@import "views/desktop.less";          // desktop-specific styles
 // @import "views/print.less";                  // print-specific styles (resume)
 
 
@@ -39,3 +32,4 @@
 
 
 @import "components/portfolio.less";    // yeah
+@import "components/resume.less";    // yeah
