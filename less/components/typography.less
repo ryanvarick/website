@@ -70,6 +70,15 @@ main h3 {
     font-weight: @strong_font_weight;
 }
 
+.headline h2 {
+    margin: 0;
+    font-weight: @normal_font_weight;
+
+    // FIXME: breaks grid, I think
+    font-size: 162.5%;
+    line-height: 1.0;
+}
+
 
 img + img,              // side-by-side images
 div + p.caption         // images (wrapped in a `div`) followed by a caption
