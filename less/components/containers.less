@@ -18,22 +18,24 @@ body {
     padding: 0 @gutter;
 }
 
+header,
 footer {
 
     // same breathing room as above, but with edge-to-edge background
     .full-bleed();
+}
 
-    // additional breathing room between the footer and the content
-    margin-top: (@leading * 3);
+main div#wikitext {
+    margin-bottom: (@leading * 3);
 }
 
 @media @desktop {
 
     // center containers
-    header,
+    header section,
     main,
     footer section,
-    footer div.temporary-footer-container {
+    div.temporary-container {
         margin: 0 auto;
         width: @page_width;
     }

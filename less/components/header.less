@@ -2,37 +2,13 @@
  Header
 */
 
-header h1 {
-    .hide();
+header {
 
-    // font-family: minion-pro, marion, "Times New Roman", Times, serif;
+    padding-top: @leading;
+    padding-bottom: @leading;
 
-    a {
-        font-weight: 300;
-        text-transform: uppercase;
-    }
-}
-
-header svg {
-    .hide();
-}
-
-header ul {
-    margin: 0;
-    padding: 0;
-}
-
-header li {
-    display: inline-block;
-    list-style: none;
-    text-transform: uppercase;
-
-    &:not(:last-child) {
-        margin-right: 1em;
-    }
-
-    &.active {
-        // border-top: 2px solid @black;
-        // font-weight: @STRONG_FONT_WEIGHT;
+    svg {
+        height: 1.5em;
+        width: 1.5em;
     }
 }
