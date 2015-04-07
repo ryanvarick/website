@@ -10,36 +10,13 @@ img {
         max-width: 100%;
     }
 }
-div.headline,
-div.portfolio-navigation {
-    .full-bleed();
-
-    margin-top: (@leading * 2);
-    margin-bottom: @leading;
-    padding-top: @leading;
-    padding-bottom: @leading;
-}
-div.portfolio-navigation {
-    border-top: 1px solid @orange;
-    border-bottom: 1px solid @orange;
-
-    @media @mobile {
-        .hide();
-    }
-}
-div.secondary {
-    @media @mobile {
-        margin-top: (@leading * 2);
-    }
-}
-
-
 
 // heading when styles are disabled
 .recent-work {
     .hide();
 }
 
+// container layout
 ul.portfolio-container {
 
     margin-top: (@leading * 2);
@@ -51,24 +28,31 @@ ul.portfolio-container {
     }
 }
 
+// typography
 ul.portfolio-container li,
 .portfolio-sidebar li {
     list-style: none;
 }
-
 .portfolio-sidebar a.selflink {
     text-decoration: none;
 }
-
 span.year {
     font-size: smaller;
 }
 
+// bottom navigation
+div.portfolio-navigation {
+    @media @mobile {
+        .hide();
+    }
+}
 
-
-
-
-
+// TBD: desirable for portfolio, not for resume
+// div.secondary {
+//     @media @mobile {
+//         margin-top: (@leading * 2);
+//     }
+// }
 
 
 

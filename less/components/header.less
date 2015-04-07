@@ -7,8 +7,19 @@ header {
     padding-top: @leading;
     padding-bottom: @leading;
 
+    h1 {
+        .hide();
+    }
+
+    a {
+        display: block;
+        width: 100%;
+    }
+
     svg {
-        height: 1.5em;
-        width: 1.5em;
+
+        // Safari does not like regular ems for some reason
+        height: 1.5rem;
+        width: 1.5rem;
     }
 }

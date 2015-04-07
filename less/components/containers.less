@@ -9,29 +9,22 @@ html, body {
     margin: 0;
 }
 
+// Mobile needs breathing room around the edges, but desktop only needs
+// extra space if the window is fairly small (e.g. mobile landscape).
+// Using padding ensures the space disappears in the `margin: auto` centering
+// of the other containers.
 body {
-
-    // Mobile needs breathing room around the edges, but desktop only needs
-    // extra space if the window is fairly small (e.g. mobile landscape).
-    // Using padding ensures the space disappears in the `margin: auto` centering
-    // of the other containers.
     padding: 0 @gutter;
 }
 
+// same breathing room as above, but with edge-to-edge background
 header,
 footer {
-
-    // same breathing room as above, but with edge-to-edge background
     .full-bleed();
 }
 
-main div#wikitext {
-    margin-bottom: (@leading * 3);
-}
-
+// center containers on desktop
 @media @desktop {
-
-    // center containers
     header section,
     main,
     footer section,
@@ -39,4 +32,19 @@ main div#wikitext {
         margin: 0 auto;
         width: @page_width;
     }
+}
+
+// TBD
+main div#wikitext {
+    margin-bottom: (@leading * 3);
+}
+
+// TBD
+div.headline {
+
+    .full-bleed();
+    margin-top: (@leading * 2);
+    margin-bottom: @leading;
+    padding-top: @leading;
+    padding-bottom: @leading;
 }

@@ -3,10 +3,52 @@
 */
 
 @topColor: @orange;
-@bottomColor: @orange;
+@bottomColor: spin(@topColor, 15);
+// @bottomColor: @yellow;
+// @bottomColor: @topColor;
 
 @themeBorderColor: @topColor;
-// configuration
+
+header {
+
+    // SVG
+    #logo-circle {
+        fill: @white;
+    }
+}
+
+header,
+footer {
+
+    color: @white;
+    background-image: linear-gradient(@topColor, @bottomColor);
+    // .animateColor();
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+main {
+    min-height: 100vh;
+
+    h2 {
+        .colorBurn();
+    }
+}
+
+// headings
+.headline h2 {
+    line-height: 1.2;
+}
+
+div.portfolio-navigation {
+    border-top: 1px solid @themeBorderColor;
+    border-bottom: 1px solid @themeBorderColor;
+}
+
+
 
 
 code {
@@ -17,23 +59,6 @@ code {
     font-size: smaller;
 }
 
-header {
-    // .hide();
-    // .animateColor();
-
-}
-main {
-    min-height: 100vh;
-}
-
-// headings
-main h2 {
-    .colorBurn();
-}
-.headline h2 {
-    line-height: 1.2;
-}
-
 // images
 img {
     border: 1px solid @dark_grey;
@@ -42,48 +67,10 @@ p.caption {
     color: @dark_grey;
 }
 
-// div.headline,
-// div.portfolio-navigation {
-//     border-top: 1px solid @topColor;
-//     border-bottom: 1px solid @topColor;
-// }
-
-// section.portfolio a {
-//     color: @white;
-// }
 
 
 
-
-
-
-#logo-circle {
-
-    fill: @black;
-
-    @media @mobile {
-        fill: @white;
-    }
-}
-
-
-
-// header,
-footer {
-    color: white;
-    background-image: linear-gradient(@topColor, @bottomColor);
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
-
-    // .animateColor();
-
-}
-
-
-
+// used by portfolio
 .colorFade(@startColor: @topColor) {
 
     // @endColor: fade(spin(@startColor, 20%), 90%);
@@ -111,14 +98,26 @@ footer {
 
 .animateColor() {
     // ANIMATED COLOR
-    -webkit-animation: hue 300s infinite linear;
+    -webkit-animation: rotate 10s infinite linear alternate;
 
-    background-image: linear-gradient(
-        rgba(red(@orange), green(@orange), blue(@orange), 1.0),
-        rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
-    );
+    // background-image: linear-gradient(
+    //     rgba(red(@orange), green(@orange), blue(@orange), 1.0),
+    //     rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
+    // );
     // -webkit-animation: hex 5s infinite alternate;
 }
+
+@keyframes rotate {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+      //   -webkit-filter: hue-rotate(-360deg);
+        -webkit-filter: hue-rotate(15deg);
+    }
+}
+
 
 @-webkit-keyframes hex {
     // fallback
