@@ -8,21 +8,6 @@
 @themeBorderColor: @topColor;
 // configuration
 
-img {
-    border: 1px solid @topColor;
-}
-p.caption {
-    color: @topColor;
-}
-div.headline,
-div.portfolio-navigation {
-    border-top: 1px solid @topColor;
-    border-bottom: 1px solid @topColor;
-}
-
-section.portfolio a {
-    color: @white;
-}
 
 code {
     background: @light_grey;
@@ -32,40 +17,58 @@ code {
     font-size: smaller;
 }
 
-main h2 {
-    .colorBurn();
-    // .resizeTo(200%);
+header {
+    // .hide();
+    // .animateColor();
 
-    // ANIMATED
-    /* autoprefixer: off */ // Requires WebKit only features
-    // background-image: -webkit-linear-gradient(270deg, @orange, @yellow);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
-    // -webkit-animation: hue 300s infinite linear;
+}
+main {
+    min-height: 100vh;
 }
 
+// headings
+main h2 {
+    .colorBurn();
+}
 .headline h2 {
     line-height: 1.2;
 }
 
-.colorBurn() {
+// images
+img {
+    border: 1px solid @dark_grey;
+}
+p.caption {
+    color: @dark_grey;
+}
 
-    @media screen {
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+// div.headline,
+// div.portfolio-navigation {
+//     border-top: 1px solid @topColor;
+//     border-bottom: 1px solid @topColor;
+// }
 
-        /* autoprefixer: off */ // Requires WebKit only features
-        background-image: -webkit-linear-gradient(270deg, @topColor, @bottomColor);
-        color: @topColor; // fallback for non-WK browsers
+// section.portfolio a {
+//     color: @white;
+// }
 
-        // // http://thecodeplayer.com/walkthrough/animating-css3-gradients
-        // background-image: linear-gradient(
-        //     rgba(red(@orange), green(@orange), blue(@orange), 1.0),
-        //     rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
-        // );
+
+
+
+
+
+#logo-circle {
+
+    fill: @black;
+
+    @media @mobile {
+        fill: @white;
     }
 }
 
+
+
+// header,
 footer {
     color: white;
     background-image: linear-gradient(@topColor, @bottomColor);
@@ -75,33 +78,62 @@ footer {
         text-decoration: none;
     }
 
+    // .animateColor();
 
+}
+
+
+
+.colorFade(@startColor: @topColor) {
+
+    // @endColor: fade(spin(@startColor, 20%), 90%);
+    @endColor: @startColor;
+
+    background-image: linear-gradient(@startColor, @endColor);
+}
+
+.colorBurn() {
+
+    @media screen {
+
+        // non-WebKit broswers fallback
+        color: @topColor;
+
+        /* autoprefixer: off */ // Requires WebKit only features
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: -webkit-linear-gradient(270deg, @topColor, @bottomColor);
+
+        // .animateColor();
+    }
+}
+
+
+.animateColor() {
     // ANIMATED COLOR
-    // -webkit-animation: hue 300s infinite linear;
+    -webkit-animation: hue 300s infinite linear;
 
-    // background-image: linear-gradient(
-    //     rgba(red(@orange), green(@orange), blue(@orange), 1.0),
-    //     rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
-    // );
+    background-image: linear-gradient(
+        rgba(red(@orange), green(@orange), blue(@orange), 1.0),
+        rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
+    );
     // -webkit-animation: hex 5s infinite alternate;
 }
 
-// @-webkit-keyframes hex {
-//     // fallback
-//     // 50%  { background-color: saturate}
-//     100% { background-color: saturate(@blue, 100%) }
-// }
-
-
+@-webkit-keyframes hex {
+    // fallback
+    // 50%  { background-color: saturate}
+    100% { background-color: saturate(@blue, 100%) }
+}
 
 // ANIMATED COLOR
-// @-webkit-keyframes hue {
-//   from {
-//     -webkit-filter: hue-rotate(0deg);
-//   }
-//
-//   to {
-//     //   -webkit-filter: hue-rotate(-360deg);
-//       -webkit-filter: hue-rotate(360deg);
-//   }
-// }
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    //   -webkit-filter: hue-rotate(-360deg);
+      -webkit-filter: hue-rotate(360deg);
+  }
+}

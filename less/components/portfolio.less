@@ -2,27 +2,104 @@
  Portfolio
 */
 
+// FIXME: MOVE THIS SOMEWHERE ELSE?
+
+img {
+    // constrain image sizes on mobile
+    @media @mobile {
+        max-width: 100%;
+    }
+}
+div.headline,
+div.portfolio-navigation {
+    .full-bleed();
+
+    margin-top: (@leading * 2);
+    margin-bottom: @leading;
+    padding-top: @leading;
+    padding-bottom: @leading;
+}
+div.portfolio-navigation {
+    border-top: 1px solid @orange;
+    border-bottom: 1px solid @orange;
+
+    @media @mobile {
+        .hide();
+    }
+}
+div.secondary {
+    @media @mobile {
+        margin-top: (@leading * 2);
+    }
+}
+
+
+
+// heading when styles are disabled
+.recent-work {
+    .hide();
+}
+
 ul.portfolio-container {
 
-    li {
-        list-style: none;
-    }
+    margin-top: (@leading * 2);
 
-    // grid container for desktop only, mobile shows inline
     @media @desktop {
         position: relative;
         height: 350px;
         width: 100%;
-        margin: (@leading * 2) 0 0 0;
     }
 }
 
+ul.portfolio-container li,
 .portfolio-sidebar li {
     list-style: none;
 }
+
 .portfolio-sidebar a.selflink {
     text-decoration: none;
 }
+
+span.year {
+    font-size: smaller;
+}
+
+
+
+
+
+
+
+
+
+// whitespace between cover images
+@xgutter: 1px;
+@ygutter: @xgutter;
+
+li.p1 {
+    .portfolio-cover("portfolio-cover-br_pub", 200px, 200px, @orange, 0, 0);
+}
+li.p2 {
+    .portfolio-cover("portfolio-cover-br_xbox", 300px, 100px, @orange, (200px + @xgutter), 0);
+}
+li.p3 {
+    // shave a little vertical size off this element to maintain the overall grid
+    .portfolio-cover("portfolio-cover-br_cms", 300px, (100px - @ygutter), @orange, (200px + @xgutter), (100px + @ygutter));
+}
+li.p4 {
+    .portfolio-cover("portfolio-cover-wf", (300px - 2 * @xgutter), 200px, @green, (500px + 2 * @xgutter), 0);
+}
+li.p5 {
+    .portfolio-cover("portfolio-cover-nokia", 400px, 150px, @blue, 0, (200px + @ygutter));
+}
+li.p6 {
+    .portfolio-cover("portfolio-cover-moto", 200px, 150px, @red, 400px, (200px + @ygutter));
+}
+li.p7 {
+    .portfolio-cover("portfolio-cover-good", 200px, 150px, @red, 600px, (200px + @ygutter));
+}
+
+
 
 /**
  Style portfolio cover images for desktop, mobile, Retina, and non-Retina
@@ -36,34 +113,35 @@ ul.portfolio-container {
 */
 .portfolio-cover(@image, @width, @height, @color, @x, @y) {
 
-    @accentColor: fade(@color, 90%);
-    @textSize: 14px;
-
-    // background image and accent color
-    // border: 1px solid @color;
-    border: 1px solid @black;
+    // background image
     .retina-png(@image, @width, @height);
-
-    // single column for mobile
-    margin: 0 0 @leading 0;
 
     // grid layout for desktop
     @media @desktop {
         position: absolute;
-        top: @x;
-        left: @y;
+        top: @y;
+        left: @x;
         width: @width;
     }
 
-    // link covers entire area
+    // single column layout for mobile
+    @media @mobile {
+        margin: 0 0 @leading 0;
+        max-width: @width;
+    }
+
+    // link should cover the entire image area
     a {
         display: block;
         position: relative;
         height: @height;
         width: 100%;
+        border: 1px solid @black;
     }
 
+    // title
     a > span {
+
         position: absolute;
         bottom: 0;
         left: 0;
@@ -73,81 +151,18 @@ ul.portfolio-container {
         padding: 10px 0 10px 10px;
 
         color: @white;
-        font-size: @textSize;
+        font-size: 14px;
         line-height: 1.0;
+        text-shadow: 1px 1px @black;
 
-        // TODO: tweak text shadow, gradient effect
-        text-shadow: 1px 1px #333;
-        background-image: linear-gradient(@accentColor, fade(spin(@accentColor, 20%), 90%));
+        .colorFade(fade(@color, 90%));
 
-        span {
+        span.year {
             display: block;
             margin: 0;
             padding: 0;
             font-size: smaller;
-        } // end span
+        } // end span.year
     } // end a > span
 
 } // end .portfolio-cover()
-
-li.p1 {
-    .portfolio-cover("portfolio-cover-br_pub", 200px, 200px, @orange, 0, 0);
-}
-li.p2 {
-    .portfolio-cover("portfolio-cover-br_xbox", 300px, 100px, @orange, 0, 200px);
-}
-li.p3 {
-    .portfolio-cover("portfolio-cover-br_cms", 300px, 100px, @orange, 100px, 200px);
-}
-li.p4 {
-    .portfolio-cover("portfolio-cover-wf", 300px, 200px, @green, 0, 500px);
-}
-li.p5 {
-    .portfolio-cover("portfolio-cover-nokia", 400px, 150px, @blue, 200px, 0);
-}
-li.p6 {
-    .portfolio-cover("portfolio-cover-moto", 200px, 150px, @red, 200px, 400px);
-}
-li.p7 {
-    .portfolio-cover("portfolio-cover-good", 200px, 150px, @red, 200px, 600px);
-}
-
-
-// TODO: Margins?
-div.headline,
-div.portfolio-navigation {
-    .full-bleed();
-
-    margin-top: (@leading * 2);
-    margin-bottom: @leading;
-    padding-top: @leading;
-    padding-bottom: @leading;
-
-    // border-top: 1px solid @orange;
-    // border-bottom: 1px solid @orange;
-}
-
-// FIXME: MOVE THIS SOMEWHERE ELSE?
-
-img {
-    // border: 1px solid @orange;
-
-    // constrain image sizes on mobile
-    @media @mobile {
-        max-width: 100%;
-    }
-}
-
-p.caption {
-
-    // margin-top: 0;
-    // color: @orange;
-
-    @media @desktop {
-        font-size: smaller;
-    }
-}
-
-span.year {
-    font-size: smaller;
-}

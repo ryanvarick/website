@@ -85,6 +85,11 @@ div + p.caption         // images (wrapped in a `div`) followed by a caption
 {
     margin: (@leading / 2) 0;
 }
+p.caption {
+    @media @desktop {
+        font-size: smaller;
+    }
+}
 
 // footer stuffs
 footer * + *:not(li) {
