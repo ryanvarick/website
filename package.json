@@ -38,8 +38,8 @@
     "livereload": "live-reload --port 9091 .",
     "serve": "http-server -s -p 9090 .",
     "version": "versiony --to 'bower.json' --from 'package.json'",
-    "watch:css": "watch 'clear && npm run build:css' less/ -t",
-    "watch:js": "watch 'clear && npm run build:js' javascript/ -t",
+    "watch:css": "watch 'clear && npm run build:css' less/ -dt",
+    "watch:js": "watch 'clear && npm run build:js' javascript/ -dt",
     "dev": "clear && npm run cleanup && parallelshell 'npm run livereload' 'npm run serve' 'npm run watch:css' 'npm run watch:js'",
     "dev:watch": "clear && npm run cleanup && parallelshell 'npm run livereload' 'npm run watch:css'"
   },
