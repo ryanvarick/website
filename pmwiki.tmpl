@@ -17,10 +17,6 @@
     <script src="https://use.typekit.com/ygu4ods.js"></script>
     <script>try { Typekit.load(); } catch(e) { }</script>
 
-    <!-- DEVELOPMENT START -->
-    <script src="//localhost:9091"></script>
-    <!--// END DEVELOPMENT -->
-
     <!--HTMLHeader-->
 </head>
 
@@ -36,5 +32,18 @@
     </footer>
 
     <script type="text/javascript" src="$SkinDirUrl/dist/app.js"></script>
+
+    <!-- DEVELOPMENT START -->
+    <script src="$SkinDirUrl/vendor/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="$SkinDirUrl/vendor/hashgrid/hashgrid.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var grid = new hashgrid();
+        });
+    </script>
+
+    <script src="//localhost:9091"></script>
+    <!--// END DEVELOPMENT -->
+
 </body>
 </html>

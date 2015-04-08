@@ -12,7 +12,7 @@
 header {
 
     // SVG
-    #logo-circle {
+    #logo {
         fill: @white;
     }
 }
@@ -75,7 +75,6 @@ p.caption {
 
     // @endColor: fade(spin(@startColor, 20%), 90%);
     @endColor: @startColor;
-
     background-image: linear-gradient(@startColor, @endColor);
 }
 
@@ -90,39 +89,20 @@ p.caption {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-image: -webkit-linear-gradient(270deg, @topColor, @bottomColor);
-
-        // .animateColor();
     }
 }
 
 
 .animateColor() {
-    // ANIMATED COLOR
     -webkit-animation: rotate 10s infinite linear alternate;
-
-    // background-image: linear-gradient(
-    //     rgba(red(@orange), green(@orange), blue(@orange), 1.0),
-    //     rgba(red(@yellow), green(@yellow), blue(@yellow), 1.0)
-    // );
-    // -webkit-animation: hex 5s infinite alternate;
 }
-
 @keyframes rotate {
     from {
-      -webkit-filter: hue-rotate(0deg);
+        -webkit-filter: hue-rotate(0deg);
     }
-
     to {
-      //   -webkit-filter: hue-rotate(-360deg);
         -webkit-filter: hue-rotate(15deg);
     }
-}
-
-
-@-webkit-keyframes hex {
-    // fallback
-    // 50%  { background-color: saturate}
-    100% { background-color: saturate(@blue, 100%) }
 }
 
 // ANIMATED COLOR

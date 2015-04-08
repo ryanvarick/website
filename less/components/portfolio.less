@@ -57,30 +57,29 @@ div.portfolio-navigation {
 
 
 // whitespace between cover images
-@xgutter: 1px;
+@xgutter: 10px;
 @ygutter: @xgutter;
 
 li.p1 {
     .portfolio-cover("portfolio-cover-br_pub", 200px, 200px, @orange, 0, 0);
 }
 li.p2 {
-    .portfolio-cover("portfolio-cover-br_xbox", 300px, 100px, @orange, (200px + @xgutter), 0);
+    .portfolio-cover("portfolio-cover-br_xbox", 280px, 95px, @orange, 210px, 0);
 }
 li.p3 {
-    // shave a little vertical size off this element to maintain the overall grid
-    .portfolio-cover("portfolio-cover-br_cms", 300px, (100px - @ygutter), @orange, (200px + @xgutter), (100px + @ygutter));
+    .portfolio-cover("portfolio-cover-br_cms", 280px, 95px, @orange, 210px, 105px);
 }
 li.p4 {
-    .portfolio-cover("portfolio-cover-wf", (300px - 2 * @xgutter), 200px, @green, (500px + 2 * @xgutter), 0);
+    .portfolio-cover("portfolio-cover-wf", 300px, 200px, @green, 500px, 0);
 }
 li.p5 {
-    .portfolio-cover("portfolio-cover-nokia", 400px, 150px, @blue, 0, (200px + @ygutter));
+    .portfolio-cover("portfolio-cover-nokia", 380px, 150px, @blue, 0, 210px);
 }
 li.p6 {
-    .portfolio-cover("portfolio-cover-moto", 200px, 150px, @red, 400px, (200px + @ygutter));
+    .portfolio-cover("portfolio-cover-good", 200px, 150px, @red, 390px, 210px);
 }
 li.p7 {
-    .portfolio-cover("portfolio-cover-good", 200px, 150px, @red, 600px, (200px + @ygutter));
+    .portfolio-cover("portfolio-cover-moto", 200px, 150px, @red, 600px, 210px);
 }
 
 
@@ -105,22 +104,25 @@ li.p7 {
         position: absolute;
         top: @y;
         left: @x;
+        height: @height;
         width: @width;
     }
 
     // single column layout for mobile
     @media @mobile {
         margin: 0 0 @leading 0;
-        max-width: @width;
+        height: @height;
+        width: 100%;
+        max-width: 400px;
     }
 
     // link should cover the entire image area
     a {
         display: block;
         position: relative;
-        height: @height;
+        height: 100%;
         width: 100%;
-        border: 1px solid @black;
+        border: 1px solid @dark_grey;
     }
 
     // title
