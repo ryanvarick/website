@@ -2,10 +2,6 @@
  Resume
 */
 
-.resume li {
-    list-style: none;
-}
-
 p.summary {
     text-transform: uppercase;
 
@@ -17,21 +13,64 @@ p.summary {
     strong {
         .normal-font-weight();
     }
+
+    // control where the summary line breaks on mobile
+    @media @mobile {
+        span.break {
+            display: block;
+        }
+    } // end @media
+
 }
 
-@media @mobile {
-    span.break {
-
-        // control where the summary line breaks on mobile
-        display: block;
-    }
-}
-
-// remove the default spacing between the summary and details
+// spacing between the summary line and details
 p.summary + p {
     margin: 0;
 }
 
+// no bullets for skills lists, etc.
+.resume li {
+    list-style: none;
+}
+
+// hide portfolio cross-link, email underlines
+@media print {
+
+    div.resume > p a,
+    div.contact-information a {
+        text-decoration: none;
+    }
+}
+
+// print only: link to portfolio
 div.portfolio-link {
     .hide();
+
+    @media print {
+        .show();
+    }
+}
+
+// print only: contact information
+div.contact-information {
+    .hide();
+
+    @media print {
+        .show();
+
+        // fake a `.secondary` container
+        position: absolute;
+        top: @leading;
+        right: 0;
+        width: @secondary_container_width + @gutter;
+
+        li {
+            list-style: none;
+        }
+
+        h2 {
+            .hide();
+        }
+    } // end @media
+
 }

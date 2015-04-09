@@ -14,6 +14,10 @@ header {
     // SVG
     #logo {
         fill: @white;
+
+        @media print {
+            fill: @black;
+        }
     }
 }
 
@@ -80,10 +84,10 @@ p.caption {
 
 .colorBurn() {
 
-    @media screen {
+    // non-WebKit broswer/print fallback
+    color: @topColor;
 
-        // non-WebKit broswers fallback
-        color: @topColor;
+    @media screen {
 
         /* autoprefixer: off */ // Requires WebKit only features
         -webkit-background-clip: text;

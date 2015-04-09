@@ -17,6 +17,12 @@
 body {
     color: @black;
     font-family: myriad-pro, "Avenir Next", sans-serif;
+
+    @media print {
+
+        // TODO: Would be good to sync with display font size (15px)
+        font-size: 10pt;
+    }
 }
 
 // only select elements should be bold
