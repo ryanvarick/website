@@ -20,7 +20,8 @@ body {
 }
 
 // only select elements should be bold
-* { font-weight: @normal_font_weight; }
+// FIXME: font stack
+* { .normal-font-weight(); }
 strong { font-weight: @strong_font_weight; }
 
 // lists
@@ -52,7 +53,9 @@ main h3 {
 
 .headline h2 {
     margin: 0;
-    font-weight: @normal_font_weight;
+
+    // FIXME: font stack
+    .normal-font-weight();
 
     // FIXME: breaks grid, I think
     font-size: 162.5%;
@@ -74,4 +77,11 @@ p.caption {
 // footer
 footer * + *:not(li) {
     margin-top: @leading;
+}
+
+.normal-font-weight() {
+    font-weight: @normal_font_weight;
+    @media @mobile {
+        font-weight: 400;
+    }
 }
