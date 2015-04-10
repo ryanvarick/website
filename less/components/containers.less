@@ -1,7 +1,5 @@
 /**
  Overall page layout
-
- For the container grid system, check out `container_grid.less`.
 */
 
 html, body {
@@ -34,17 +32,30 @@ footer {
     }
 }
 
-// TBD
-main div#wikitext {
-    margin-bottom: (@leading * 3);
+// left/right golden ratio grid
+@primary_container_width: @page_width * 0.618;
+@secondary_container_width: @page_width - @primary_container_width;
+
+@media @desktop {
+    div.primary {
+        display: table-cell;
+        width: @primary_container_width;
+        padding-right: (@gutter * 2);
+    }
+    div.secondary {
+        display: table-cell;
+        width: @secondary_container_width;
+    }
 }
 
-// TBD
-div.headline {
+// breathing room for print
+@media print {
+    body {
+        padding: (@leading * 2) (@gutter * 3);
+    }
+}
 
-    .full-bleed();
-    margin-top: (@leading * 2);
-    margin-bottom: @leading;
-    padding-top: @leading;
-    padding-bottom: @leading;
+// breathing room between the content and the footer
+main div#wikitext {
+    margin-bottom: (@leading * 3);
 }
