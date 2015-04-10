@@ -7,19 +7,20 @@ header {
     padding-top: @leading;
     padding-bottom: @leading;
 
+    @media print {
+        padding: (@leading * 2) 0 0 0;
+    }
+
     h1 {
         .hide();
     }
 
-    a {
-        display: block;
-        width: 100%;
-    }
-
+    // SVG is hard. The `svg` tag specifies an initial width and height, a
+    // viewbox, and an aspect ratio. The height here controls the overall size.
+    // The aspect ratio on the tag handles scaling. The max-width is just to
+    // make sure that leftover "blank space" does not break the mobile viewport.
     svg {
-
-        // Safari does not like regular ems for some reason
-        height: 1.5rem;
-        width: 1.5rem;
+        height: 1.6em;
+        max-width: 10em;
     }
 }
