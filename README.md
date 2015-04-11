@@ -22,31 +22,33 @@ I don't really like dealing with Bower or NPM either, so here are a few utilitie
 
 * `npm run version` - Sync `package.json` version number to `bower.json`
 * `npm run postinstall` - Automatically run `bower install` after `npm install`
-* `npm run clean:packages` - Wipe out NPM and Bower junk
-* `npm run clean:processes` - Kill processes (useful if the watch process dies)
+* `npm run clean:packages` - Remove NPM/Bower junk
+* `npm run clean:processes` - Kill processes, which is useful when watch dies (see note below)
 
 ### Notes
 
-* Watch dies when switching branches (watched files and directories are temporarily removed), but I don't know how to fix
+* Watch dies when switching branches because files are temporarily removed
 
-## Client Dependencies (TBD)
+## Bower Packages
 
-* [Font Awesome](https://github.com/FortAwesome/Font-Awesome) (subset)
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) (subset)
 * [Hashgrid](http://hashgrid.com) (replace with something that does not require jQuery)
-* [Normalize.css](https://github.com/necolas/normalize.css)
-* sanitize.css - TBD
+* [sanitize.css](http://jonathantneal.github.io/sanitize.css/) - Browser reset
+* [retina.js](http://imulus.github.io/retinajs/) - Automagically serve Retina assets
 
-## NPM Dependencies
+## NPM Packages
 
 All this junk is used during development or for building.
 
-* "autoprefixer" - Automatically generate CSS vendor prefixes
-* "browserify": - Modules for Javascript
-* "clear": - Clear the screen (used by NPM scripts)
+* [Autoprefixer](https://github.com/postcss/autoprefixer) - Automatically generate CSS vendor prefixes
+* [Browserify](https://github.com/substack/node-browserify) - Javascript modules
+* [clear](https://github.com/bahamas10/node-clear): - Clear the screen (used by NPM scripts)
+* [clean-css](https://github.com/jakubpawlowicz/clean-css) - CSS minifier
 * [debowerify](https://github.com/eugeneware/debowerify) - Make `require('module')` work with the rat's nest that is Bower
-* "http-server": Small static asset server (used for Live Reload)
-* "less": CSS preprocessor
-* "live-reload": Awesome
-* "parallelshell": Flaky little tool to run multiple NPM scripts in parallel
-* "versiony-cli": Sync `package.json` version to `bower.json`
-* "watch": Watch filesystem for changes
+* [http-server](https://github.com/indexzero/http-server) - Simple static server (used with Live Reload)
+* [less.js](https://github.com/less/less.js): CSS preprocessor
+* [live-reload](https://github.com/Raynos/live-reload) - Live reloading
+* [Parallel Shell](https://github.com/keithamus/parallelshell) - Flaky little tool to run multiple NPM scripts in parallel
+* [UglifyJS](https://github.com/mishoo/UglifyJS2) - Javascript minifier
+* [versiony-cli](https://github.com/radubrehar/versiony-cli) - Sync `package.json` version to `bower.json`
+* [watch](https://github.com/mikeal/watch) - Watch filesystem for changes (used with Live Reload)
