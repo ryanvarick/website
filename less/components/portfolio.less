@@ -2,15 +2,6 @@
  Portfolio
 */
 
-// FIXME: MOVE THIS SOMEWHERE ELSE?
-
-img {
-    // constrain image sizes on mobile
-    @media @mobile {
-        max-width: 100%;
-    }
-}
-
 // heading when styles are disabled
 .recent-work {
     .hide();
@@ -19,20 +10,14 @@ img {
 // container layout
 ul.portfolio-container {
 
-    margin-left: -100%;
-    margin-right: -100%;
-
-    padding: @leading;
-    background: @light_grey;
-
-    .debug();
-
     margin-top: (@leading * 2);
 
     @media @desktop {
-        position: relative;
-    //     height: 350px;
-    //     width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding-left: @gutter;
+        padding-right: @gutter;
     }
 }
 
@@ -109,9 +94,12 @@ li.p7 {
 
     // grid layout for desktop
     @media @desktop {
-        position: absolute;
-        top: @y;
-        left: @x;
+        // position: absolute;
+        // top: @y;
+        // left: @x;
+        // height: @height;
+        // width: @width;
+        display: inline-block;
         height: @height;
         width: @width;
     }

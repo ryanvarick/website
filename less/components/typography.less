@@ -88,6 +88,14 @@ p.caption {
         font-size: smaller;
     }
 }
+img {
+    // constrain image sizes on mobile
+    @media @mobile {
+        max-width: 100%;
+    }
+}
+
+
 
 // footer
 footer * + *:not(li) {
