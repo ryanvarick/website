@@ -2,6 +2,8 @@
  Portfolio
 */
 
+// FIXME: Desktop layout is a fixed width 800px, which breaks iPad portrait
+
 // heading when styles are disabled
 .recent-work {
     .hide();
@@ -91,6 +93,14 @@ li.p7 {
     // background image
     .retina-png(@image, @width, @height);
 
+    // single column layout for mobile
+    // @media @mobile {
+        margin: 0 0 @leading 0;
+        height: @height;
+        width: 100%;
+        max-width: 400px;
+    // }
+
     // grid layout for desktop
     @media @desktop {
         position: absolute;
@@ -101,14 +111,6 @@ li.p7 {
         // display: inline-block;
         // height: @height;
         // width: @width;
-    }
-
-    // single column layout for mobile
-    @media @mobile {
-        margin: 0 0 @leading 0;
-        height: @height;
-        width: 100%;
-        max-width: 400px;
     }
 
     // link should cover the entire image area

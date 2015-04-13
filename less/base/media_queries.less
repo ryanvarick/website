@@ -3,11 +3,10 @@
 */
 
 @mobile:
-    ~"only screen and (max-device-width: 500px)";
-    // something like: screen and (portrait + 480) OR (landscape + 640ish)
+    ~"only screen and (max-device-width: @{desktop_width})";
 
 @desktop:
-    ~"(min-width: @{page_width})";
+    ~"(min-device-width: @{desktop_width})";
 
 // https://css-tricks.com/snippets/css/retina-display-media-query/
 @retina:
