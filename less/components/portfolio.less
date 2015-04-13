@@ -13,11 +13,14 @@ ul.portfolio-container {
     margin-top: (@leading * 2);
 
     @media @desktop {
-        position: absolute;
-        left: 0;
-        right: 0;
-        padding-left: @gutter;
-        padding-right: @gutter;
+        position: relative;
+        height: 350px;
+        width: 100%;
+        // position: absolute;
+        // left: 0;
+        // right: 0;
+        // padding-left: @gutter;
+        // padding-right: @gutter;
     }
 }
 
@@ -49,18 +52,14 @@ div.portfolio-navigation {
 
 
 
-// whitespace between cover images
-@xgutter: 10px;
-@ygutter: @xgutter;
-
 li.p1 {
-    .portfolio-cover("portfolio-cover-br_pub", 200px, 200px, @orange, 0, 0);
+    .portfolio-cover("portfolio-cover-br_pub", 220px, 200px, @orange, 0, 0);
 }
 li.p2 {
-    .portfolio-cover("portfolio-cover-br_xbox", 280px, 95px, @orange, 210px, 0);
+    .portfolio-cover("portfolio-cover-br_xbox", 260px, 95px, @orange, 230px, 0);
 }
 li.p3 {
-    .portfolio-cover("portfolio-cover-br_cms", 280px, 95px, @orange, 210px, 105px);
+    .portfolio-cover("portfolio-cover-br_cms", 260px, 95px, @orange, 230px, 105px);
 }
 li.p4 {
     .portfolio-cover("portfolio-cover-wf", 300px, 200px, @green, 500px, 0);
@@ -94,14 +93,14 @@ li.p7 {
 
     // grid layout for desktop
     @media @desktop {
-        // position: absolute;
-        // top: @y;
-        // left: @x;
-        // height: @height;
-        // width: @width;
-        display: inline-block;
+        position: absolute;
+        top: @y;
+        left: @x;
         height: @height;
         width: @width;
+        // display: inline-block;
+        // height: @height;
+        // width: @width;
     }
 
     // single column layout for mobile
@@ -132,12 +131,9 @@ li.p7 {
         margin: 0;
         padding: 10px 0 10px 10px;
 
+        .colorFade(fade(@color, 95%));
         color: @white;
-        font-size: 14px;
         line-height: 1.0;
-        text-shadow: 1px 1px @black;
-
-        .colorFade(fade(@color, 90%));
 
         span.year {
             display: block;
