@@ -44,7 +44,6 @@ All this junk is used during development or for building.
 * [Browserify](https://github.com/substack/node-browserify) - Javascript modules
 * [clear](https://github.com/bahamas10/node-clear): - Clear the screen (used by NPM scripts)
 * [clean-css](https://github.com/jakubpawlowicz/clean-css) - CSS minifier
-* [debowerify](https://github.com/eugeneware/debowerify) - Make `require('module')` work with the rat's nest that is Bower
 * [http-server](https://github.com/indexzero/http-server) - Simple static server (used with Live Reload)
 * [less.js](https://github.com/less/less.js): CSS preprocessor
 * [live-reload](https://github.com/Raynos/live-reload) - Live reloading

@@ -14,6 +14,7 @@
     "build:autoprefix": "autoprefixer dist/app.css",
     "build:css": "npm run build:less && npm run build:autoprefix && npm run min:css",
     "build:js": "browserify -t debowerify javascript/app.js -o dist/app.js && npm run min:js",
+    "build:devjs": "browserify javascript/*.js -o dist/app.js",
     "build:fonts": "npm run clean:fonts && cp vendor/fontawesome/fonts/* dist/fonts",
     "build": "npm run build:css && npm run build:js && npm run build:fonts",
     "build:clean": "npm run clean:dist && npm run build",
@@ -40,7 +41,7 @@
     "serve": "http-server -s -p 9090 .",
     "version": "versiony --to 'bower.json' --from 'package.json'",
     "watch:css": "watch 'clear && npm run build:css' less/ -dt",
-    "watch:js": "watch 'clear && npm run build:js' javascript/ -dt",
+    "watch:js": "watch 'clear && npm run build:devjs' javascript/ -dt",
     "dev": "clear && npm run cleanup && parallelshell 'npm run livereload' 'npm run serve' 'npm run watch:css' 'npm run watch:js'",
     "dev:watch": "clear && npm run cleanup && parallelshell 'npm run livereload' 'npm run watch:css'",
     "deploy": "clear && npm run build:clean"
@@ -50,8 +51,8 @@
     "browserify": "^9.0.0",
     "clean-css": "^3.1.9",
     "clear": "^0.0.1",
-    "debowerify": "^1.2.0",
     "http-server": "^0.8.0",
+    "jquery": "^2.1.3",
     "less": "^2.1.1",
     "live-reload": "^1.1.0",
     "parallelshell": "^1.0.0",
@@ -61,7 +62,6 @@
   },
   "dependencies": {
     "font-awesome": "^4.3.0",
-    "jquery": "^2.1.3",
     "sanitize.css": "^1.1.0"
   }
 }
