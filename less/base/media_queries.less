@@ -2,8 +2,9 @@
  Breakpoint definitions
 */
 
+@mobile_width: @desktop_width - 1px;
 @mobile:
-    ~"only screen and (max-device-width: @{desktop_width})";
+    ~"only screen and (max-device-width: @{mobile_width})";
 
 @desktop:
     ~"(min-device-width: @{desktop_width})";
