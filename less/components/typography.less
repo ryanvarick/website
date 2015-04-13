@@ -4,23 +4,21 @@
 
 @gutter: @leading;
 @normal_font_weight:  300;
-@strong_font_weight:  600;
+@strong_font_weight:  400;
 
-// @import "components/font-awesome.less";
-// - fa-font-path is defined relative to current URL
 // - FIXME: Use `import (reference)` and `:extend` to cut down file size?
 // - FIXME: Serve subset of icon font? Serve icon font inline?
 @import "../../node_modules/font-awesome/less/font-awesome.less";
+
+// defined relative to imported stylesheet
 @fa-font-path: "fonts";
 
 
 body {
     color: @black;
-    font-family: myriad-pro, "Avenir Next", sans-serif;
+    font-family: myriad-pro, "Avenir Next", Roboto, sans-serif;
 
     @media print {
-
-        // TODO: Would be good to sync with display font size (15px)
         font-size: 10pt;
     }
 }
@@ -50,10 +48,12 @@ p + * {
     margin-top: @leading;
 }
 
-main h2 {
-    font-weight: @strong_font_weight;
-}
-main h3 {
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6 {
     font-weight: @strong_font_weight;
 }
 
