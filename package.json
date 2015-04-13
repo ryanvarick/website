@@ -14,7 +14,7 @@
     "build:autoprefix": "autoprefixer dist/app.css",
     "build:css": "npm run build:less && npm run build:autoprefix && npm run min:css",
     "build:js": "browserify javascript/app.js -o dist/app.js && npm run min:js",
-    "build:devjs": "browserify javascript/*.js -o dist/app.js",
+    "build:devjs": "browserify javascript/app.js javascript/development.js -o dist/app.js",
     "build:fonts": "npm run clean:fonts && cp node_modules/font-awesome/fonts/* dist/fonts",
     "build": "npm run build:css && npm run build:js && npm run build:fonts",
     "build:clean": "npm run clean:dist && npm run build",
