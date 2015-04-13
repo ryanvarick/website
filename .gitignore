@@ -1,4 +1,4 @@
 dist/*
 vendor/*
 **/experimental/*
-SCRATCH.md
+NOTES.md
