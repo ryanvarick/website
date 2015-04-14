@@ -2,14 +2,129 @@
  PmWiki-specific styles
 */
 
-p.edit-link {
-    position: fixed;
-    z-index: 1000;
-    bottom: 10px;
-    right: 20px;
-    text-transform: lowercase;
+/* Warning colors */
+@DEFAULT_WARNING_COLOR: #d7cf50;
+@LOCAL_EDIT_WARNING_COLOR: #f5f5f5;
+@LOCAL_ANON_EDIT_WARNING_COLOR: fade(desaturate(darken(red, 10%), 10%), 30%);
+@ANON_EDIT_WARNING_COLOR: #d7cf50;
 
-    a {
-        text-decoration: none;
+@DIFF_ADD_COLOR: #9f9;
+@DIFF_DEL_COLOR: #ff9;
+
+@BAR_WIDTH: 5px;
+
+
+/*                                                                   *
+ * --------------------[ PAGE-SPECIFIC STYLES ]--------------------- *
+ *                                                                   */
+
+/* Categories and search results */
+
+div.wikisearch,
+div.fpltemplate
+{
+  dt
+  {
+    a
+    {
+      font-weight: @strong_font_weight;
+      display: inline-block;
+      padding-top: @leading;
     }
+  }
+
+  dd {
+      text-indent: -@gutter;
+      margin-left: @gutter * 2;
+  }
+}
+
+/* Diff */
+
+.difftime
+{
+  background-color: @light_grey;
+}
+
+.diffmarkup
+{
+  font-family: monospace;
+}
+
+.diffadd
+{
+  padding: (@leading / 2) (@gutter / 2);
+  border-left: @BAR_WIDTH solid @DIFF_ADD_COLOR;
+}
+
+.diffdel
+{
+  padding: (@leading / 2) (@gutter / 2);
+  border-left: @BAR_WIDTH solid @DIFF_DEL_COLOR;
+}
+
+.diffrestore
+{
+  padding-bottom: @leading @gutter;
+  text-align: right;
+}
+
+/* Edit warnings */
+
+p.note
+{
+  max-width: 100%;
+}
+
+p.local-edit-warning
+{
+  .striped-background(@LOCAL_EDIT_WARNING_COLOR, .5);
+}
+p.anonymous-local-edit-warning
+{
+  .striped-background(@LOCAL_ANON_EDIT_WARNING_COLOR);
+}
+p.anonymous-edit-warning
+{
+  .striped-background(@ANON_EDIT_WARNING_COLOR);
+}
+
+
+
+/* Mixin: Background striping */
+.striped-background(@color: @DEFAULT_WARNING_COLOR, @alpha: 0.25)
+{
+  background-color: @color;
+
+  // 1. Dark stripe from 0% to point 1
+  // 2. Light stripe from point 1 to point 2
+  // 3. Dark stripe from point 2 to point 3
+  // 4  Light strip again from point 3 to 100%
+
+  // TODO: Should be -30deg (15/50/80 for the angles?)
+  // TODO: Background size
+
+  @DARK_WARNING_COLOR: rgba(255, 255, 255, @alpha);
+  @FIRST_STRIPE_POINT: 25%;
+  @SECOND_STRIPE_POINT: 50%;
+  @THIRD_STRIPE_POINT: 75%;
+
+  background-image:
+    linear-gradient(
+      -45deg,
+
+      @DARK_WARNING_COLOR @FIRST_STRIPE_POINT,
+
+      transparent @FIRST_STRIPE_POINT,
+      transparent @SECOND_STRIPE_POINT,
+
+      @DARK_WARNING_COLOR @SECOND_STRIPE_POINT,
+      @DARK_WARNING_COLOR @THIRD_STRIPE_POINT,
+
+      transparent @THIRD_STRIPE_POINT,
+      transparent
+    );
+
+  background-size: 60px 60px;
+  text-shadow: #eee 0 1px;
 }
