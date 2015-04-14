@@ -26,7 +26,7 @@ footer {
     header section,
     main,
     footer section,
-    div.temporary-container {
+    div.container {
         margin: 0 auto;
         width: 100%;
         max-width: @page_width;
@@ -52,11 +52,16 @@ footer {
 // breathing room for print
 @media print {
     body {
-        padding: (@leading * 2) (@gutter * 3);
+        padding-top: @leading;
+        zoom: 80%;
     }
 }
 
 // breathing room between the content and the footer
 main div#wikitext {
-    margin-bottom: (@leading * 3);
+
+    // ...but not for print
+    @media screen {
+        margin-bottom: (@leading * 3);
+    }
 }
