@@ -32,7 +32,7 @@ p.summary + p {
     list-style: none;
 }
 
-// hide portfolio cross-link, email underlines
+// do not underline email or position detail links
 @media print {
 
     div.resume > p a,
@@ -41,7 +41,7 @@ p.summary + p {
     }
 }
 
-// print only: link to portfolio
+// portfolio link for print only
 div.portfolio-link {
     .hide();
 
@@ -50,26 +50,30 @@ div.portfolio-link {
     }
 }
 
-// print only: contact information
-div.contact-information {
+// hide download link for print
+p.download-link {
+
+    // TODO: Style download link for display
     .hide();
 
     @media print {
-        .show();
+        .hide()
+    }
+}
 
-        // fake a `.secondary` container
-        position: absolute;
-        top: (@leading * 3);
-        right: 0;
-        width: @secondary_container_width + @gutter;
+div.contact-information {
 
-        li {
-            list-style: none;
-        }
+    position: absolute;
+    top: 0;
 
-        h2 {
-            .hide();
-        }
-    } // end @media
+    // only show contact information for print
+    @media screen {
+        .hide();
+    }
+
+    // only show heading when styles are disabled
+    h2 {
+        .hide();
+    }
 
 }
