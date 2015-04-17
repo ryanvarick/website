@@ -8,7 +8,8 @@ ul.portfolio-container li,
 .portfolio-sidebar li {
     list-style: none;
 }
-.portfolio-sidebar a.selflink {
+.portfolio-sidebar a.selflink,
+ul.portfolio-container a {
     text-decoration: none;
 }
 span.year {
@@ -16,92 +17,95 @@ span.year {
 }
 
 // context-specific navigation
+h3.recent-work {
+    .hide();
+}
 div.portfolio-navigation {
     @media @mobile {
         .hide();
     }
 }
-h3.recent-work {
-    .hide();
+div.portfolio-sidebar {
+    @media @mobile {
+        margin-top: (@leading *  2);
+    }
 }
 
-// container layout
+// overall container layout
 ul.portfolio-container {
-
-    // extra breathing room
-    margin-top: (@leading * 3);
 
     display: flex;
     flex-wrap: wrap;
 
-    li {
+    // extra breathing room
+    @media @desktop {
+        margin-top: (@leading * 3);
+    }
+    @media @mobile {
+        margin-top: @leading;
+    }
+}
+
+// layout for individual cover images
+ul.portfolio-container li {
+
+    // container for hover-generated pseudo-elements (see below)
+    position: relative;
+
+    height: 100px;
+    width: 100%;
+    @media @desktop {
+        width: (@page_width / 3);
+    }
+
+    // set border color, actual borders drawn by `app.js`
+    border-color: @light_grey;
+
+    a {
+        // center vertically
         display: flex;
         align-items: center;
         justify-content: center;
 
-        height: 100px;
-        width: 100%;
-
-        @media @desktop {
-            width: (@page_width / 3);
-        }
-
-
-        // container for pseudo-element
+        // for z-index
         position: relative;
-        border-color: @light_grey;
 
-        a {
-            display: block;
-            height: 100%;
-            width: 100%;
-            padding: 10px;
-            text-decoration: none;
-        }
-
-        span.summary {
-            z-index: 100;
-            opacity: 0.0;
-        }
+        height: 100%;
+        padding: (@gutter / 2);
+        opacity: 0.0;
     }
 
-    // hover effects
-    li:not(:last-child):hover {
+    // resume link
+    &.p6 a {
+        opacity: 1.0;
+    }
+} // end ul.portfolio-container li
 
-        span.summary {
-            transition: opacity 250ms ease-in-out;
-            opacity: 1.0;
-        }
+// hover effects
+ul.portfolio-container li:not(:last-child):hover {
 
-        &::after {
-            content: '';
-            background: @white;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            position: absolute;
-            opacity: 0.95;
-        }
-    } // end li:hover
-} // end ul.portfolio-container
+    &::after {
+        content: '';
+        background: @white;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        opacity: 0.95;
+    }
 
-
-/**
- Generate portfolio cover styles for desktop, mobile, Retina, and non-Retina
-
- @param {string} image name (do not include the path, file extension, or @2x)
- @param {length} width of the image
- @param {length} height of the image
-*/
-.portfolio-image(@image, @width, @height) {
-    .retina-png(@image, @width, @height, no-repeat, 50%, 50%);
-    // @media @desktop { .retina-png(@image, @width, @height, no-repeat, 50%, 50%); }
-    // @media @mobile  { .retina-png(@image, @width, @height, no-repeat,  0%,  0%); }
+    // fade in text overlay
+    a {
+        opacity: 1.0;
+        transition: opacity 250ms ease-in-out;
+        z-index: 1;
+    }
 }
 
-li.p1 { .portfolio-image("portfolio-cover-br",    150px, 25px); }
-li.p2 { .portfolio-image("portfolio-cover-wf",    40px,  40px); }
-li.p3 { .portfolio-image("portfolio-cover-nokia", 80px,  13px); }
-li.p4 { .portfolio-image("portfolio-cover-good",  75px,  25px); }
-li.p5 { .portfolio-image("portfolio-cover-moto",  130px, 25px); }
+// cover images
+li.p1 { .retina-png("portfolio-cover-br",    150px, 25px, no-repeat, 50%, 50%); }
+li.p2 { .retina-png("portfolio-cover-wf",    40px,  40px, no-repeat, 50%, 50%); }
+li.p3 { .retina-png("portfolio-cover-nokia", 80px,  13px, no-repeat, 50%, 50%); }
+li.p4 { .retina-png("portfolio-cover-good",  75px,  25px, no-repeat, 50%, 50%); }
+li.p5 { .retina-png("portfolio-cover-moto",  130px, 25px, no-repeat, 50%, 50%); }
