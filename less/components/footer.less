@@ -4,19 +4,18 @@
 
 footer {
 
+    // breathing room around the edges
     padding-top: @leading;
     padding-bottom: (@leading * 2);
 
+    // hide accessbility markup
     h3,
     hr {
-
-        // hide accessbility markup
         .hide();
     }
 
+    // hide when printing
     @media print {
-
-        // hide when printing
         .hide();
     }
 }
@@ -25,10 +24,9 @@ footer li {
     list-style: none;
 }
 
+// extra styling for navigation links
 p.page-info a,
 footer .links a {
-
-    // add a little extra styling to navigation links
     text-decoration: underline;
 }
 
@@ -48,9 +46,8 @@ ul.social {
         padding: 0 (@gutter / 2) 0 0;
     }
 
+    // except for Twitter, only show icons for mobile
     @media @mobile {
-
-        // except for Twitter, only show icons
         li:not(:first-child) span {
             display: none;
         }
