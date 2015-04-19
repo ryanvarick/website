@@ -3,9 +3,19 @@
 */
 
 @startColor: @orange;
-@endColor: spin(@startColor, 15);
-@borderColor: @startColor;
-@defaultAngle: 175deg;
+@endColor: @yellow;
+@defaultAngle: 0deg;
+
+// header and footer
+header,
+footer {
+    color: @white;
+    .fadeBackground(to bottom right);
+    // .animateBackground();
+}
+footer a {
+    color: @white;
+}
 
 // logo
 svg path {
@@ -18,23 +28,10 @@ svg path {
     }
 }
 
-header,
-footer {
-    color: @white;
-    .backgroundFade(170deg);
-    // .animateBackground();
-}
-
-main h2 {
-    .colorFade(270deg);
-}
-
+// headings
+main h2,
 div.headline h2 {
-    .colorFade(0deg, @orange, @yellow);
-}
-
-div.portfolio-navigation {
-    .borderFade(135deg, @orange, @yellow);
+    .fadeColor();
 }
 
 // images
@@ -45,41 +42,44 @@ p.caption {
     color: @dark_grey;
 }
 
-footer a {
-    color: @white;
+// portfolio
+ul.portfolio-container li {
+    border-color: fade(@startColor, 50%);
 }
-
-
-/**
- Fade the background from `startColor` to `endColor` at the specified `angle`
-*/
-.backgroundFade(@angle: @defaultAngle, @color1: @startColor, @color2: @endColor) {
-    background-image: linear-gradient(@angle, @color1, @color2);
+div.portfolio-navigation {
+    .fadeBorder(135deg);
 }
 
 /**
- Fade the border from `startColor` to `endColor` at the specified `angle`
+ Fade the background from `startColor` to `endColor` at the specified `direction`
 */
-.borderFade(@angle: @defaultAngle, @color1: @startColor, @color2: @endColor) {
+.fadeBackground(@direction: @defaultAngle, @color1: @startColor, @color2: @endColor) {
+    background-image: linear-gradient(@direction, @color1, @color2);
+}
+
+/**
+ Fade the border from `startColor` to `endColor` at the specified `direction`
+*/
+.fadeBorder(@direction: @defaultAngle, @color1: @startColor, @color2: @endColor) {
     border-style: solid;
     border-width: 1px 0 1px 0;
-    border-image: linear-gradient(@angle, @color1, @color2) 1 repeat repeat;
+    border-image: linear-gradient(@direction, @color1, @color2) 1 repeat repeat;
 }
 
 /**
- Fade the text color from `startColor` to `endColor` at the specified `angle`
+ Fade the text color from `startColor` to `endColor` at the specified `direction`
 */
-.colorFade(@angle: @defaultAngle, @color1: @startColor, @color2: @endColor) {
+.fadeColor(@direction: @defaultAngle, @color1: @startColor, @color2: @endColor) {
 
     // non-WebKit broswer/print fallback
     color: @color1;
 
     @media screen {
 
-        /* autoprefixer: off */ // Requires WebKit only features
+        /* autoprefixer: off */  // All three effects must be supported
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-image: -webkit-linear-gradient(@angle, @color1, @color2);
+        background-image: -webkit-linear-gradient(@direction, @color1, @color2);
     }
 }
 
