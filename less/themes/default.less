@@ -2,63 +2,38 @@
  Default theme
 */
 
-@topColor: @orange;
-@bottomColor: spin(@topColor, 15);
-// @bottomColor: @yellow;
-// @bottomColor: @topColor;
+@startColor: @orange;
+@endColor: spin(@startColor, 15);
+@borderColor: @startColor;
+@defaultAngle: 175deg;
 
-@themeBorderColor: @topColor;
+// logo
+svg path {
 
-header {
+    // screen
+    fill: @white;
 
-    // logo
-    svg path {
-        fill: @white;
-
-        @media print {
-            fill: @black;
-        }
+    @media print {
+        fill: @black;
     }
 }
 
 header,
 footer {
-
     color: @white;
-    background-image: linear-gradient(@topColor, @bottomColor);
-    // .animateColor();
-
-    a {
-        color: inherit;
-        text-decoration: none;
-    }
+    .backgroundFade(170deg);
 }
 
-main {
-    h2 {
-        .colorBurn();
-    }
+main h2 {
+    .colorFade(270deg);
 }
 
-// headings
-.headline h2 {
-    line-height: 1.2;
+div.headline h2 {
+    .colorFade(0deg, @orange, @yellow);
 }
 
 div.portfolio-navigation {
-    border-top: 1px solid @themeBorderColor;
-    border-bottom: 1px solid @themeBorderColor;
-}
-
-
-
-
-code {
-    background: @light_grey;
-
-    // taken from Github
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: smaller;
+    .borderFade(135deg, @orange, @yellow);
 }
 
 // images
@@ -69,32 +44,45 @@ p.caption {
     color: @dark_grey;
 }
 
-
-
-
-// used by portfolio
-.colorFade(@startColor: @topColor) {
-
-    // @endColor: fade(spin(@startColor, 20%), 90%);
-    @endColor: @startColor;
-    background-image: linear-gradient(@startColor, @endColor);
+footer a {
+    color: @white;
 }
 
-.colorBurn() {
+
+/**
+ Fade the background from `startColor` to `endColor` at the specified `angle`
+*/
+.backgroundFade(@angle: @defaultAngle, @color1: @startColor, @color2: @endColor) {
+    background-image: linear-gradient(@angle, @color1, @color2);
+}
+
+/**
+ Fade the border from `startColor` to `endColor` at the specified `angle`
+*/
+.borderFade(@angle: @defaultAngle, @color1: @startColor, @color2: @endColor) {
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    border-image: linear-gradient(@angle, @color1, @color2) 1 repeat repeat;
+}
+
+/**
+ Fade the text color from `startColor` to `endColor` at the specified `angle`
+*/
+.colorFade(@angle: @defaultAngle, @color1: @startColor, @color2: @endColor) {
 
     // non-WebKit broswer/print fallback
-    color: @topColor;
+    color: @color1;
 
     @media screen {
 
         /* autoprefixer: off */ // Requires WebKit only features
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-image: -webkit-linear-gradient(270deg, @topColor, @bottomColor);
+        background-image: -webkit-linear-gradient(@angle, @color1, @color2);
     }
 }
 
-
+/*
 .animateColor() {
     -webkit-animation: rotate 10s infinite linear alternate;
 }
@@ -118,3 +106,4 @@ p.caption {
       -webkit-filter: hue-rotate(360deg);
   }
 }
+*/
