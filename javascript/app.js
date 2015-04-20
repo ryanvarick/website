@@ -12,10 +12,10 @@ retina.Retina.init(window);
 var stickFooter = function() {
 
     // first reset previous class additions
-    var footer = document.getElementsByTagName('footer')[0];
+    var footer = document.querySelector('footer');
     footer.className = '';
 
-    var main = document.getElementsByTagName('main')[0];
+    var main = document.querySelector('main');
     var mainHeight = main.offsetTop + main.offsetHeight;
     var windowHeight = window.innerHeight;
 
@@ -32,7 +32,7 @@ var stickFooter = function() {
 var drawBorders = function() {
 
     // get the portfolio items for consideration
-    var items = document.getElementsByClassName('portfolio-container')[0].getElementsByTagName('li');
+    var items = document.querySelectorAll('ul.portfolio-container li');
 
     // helper function: does the given index have a neighbor to its right?
     var hasRightNeighbor = function(index) {
@@ -73,7 +73,7 @@ var drawBorders = function() {
 };
 
 // look for the portfolio container
-if(document.getElementsByClassName('portfolio-container')[0]) {
+if(document.querySelector('ul.portfolio-container')) {
 
     // draw borders and then listen for events that might cause flexbox wrapping
     window.addEventListener('orientationchange', drawBorders);
