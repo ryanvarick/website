@@ -84,6 +84,11 @@ p.caption {
 img {
     // ensure that images are not wider than their containers
     max-width: 100%;
+    opacity: 0.0;
+}
+img.visible {
+    transition: opacity 500ms ease;
+    opacity: 1.0;
 }
 
 

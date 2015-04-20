@@ -7,6 +7,28 @@ var retina = require('../vendor/retinajs/dist/retina.js');
 retina.Retina.init(window);
 
 /**
+ Fade in images on scroll
+*/
+var fadeImages = function() {
+
+    // get images
+    var images = document.querySelectorAll('img');
+
+    // trigger point
+    var scrollLocation = document.querySelector('body').scrollTop + window.innerHeight;
+    var scrollLocation = scrollLocation * 0.9;
+
+    // check if the top of each image is above the trigger point
+    for(var i = 0; i < images.length; i++) {
+        if(scrollLocation > images[i].offsetTop) {
+            images[i].className += ' visible';
+        }
+    }
+};
+fadeImages();
+window.addEventListener('scroll', fadeImages);
+
+/**
  Stick the footer just above the fold
 */
 var stickFooter = function() {
