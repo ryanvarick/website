@@ -21,7 +21,7 @@ body {
 
 // only select elements should be bold
 * { font-weight: @normal_font_weight }
-strong { font-weight: @strong_font_weight; }
+strong, strong * { font-weight: @strong_font_weight; }
 
 // lists
 ul { list-style: circle inside;  }
@@ -39,6 +39,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // space after all paragraphs
+ol + p,
+ul + p,
 p + * {
     margin-top: @leading;
 }
