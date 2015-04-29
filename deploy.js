@@ -7,7 +7,6 @@
  uses `rsync` to upload to the server, and assumes public key authentcation.
 */
 
-/* jslint node: true */
 'use strict';
 
 // dependencies
