@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/ryanvarick/website"
   },
-  "version": "16.4.1",
+  "version": "16.4.2",
   "private": true,
   "readme": "README.md",
   "scripts": {
@@ -31,12 +31,11 @@
     "postinstall": "bower install",
     "livereload": "live-reload --port 9091 .",
     "serve": "http-server -s -p 9090 .",
-    "version": "versiony --from 'package.json' --to 'bower.json'",
     "watch:css": "watch 'clear && npm run build:css' less/ -d -u",
     "watch:js": "watch 'clear && npm run build:devjs' javascript/ -d -u",
     "dev": "clear && npm run cleanup && parallelshell 'npm run livereload' 'npm run serve' 'npm run watch:css' 'npm run watch:js'",
     "dev:watch": "clear && npm run cleanup && parallelshell 'npm run livereload' 'npm run watch:css'",
-    "deploy": "clear && npm run version && npm run build:clean && node deploy.js"
+    "deploy": "clear && npm run build:clean && node deploy.js"
   },
   "devDependencies": {
     "autoprefixer": "^5.1.0",
@@ -50,7 +49,6 @@
     "live-reload": "^1.1.0",
     "parallelshell": "^1.0.0",
     "uglify-js": "^2.4.19",
-    "versiony-cli": "^1.3.0",
     "watch": "^0.16.0"
   },
   "dependencies": {

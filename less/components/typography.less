@@ -3,8 +3,8 @@
 */
 
 @gutter: @leading;
-@normal_font_weight:  300;
-@strong_font_weight:  400;
+@normal_font_weight: 400;
+@strong_font_weight: 500;
 
 // - FIXME: Use `import (reference)` and `:extend` to cut down file size?
 // - FIXME: Serve subset of icon font? Serve icon font inline?
@@ -16,7 +16,7 @@
 
 body {
     color: @black;
-    font-family: myriad-pro, "Avenir Next", Roboto, sans-serif;
+    font-family: "Avenir Next", Roboto, sans-serif;
 }
 
 // only select elements should be bold
@@ -26,6 +26,13 @@ strong, strong * { font-weight: @strong_font_weight; }
 // lists
 ul { list-style: circle inside;  }
 ol { list-style: decimal inside; }
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    padding-left: (@gutter);
+}
 
 // links
 a {

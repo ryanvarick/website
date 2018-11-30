@@ -53,5 +53,4 @@ Development stuff:
 * [live-reload](https://github.com/Raynos/live-reload) - Live reloading
 * [Parallel Shell](https://github.com/keithamus/parallelshell) - Flaky little tool to run multiple NPM scripts in parallel
 * [UglifyJS](https://github.com/mishoo/UglifyJS2) - Javascript minifier
-* [versiony-cli](https://github.com/radubrehar/versiony-cli) - Sync `package.json` version to `bower.json`
 * [watch](https://github.com/mikeal/watch) - Watch filesystem for changes (used with Live Reload)

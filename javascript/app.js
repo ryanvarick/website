@@ -1,4 +1,4 @@
-/*! Javascript for ryanvarick.com | v16.4.1 (April, 2015) | https://github.com/ryanvarick.com/website */
+/*! Javascript for ryanvarick.com | v16.4.2 (November, 2018) | https://github.com/ryanvarick.com/website */
 
 /**
  Automatically look for Retina assets
